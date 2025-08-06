@@ -78,9 +78,13 @@ void AHero::BeginPlay()
 	}
 	HeroWidget->UpDateHealth(CurrentHealth/MaxHealth);
 	HeroWidget->UpDateStamina(CurrentStamina/ MaxStamina);
-
-
-
+	//配置枪
+	if (ConfigWeapon) {
+		FActorSpawnParameters SpawnParams;
+		CurrentWeapon = GetWorld()->SpawnActor<AWeaponBase>(ConfigWeapon);
+		CurrentWeapon->AttachToComponent(MyMeshComponent, FAttachmentTransformRules::SnapToTargetIncludingScale,TEXT("hand_r_Weapon"));
+		CurrentWeapon->SetActorHiddenInGame(false);//暂时不隐藏，后续背包出来再开发
+	}
 
 
 }
@@ -115,6 +119,10 @@ void AHero::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	//fast run
 	PlayerInputComponent->BindAction("FastRun", IE_Pressed, this, &AHero::FastRun);
 	PlayerInputComponent->BindAction("FastRun", IE_Released, this, &AHero::StopFastRun);
+	//Fire
+	PlayerInputComponent->BindAction("CharaFire",IE_Pressed,this,&AHero::StartFire);
+	PlayerInputComponent->BindAction("CharaFire",IE_Released,this,&AHero::StopFire);
+
 
 	//move
 	PlayerInputComponent->BindAxis("Move Forward", this, &AHero::MoveForward);
@@ -180,7 +188,7 @@ void AHero::CurrentTakeDamage(float DamageAmount) {
 	HeroWidget->UpDateHealth(CurrentHealth/MaxHealth);
 
 	if (CurrentHealth <= 0) {
-
+		
 	}
 }
 
@@ -196,8 +204,13 @@ void AHero::StopFastRun() {
 	GetCharacterMovement()->MaxWalkSpeed = 500.0f;
 }
 
-void AHero::Fire() {
+void AHero::StartFire() {
 	if (CurrentWeapon) {
-		CurrentWeapon->WeaponFire();
+		CurrentWeapon->WeaponStartFire();
+	}
+}
+void AHero::StopFire() {
+	if (CurrentWeapon) {
+		CurrentWeapon->WeaponStopFire();
 	}
 }

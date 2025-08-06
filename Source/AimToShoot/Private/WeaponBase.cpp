@@ -24,6 +24,14 @@ void AWeaponBase::BeginPlay()
 	Super::BeginPlay();
 	
 }
+void AWeaponBase::EndPlay(const EEndPlayReason::Type EndPlayReason) {
+	Super::EndPlay(EndPlayReason);
+
+	if (GetWorld()->GetTimerManager().IsTimerActive(FireRateTimerHandle)) {
+		GetWorld()->GetTimerManager().ClearTimer(FireRateTimerHandle);
+	}
+}
+
 
 // Called every frame
 void AWeaponBase::Tick(float DeltaTime)
@@ -32,6 +40,20 @@ void AWeaponBase::Tick(float DeltaTime)
 
 }
 
-void AWeaponBase::WeaponFire() {
+void AWeaponBase::WeaponStartFire() {
+	WeaponFiring();
+	if (!GetWorld()->GetTimerManager().IsTimerActive(FireRateTimerHandle)) {
+		GetWorld()->GetTimerManager().SetTimer(FireRateTimerHandle, this, &AWeaponBase::WeaponFiring, FireRate, true);
+	}
 
+}
+
+void AWeaponBase::WeaponStopFire() {
+	if (GetWorld()->GetTimerManager().IsTimerActive(FireRateTimerHandle)) {
+		GetWorld()->GetTimerManager().ClearTimer(FireRateTimerHandle);
+	}
+}
+
+void AWeaponBase::WeaponFiring() {
+	UE_LOG(LogTemp, Log, TEXT("WeaponBase Firing"));
 }

@@ -19,9 +19,12 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SkeletalComponent")
 		USkeletalMeshComponent* SkeleMesh;
 
-	virtual void WeaponFire();
-
+	virtual void WeaponStartFire();
+	virtual void WeaponStopFire();
+	virtual void WeaponFiring();
 protected:
+	FTimerHandle FireRateTimerHandle;
+
 	UPROPERTY(EditAnywhere, Category = "WeaponStats")
 		float FireRate;
 	UPROPERTY(EditAnywhere, Category = "WeaponStats")
@@ -38,7 +41,7 @@ protected:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
 
 public:	

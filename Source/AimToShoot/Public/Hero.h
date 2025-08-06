@@ -88,8 +88,9 @@ public:
 		void StopFastRun();
 	//受击函数
 	void CurrentTakeDamage(float DamageAmount);
-	//开火函数
-	void Fire();
+	//开火函数,
+	void StartFire();
+	void StopFire();
 
 protected:
 	// Called when the game starts or when spawned
