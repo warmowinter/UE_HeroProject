@@ -5,9 +5,12 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Hero_Widget.h"
+#include "BackPackWidget.h"
 #include "WeaponBase.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
+#include "Components/SphereComponent.h"
+#include "DataDefine/AllDataDefine.h"
 #include "Hero.generated.h"
 
 UCLASS()
@@ -18,31 +21,45 @@ class AIMTOSHOOT_API AHero : public ACharacter
 public:
 	// Sets default values for this character's properties
 	AHero();
-	//角色组件属性
+	//角色组件属性：角色网格体可编辑，暴露在蓝图，弹簧臂和摄像机
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		USkeletalMeshComponent* MyMeshComponent;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 		class USpringArmComponent* SpringRob;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 		UCameraComponent* MyCameraComponent;
-
+	//角色2.5D视角：弹簧臂建立和摄像机
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera2.5D")
 		class USpringArmComponent* SpringRob_2D;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera2.5D")
 		UCameraComponent* MyCameraComponent_2D;
-	//UI界面
+	//UI血条体力界面
 	UPROPERTY(EditAnywhere, Category = "UI")
 		TSubclassOf<UUserWidget> HeroWidgetClass;
-	//UI实例化
+	//UI血条体力实例化
 	UHero_Widget* HeroWidget;
-	
+	//UI背包界面
+	UPROPERTY(EditAnywhere, Category = "BackPackUI")
+		TSubclassOf<UUserWidget> BackPackWidgetClass;
+	//UI背包界面实例化
+	UBackPackWidget* BackPackUI;
+
+
+	//拾取范围组件
+	UPROPERTY(VisibleAnywhere)
+		USphereComponent* PickUpRange;
 	//体力属性
 	float StaminaDrainRate;
-	//武器组件属性
+	//配备武器类型
 	UPROPERTY(EditAnywhere, Category = "WeaponClass")
 		TSubclassOf<AWeaponBase> ConfigWeapon;
 	//当前武器实例化
 	AWeaponBase* CurrentWeapon;
+protected:
+	//背包数组
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category = "Inventory")
+		TArray<FBackPackStruct> BackPackArray;
+
 
 public:
 	//默认视角转速，
@@ -73,6 +90,7 @@ protected:
 		float CurrentStamina;
 
 	bool Is_Run = false;
+	bool Is_OpenBP = false;
 public:
 	//切换视图
 	UFUNCTION(BlueprintCallable, Category = "ToggleCharacterView")
@@ -91,6 +109,14 @@ public:
 	//开火函数,
 	void StartFire();
 	void StopFire();
+	//拾取东西函数
+	void TryPickUp();
+	//添加物品到背包中函数
+	void AddItemToBackPack(const FBackPackStruct& NewItem);
+	//通知背包刷新的函数
+	void NoticeRefresh();
+	//打开背包函数
+	void OpenBackPack();
 
 protected:
 	// Called when the game starts or when spawned

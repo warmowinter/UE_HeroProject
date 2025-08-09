@@ -3,6 +3,7 @@
 
 #include "Hero.h"
 #include "Components/InputComponent.h"
+#include "ItemActor.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
@@ -56,6 +57,11 @@ AHero::AHero()
 	MyCameraComponent_2D->SetActive(false);
 
 
+	PickUpRange = CreateDefaultSubobject<USphereComponent>(TEXT("PickUpRange"));
+	PickUpRange->SetupAttachment(RootComponent);
+	PickUpRange->SetSphereRadius(200.f);
+	PickUpRange->SetCollisionProfileName(TEXT("OverLapAll"));
+
 }
 
 // Called when the game starts or when spawned
@@ -69,6 +75,8 @@ void AHero::BeginPlay()
 	MaxStamina = 100.0f;
 	CurrentStamina = MaxStamina;
 	StaminaDrainRate = 10.0f;
+	//背包初始化
+	BackPackArray.SetNum(0);
 	//创建生命和体力值界面
 	if (HeroWidgetClass) {
 		HeroWidget = CreateWidget<UHero_Widget>(GetWorld(),HeroWidgetClass);
@@ -78,6 +86,15 @@ void AHero::BeginPlay()
 	}
 	HeroWidget->UpDateHealth(CurrentHealth/MaxHealth);
 	HeroWidget->UpDateStamina(CurrentStamina/ MaxStamina);
+	//创建背包界面
+	if (BackPackWidgetClass) {
+		BackPackUI = CreateWidget<UBackPackWidget>(GetWorld(), BackPackWidgetClass);
+		if (BackPackUI) {
+			BackPackUI->AddToViewport();
+			BackPackUI->SetVisibility(ESlateVisibility::Hidden);
+		}
+	}
+
 	//配置枪
 	if (ConfigWeapon) {
 		FActorSpawnParameters SpawnParams;
@@ -122,6 +139,10 @@ void AHero::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	//Fire
 	PlayerInputComponent->BindAction("CharaFire",IE_Pressed,this,&AHero::StartFire);
 	PlayerInputComponent->BindAction("CharaFire",IE_Released,this,&AHero::StopFire);
+	//PickUp
+	PlayerInputComponent->BindAction("Pickup", IE_Pressed, this, &AHero::TryPickUp);
+	//Open BackPack
+	PlayerInputComponent->BindAction("OpenBP", IE_Pressed, this, &AHero::OpenBackPack);
 
 
 	//move
@@ -213,4 +234,51 @@ void AHero::StopFire() {
 	if (CurrentWeapon) {
 		CurrentWeapon->WeaponStopFire();
 	}
+}
+void AHero::AddItemToBackPack(const FBackPackStruct& NewItem) {
+	if (NewItem.bIsStackable) {
+		for (FBackPackStruct& Item : BackPackArray) {
+			if (Item.ItemID == NewItem.ItemID) {
+				Item.Quantity += NewItem.Quantity;
+				return;
+			}
+		}
+	}
+	BackPackArray.Add(NewItem);
+}
+
+void AHero::TryPickUp() {
+	TArray<AActor*> OverlappingActors;
+	PickUpRange->GetOverlappingActors(OverlappingActors, AItemActor::StaticClass());
+	UE_LOG(LogTemp, Log, TEXT("TryPickUp Callable"));
+	for (AActor* Actor : OverlappingActors) {
+		if (AItemActor* Item = Cast<AItemActor>(Actor)) {
+			AddItemToBackPack(Item->ItemInfo);
+			Item->Destroy();
+			break;
+		}
+	}
+	NoticeRefresh();
+}
+
+void AHero::NoticeRefresh() {
+	if (BackPackUI) {
+		BackPackUI->RefreshBackPack(BackPackArray);
+	}
+}
+
+void AHero::OpenBackPack() {
+
+	if (!Is_OpenBP) {
+		if (!BackPackUI)	return;
+		BackPackUI->SetVisibility(ESlateVisibility::Visible);
+		NoticeRefresh();
+		UE_LOG(LogTemp, Log, TEXT("open BackPack"));
+		Is_OpenBP = true;
+	}
+	else {
+		BackPackUI->SetVisibility(ESlateVisibility::Hidden);
+		Is_OpenBP = false;
+	}
+
 }
