@@ -61,6 +61,7 @@ void AItemActor::InitVisible(FBackPackStruct& Message) {
 	case EItemType::EIT_QuestItem:
 		Mesh->SetVisibility(true);
 		SkeleMesh->SetVisibility(false);
+		break;
 	default:
 		Mesh->SetVisibility(false);
 		SkeleMesh->SetVisibility(false);

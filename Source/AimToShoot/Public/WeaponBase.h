@@ -4,8 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+
+#include "BulletsBase.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "WeaponBase.generated.h"
+
+
+class AHero;
 
 UCLASS()
 class AIMTOSHOOT_API AWeaponBase : public AActor
@@ -18,25 +23,34 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SkeletalComponent")
 		USkeletalMeshComponent* SkeleMesh;
-
-	virtual void WeaponStartFire();
-	virtual void WeaponStopFire();
+	//开火开始时，开火禁止时，开火进行时
+	void WeaponStartFire();
+	void WeaponStopFire();
 	virtual void WeaponFiring();
+	//换弹，设置该武器的拥有者
+	void ChangeBullet();
+	void SetOwnerHero(AHero* InOwnerHero);
+public:
+	AHero* OwnerHero = nullptr;
+
+
 protected:
 	FTimerHandle FireRateTimerHandle;
 
-	UPROPERTY(EditAnywhere, Category = "WeaponStats")
+	UPROPERTY(EditAnywhere, Category = "WeaponProperty")
 		float FireRate;
-	UPROPERTY(EditAnywhere, Category = "WeaponStats")
+	UPROPERTY(EditAnywhere, Category = "WeaponProperty")
 		float BaseDamage;
-	UPROPERTY(EditAnywhere, Category = "WeaponStats")
+	UPROPERTY(EditAnywhere, Category = "WeaponProperty")
 		float RecoilStrength;
-	UPROPERTY(EditAnywhere, Category = "WeaponStats")
+	UPROPERTY(EditAnywhere, Category = "WeaponProperty")
 		int32 MaxAmmo;
-	UPROPERTY(EditAnywhere, Category = "WeaponStats")
+	UPROPERTY(EditAnywhere, Category = "WeaponProperty")
 		int32 CurrentAmmo;
-	UPROPERTY(EditAnywhere, Category = "WeaponStats")
-		TSubclassOf<class ABulletsBase> BulletClass;
+	UPROPERTY(EditAnywhere, Category = "WeaponProperty")
+		TSubclassOf<ABulletsBase> BulletClass;
+
+	
 
 protected:
 	// Called when the game starts or when spawned

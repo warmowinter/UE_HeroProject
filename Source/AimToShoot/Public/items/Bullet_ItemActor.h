@@ -14,5 +14,7 @@ class AIMTOSHOOT_API ABullet_ItemActor : public AItemActor
 {
 	GENERATED_BODY()
 public:
+	ABullet_ItemActor();
+
 	void InitType() override;
 };

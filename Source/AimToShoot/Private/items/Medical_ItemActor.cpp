@@ -19,4 +19,5 @@ void AMedical_ItemActor::InitType() {
 	ItemInfo.Icon = ItemTexture2D;
 	ItemInfo.bIsStackable = true;
 	ItemInfo.ItemType = EItemType::EIT_Consumable;
+	ItemInfo.WeaponNumber = 0;
 }

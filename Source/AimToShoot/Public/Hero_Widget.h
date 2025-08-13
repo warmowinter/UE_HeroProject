@@ -6,6 +6,8 @@
 #include "Blueprint/UserWidget.h"
 #include "Hero_Widget.generated.h"
 
+
+class AHero;
 /**
  * 
  */
@@ -21,7 +23,9 @@ public:
 	UPROPERTY(Meta = (BindWidget))
 		class UProgressBar* StaminaBar;
 
-	void UpDateHealth(float Percent);
 
-	void UpDateStamina(float percent);
+
+	void UpDateHealth(AHero* Object);
+
+	void UpDateStamina(AHero* Object);
 };

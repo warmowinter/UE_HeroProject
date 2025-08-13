@@ -22,7 +22,7 @@ public:
 	// Sets default values for this character's properties
 	AHero();
 	//角色组件属性：角色网格体可编辑，暴露在蓝图，弹簧臂和摄像机
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY()
 		USkeletalMeshComponent* MyMeshComponent;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 		class USpringArmComponent* SpringRob;
@@ -37,12 +37,14 @@ public:
 	UPROPERTY(EditAnywhere, Category = "UI")
 		TSubclassOf<UUserWidget> HeroWidgetClass;
 	//UI血条体力实例化
-	UHero_Widget* HeroWidget;
+	UPROPERTY(BlueprintReadWrite, Category = "UI")
+		UHero_Widget* HeroWidget;
 	//UI背包界面
 	UPROPERTY(EditAnywhere, Category = "BackPackUI")
 		TSubclassOf<UUserWidget> BackPackWidgetClass;
 	//UI背包界面实例化
-	UBackPackWidget* BackPackUI;
+	UPROPERTY(BlueprintReadWrite, Category = "BackPackUI")
+		UBackPackWidget* BackPackUI;
 
 
 	//拾取范围组件
@@ -54,12 +56,14 @@ public:
 	UPROPERTY(EditAnywhere, Category = "WeaponClass")
 		TSubclassOf<AWeaponBase> ConfigWeapon;
 	//当前武器实例化
-	AWeaponBase* CurrentWeapon;
+	AWeaponBase* CurrentWeapon = nullptr;
 protected:
 	//背包数组
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category = "Inventory")
+	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category = "Inventory")
 		TArray<FBackPackStruct> BackPackArray;
-
+	//装备格数组
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Equip_State")
+		TArray<FBackPackStruct>	EquipArray;
 
 public:
 	//默认视角转速，
@@ -80,17 +84,20 @@ protected:
 protected:
 	//角色状态State
 	UPROPERTY(EditAnywhere, Category = "State")
-		float MaxHealth;
+		float MaxHealth;//健康值
 	UPROPERTY(EditAnywhere, Category = "State")
-		float CurrentHealth;
+		float CurrentHealth;//当前健康值
 
 	UPROPERTY(EditAnywhere, Category = "State")
-		float MaxStamina;
+		float MaxStamina;//体力值
 	UPROPERTY(EditAnywhere, Category = "State")
-		float CurrentStamina;
+		float CurrentStamina;//当前体力值
 
-	bool Is_Run = false;
-	bool Is_OpenBP = false;
+
+
+	bool Is_Run = false;//是否在快跑
+	bool Is_OpenBP = false;//是否打开了背包
+	bool Is_ChangeBullet = false; //是否在换弹
 public:
 	//切换视图
 	UFUNCTION(BlueprintCallable, Category = "ToggleCharacterView")
@@ -100,6 +107,8 @@ public:
 		float GetCharaMaxHealth();
 	UFUNCTION(BlueprintCallable, Category = "CharacterState")
 		float GetCharaCurrentHealth();
+	friend void UHero_Widget::UpDateHealth(AHero* Object);
+	friend void UHero_Widget::UpDateStamina(AHero* Object);
 
 	//奔跑
 		void FastRun();
@@ -117,7 +126,19 @@ public:
 	void NoticeRefresh();
 	//打开背包函数
 	void OpenBackPack();
+	//外界获取背包数组
+	TArray<FBackPackStruct>& GetBackPackArray();
 
+	//装备武器
+	void EquipWeapon();
+	//卸下武器
+	void RemoveWeapon();
+	//切换武器附着点
+	void SwitchWeaponAttachment();
+
+	//换弹通知
+	void NoticeChangeBullet();
+	friend void AWeaponBase::ChangeBullet();
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

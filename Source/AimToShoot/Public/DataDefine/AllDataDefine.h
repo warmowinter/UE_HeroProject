@@ -9,6 +9,15 @@
 /**
  * 
  */
+//格子类型
+UENUM(BlueprintType)
+enum class ESlotType :uint8 {
+	BackPack,
+	Equipment
+};
+
+
+//物品类型
 UENUM(BlueprintType)
 enum class EItemType : uint8 {
 	EIT_Unknown UMETA(DIsplayName = "Unknown"),
@@ -31,6 +40,7 @@ public:
 		, Icon(nullptr)
 		, bIsStackable(false)
 		, ItemType(EItemType::EIT_Unknown)
+		, WeaponNumber(0)
 	{}
 	//物品ID
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
@@ -50,6 +60,10 @@ public:
 	//类型
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
 		EItemType ItemType;
+	//wuqi
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
+		int32 WeaponNumber;
+
 };
 
 

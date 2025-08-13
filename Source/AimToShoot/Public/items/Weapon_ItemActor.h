@@ -14,5 +14,7 @@ class AIMTOSHOOT_API AWeapon_ItemActor : public AItemActor
 {
 	GENERATED_BODY()
 public:
+	AWeapon_ItemActor();
+
 	void InitType() override;
 };

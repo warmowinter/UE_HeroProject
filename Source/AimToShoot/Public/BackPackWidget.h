@@ -22,6 +22,8 @@ public:
 public:
 	UPROPERTY(Meta = (BindWidget))
 		class UGridPanel* GridPanel_A;
+	UPROPERTY(Meta = (BindWidget))
+		class UGridPanel* Grid_EquipWeapon;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
 		TSubclassOf<UItemSlotWidget> SlotWidgetClass;
@@ -29,13 +31,15 @@ public:
 	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category = "BackPackNum")
 		TArray<FBackPackStruct> BackPackNum;
 
+	TArray<UItemSlotWidget*> SlotWidgets;
+	TArray<UItemSlotWidget*> Wea_SlotWidgets;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BackPackCapacity")
 		int32 BPCapacity;
 
 
 public:
 	UFUNCTION(BlueprintCallable, Category = "RefreshBackPack")
-		void RefreshBackPack(const TArray<FBackPackStruct>& Items);
+		void RefreshBackPack(TArray<FBackPackStruct>& Items,TArray<FBackPackStruct>& Wea_Items);
 
 	UFUNCTION()
 		void InitializeBackPack();

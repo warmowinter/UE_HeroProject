@@ -6,6 +6,7 @@
 #include "ItemActor.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
+#include "InventoryMangerInstance.h"
 #include "GameFramework/SpringArmComponent.h"
 
 // Sets default values
@@ -25,6 +26,7 @@ AHero::AHero()
 	//启用角色朝移动方向转向,且配置转向速率
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 500.0f, 0.0f);
+	GetCharacterMovement()->MaxWalkSpeed = 200.0f;
 	//set mesh location and rotation设置位置和旋转
 	MyMeshComponent->SetRelativeLocation(FVector(0.0f, 0.0f, -90.0f));
 	MyMeshComponent->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
@@ -76,7 +78,10 @@ void AHero::BeginPlay()
 	CurrentStamina = MaxStamina;
 	StaminaDrainRate = 10.0f;
 	//背包初始化
-	BackPackArray.SetNum(0);
+	BackPackArray.SetNum(12);
+	//装备数组初始化
+	EquipArray.SetNum(22);
+
 	//创建生命和体力值界面
 	if (HeroWidgetClass) {
 		HeroWidget = CreateWidget<UHero_Widget>(GetWorld(),HeroWidgetClass);
@@ -84,8 +89,8 @@ void AHero::BeginPlay()
 			HeroWidget->AddToViewport();
 		}
 	}
-	HeroWidget->UpDateHealth(CurrentHealth/MaxHealth);
-	HeroWidget->UpDateStamina(CurrentStamina/ MaxStamina);
+	HeroWidget->UpDateHealth(this);
+	HeroWidget->UpDateStamina(this);
 	//创建背包界面
 	if (BackPackWidgetClass) {
 		BackPackUI = CreateWidget<UBackPackWidget>(GetWorld(), BackPackWidgetClass);
@@ -95,13 +100,17 @@ void AHero::BeginPlay()
 		}
 	}
 
-	//配置枪
-	if (ConfigWeapon) {
-		FActorSpawnParameters SpawnParams;
-		CurrentWeapon = GetWorld()->SpawnActor<AWeaponBase>(ConfigWeapon);
-		CurrentWeapon->AttachToComponent(MyMeshComponent, FAttachmentTransformRules::SnapToTargetIncludingScale,TEXT("hand_r_Weapon"));
-		CurrentWeapon->SetActorHiddenInGame(false);//暂时不隐藏，后续背包出来再开发
-	}
+	//背包管理绑定角色
+	UInventoryMangerInstance* BPSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UInventoryMangerInstance>();
+	BPSubsystem->Bind_Chara = this;
+	////配置枪
+	//if (ConfigWeapon) {
+	//	FActorSpawnParameters SpawnParams;
+	//	CurrentWeapon = GetWorld()->SpawnActor<AWeaponBase>(ConfigWeapon);
+	//	CurrentWeapon->AttachToComponent(MyMeshComponent, FAttachmentTransformRules::SnapToTargetIncludingScale,TEXT("hand_r_Weapon"));
+	//	CurrentWeapon->SetActorHiddenInGame(false);//暂时不隐藏，后续背包出来再开发
+	//	CurrentWeapon->SetOwnerHero(this);
+	//}
 
 
 }
@@ -113,14 +122,14 @@ void AHero::Tick(float DeltaTime)
 
 	if (Is_Run && CurrentStamina) {
 		CurrentStamina -= StaminaDrainRate * DeltaTime;
-		HeroWidget->UpDateStamina(CurrentStamina/MaxStamina);
+		HeroWidget->UpDateStamina(this);
 		if (CurrentStamina <= 0) {
 			CurrentStamina = 0;
 			StopFastRun();
 		}
 	}
 	if (Is_Run == false && CurrentStamina <= MaxStamina) {
-		HeroWidget->UpDateStamina(CurrentStamina / MaxStamina);
+		HeroWidget->UpDateStamina(this);
 		CurrentStamina += StaminaDrainRate * DeltaTime;
 	}
 
@@ -139,11 +148,14 @@ void AHero::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	//Fire
 	PlayerInputComponent->BindAction("CharaFire",IE_Pressed,this,&AHero::StartFire);
 	PlayerInputComponent->BindAction("CharaFire",IE_Released,this,&AHero::StopFire);
+	//change Bullet
+	PlayerInputComponent->BindAction("ChangeBullet", IE_Pressed, this, &AHero::NoticeChangeBullet);
 	//PickUp
 	PlayerInputComponent->BindAction("Pickup", IE_Pressed, this, &AHero::TryPickUp);
 	//Open BackPack
 	PlayerInputComponent->BindAction("OpenBP", IE_Pressed, this, &AHero::OpenBackPack);
-
+	//切换武器装备
+	PlayerInputComponent->BindAction("ChangeWeapon", IE_Pressed, this, &AHero::SwitchWeaponAttachment);
 
 	//move
 	PlayerInputComponent->BindAxis("Move Forward", this, &AHero::MoveForward);
@@ -206,7 +218,7 @@ float AHero::GetCharaCurrentHealth() {
 
 void AHero::CurrentTakeDamage(float DamageAmount) {
 	CurrentHealth -= DamageAmount;
-	HeroWidget->UpDateHealth(CurrentHealth/MaxHealth);
+	HeroWidget->UpDateHealth(this);
 
 	if (CurrentHealth <= 0) {
 		
@@ -222,11 +234,11 @@ void AHero::FastRun() {
 
 void AHero::StopFastRun() {
 	Is_Run = false;
-	GetCharacterMovement()->MaxWalkSpeed = 500.0f;
+	GetCharacterMovement()->MaxWalkSpeed = 200.0f;
 }
 
 void AHero::StartFire() {
-	if (CurrentWeapon) {
+	if (CurrentWeapon && CurrentWeapon->GetAttachParentSocketName() == TEXT("hand_r_Weapon")) {
 		CurrentWeapon->WeaponStartFire();
 	}
 }
@@ -235,18 +247,38 @@ void AHero::StopFire() {
 		CurrentWeapon->WeaponStopFire();
 	}
 }
+//我这个添加物品函数，是建立在数组已有背包结构全部初始化的信息，根据背包结构的信息来进行修改，达到物品添加的效果
 void AHero::AddItemToBackPack(const FBackPackStruct& NewItem) {
+	int32 EmptySlotIndex = -1;
+
 	if (NewItem.bIsStackable) {
-		for (FBackPackStruct& Item : BackPackArray) {
-			if (Item.ItemID == NewItem.ItemID) {
-				Item.Quantity += NewItem.Quantity;
+		// 先找可堆叠物品
+		for (int32 i = 0; i < BackPackArray.Num(); i++) {
+			if (BackPackArray[i].ItemID == NewItem.ItemID) {
+				BackPackArray[i].Quantity += NewItem.Quantity;
+				return;
+			}
+			if (BackPackArray[i].ItemID == 0 && EmptySlotIndex == -1) {
+				EmptySlotIndex = i;
+			}
+		}
+	}
+	else {
+		// 不可堆叠物品直接找空位
+		for (int32 i = 0; i < BackPackArray.Num(); i++) {
+			if (BackPackArray[i].ItemID == 0) {
+				BackPackArray[i] = NewItem;
 				return;
 			}
 		}
 	}
-	BackPackArray.Add(NewItem);
-}
 
+	// 如果可堆叠但没找到相同物品，就用空位
+	if (EmptySlotIndex != -1) {
+		BackPackArray[EmptySlotIndex] = NewItem;
+	}
+}
+//拾取函数
 void AHero::TryPickUp() {
 	TArray<AActor*> OverlappingActors;
 	PickUpRange->GetOverlappingActors(OverlappingActors, AItemActor::StaticClass());
@@ -263,11 +295,12 @@ void AHero::TryPickUp() {
 
 void AHero::NoticeRefresh() {
 	if (BackPackUI) {
-		BackPackUI->RefreshBackPack(BackPackArray);
+		BackPackUI->RefreshBackPack(BackPackArray, EquipArray);
 	}
 }
 
 void AHero::OpenBackPack() {
+	APlayerController* PC = Cast<APlayerController>(GetController());
 
 	if (!Is_OpenBP) {
 		if (!BackPackUI)	return;
@@ -275,10 +308,62 @@ void AHero::OpenBackPack() {
 		NoticeRefresh();
 		UE_LOG(LogTemp, Log, TEXT("open BackPack"));
 		Is_OpenBP = true;
+
+		PC->bShowMouseCursor = true;
+		FInputModeGameAndUI InputMode;
+		InputMode.SetWidgetToFocus(BackPackUI->TakeWidget());
+		InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
+		PC->SetInputMode(InputMode);
 	}
 	else {
 		BackPackUI->SetVisibility(ESlateVisibility::Hidden);
 		Is_OpenBP = false;
+		PC->bShowMouseCursor = false;
+		FInputModeGameOnly InputMode;
+		PC->SetInputMode(InputMode);
 	}
 
+}
+
+TArray<FBackPackStruct>& AHero::GetBackPackArray() {
+	return BackPackArray;
+}
+
+void AHero::EquipWeapon() {
+	for (int32 i = 0; i < EquipArray.Num(); i++) {
+		if (EquipArray[i].ItemType == EItemType::EIT_Weapon && EquipArray[i].WeaponNumber == 1) {
+			CurrentWeapon = GetWorld()->SpawnActor<AWeaponBase>(ConfigWeapon);
+			CurrentWeapon->SetOwnerHero(this);
+			CurrentWeapon->AttachToComponent(MyMeshComponent, FAttachmentTransformRules::SnapToTargetIncludingScale, TEXT("Spine_Weapon1"));
+		}
+	}
+}
+void AHero::RemoveWeapon() {
+	for (int32 i = 0; i < EquipArray.Num(); i++) {
+		if (EquipArray[i].ItemType != EItemType::EIT_Weapon) {
+			if (CurrentWeapon) {
+				CurrentWeapon->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+				CurrentWeapon->SetActorHiddenInGame(true);
+				CurrentWeapon = nullptr;
+			}
+		}
+	}
+}
+
+void AHero::SwitchWeaponAttachment() {
+	if (CurrentWeapon) {
+		if (CurrentWeapon->GetAttachParentSocketName() == TEXT("Spine_Weapon1")) {
+			CurrentWeapon->AttachToComponent(MyMeshComponent, FAttachmentTransformRules::SnapToTargetIncludingScale, TEXT("hand_r_Weapon"));
+		}
+		else {
+			CurrentWeapon->AttachToComponent(MyMeshComponent, FAttachmentTransformRules::SnapToTargetIncludingScale, TEXT("Spine_Weapon1"));
+		}
+	}
+}
+
+void AHero::NoticeChangeBullet() {
+	if (!Is_ChangeBullet && CurrentWeapon) {
+		CurrentWeapon->ChangeBullet();
+		Is_ChangeBullet = true;
+	}
 }
