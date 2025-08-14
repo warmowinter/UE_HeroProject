@@ -40,6 +40,7 @@ void AItemActor::InitType() {
 	ItemInfo.Icon = nullptr;
 	ItemInfo.bIsStackable = false;
 	ItemInfo.ItemType = EItemType::EIT_Consumable;
+	ItemInfo.Actor_Ptr = nullptr;
 }
 
 void AItemActor::InitVisible(FBackPackStruct& Message) {

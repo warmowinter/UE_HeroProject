@@ -20,49 +20,55 @@ AHero::AHero()
 		RootComponent = GetCapsuleComponent();
 	}
 	MyMeshComponent = GetMesh();
+
+	//防止角色旋转跟随鼠标
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationRoll = false;
 	bUseControllerRotationYaw = false;
+
 	//启用角色朝移动方向转向,且配置转向速率
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 500.0f, 0.0f);
 	GetCharacterMovement()->MaxWalkSpeed = 200.0f;
+
 	//set mesh location and rotation设置位置和旋转
 	MyMeshComponent->SetRelativeLocation(FVector(0.0f, 0.0f, -90.0f));
 	MyMeshComponent->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
-	//Springboom
+
+	//第三人称视角
 	SpringRob = CreateDefaultSubobject<USpringArmComponent>(TEXT("CaremaBoom"));
 	SpringRob->SetupAttachment(RootComponent);
 	SpringRob->TargetArmLength = 400.0f;
 	SpringRob->bUsePawnControlRotation = true;
-	//CameraComponent
+
 	MyCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraComp"));
 	MyCameraComponent->SetupAttachment(SpringRob,USpringArmComponent::SocketName);
 	MyCameraComponent->bUsePawnControlRotation = false;
 
-
+	//仿2.5D视角
 	SpringRob_2D = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom2"));
 	SpringRob_2D->SetupAttachment(RootComponent);
 	SpringRob_2D->TargetArmLength = 1200.0f;
 	SpringRob_2D->bUsePawnControlRotation = false;//弹簧臂不跟随控制器旋转而旋转
 	SpringRob_2D->SetUsingAbsoluteRotation(true);//设置世界绝对旋转，不跟随角色旋转而旋转
 
-
 	MyCameraComponent_2D = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraComp2"));
 	MyCameraComponent_2D->SetupAttachment(SpringRob_2D, USpringArmComponent::SocketName);
 	MyCameraComponent_2D->bUsePawnControlRotation = false;
 	
-
-
+	//视角初始化设置
 	CurrentCamera = MyCameraComponent;//设置当前摄像机
 	MyCameraComponent->SetActive(true);//激活第一个摄像机
 	MyCameraComponent_2D->SetActive(false);
+	Is_2D_View = false;
 
-
+	//拾取范围初始化
 	PickUpRange = CreateDefaultSubobject<USphereComponent>(TEXT("PickUpRange"));
 	PickUpRange->SetupAttachment(RootComponent);
 	PickUpRange->SetSphereRadius(200.f);
 	PickUpRange->SetCollisionProfileName(TEXT("OverLapAll"));
+
+	//
 
 }
 
@@ -169,22 +175,38 @@ void AHero::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 }
 
+void AHero::AttackMoster(AMosterBase* Target)
+{
+	if (!Target)	return;
+	//命中或者啥啥啥-占个位置
+	OnMosterAttacked.Broadcast(this, Target);
+
+}
+
 void AHero::MoveForward(float value) {
-	if (Controller != nullptr && value != 0.0f) {
+	if (Controller != nullptr && value != 0.0f && !Is_2D_View) {
 		const FRotator Rotation = Controller->GetControlRotation();
 		const FRotator YawRotation(0, Rotation.Yaw, 0);
 
 		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
 		AddMovementInput(Direction, value);
 	}
+	else {
+		FVector Forward = FVector::ForwardVector;
+		AddMovementInput(Forward, value);
+	}
 }
 
 void AHero::MoveRight(float value) {
-	if (Controller != nullptr && value != 0.0f) {
+	if (Controller != nullptr && value != 0.0f && !Is_2D_View) {
 		const FRotator Rotation = Controller->GetControlRotation();
 		const FRotator YawRotation(0, Rotation.Yaw, 0);
 		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 		AddMovementInput(Direction, value);
+	}
+	else {
+		FVector Right = FVector::RightVector;
+		AddMovementInput(Right, value);
 	}
 }
 
@@ -198,9 +220,19 @@ void AHero::LookUpRate(float rate) {
 
 
 void AHero::ToggleCharacterView() {
-	CurrentCamera = (CurrentCamera == MyCameraComponent) ? MyCameraComponent_2D : MyCameraComponent;
-	MyCameraComponent->SetActive(CurrentCamera == MyCameraComponent);
-	MyCameraComponent_2D->SetActive(CurrentCamera == MyCameraComponent_2D);
+	if (!Is_2D_View) {
+		CurrentCamera = MyCameraComponent_2D;
+		MyCameraComponent->SetActive(false);
+		MyCameraComponent_2D->SetActive(true);
+		Is_2D_View = true;
+	}
+	else {
+		CurrentCamera = MyCameraComponent;
+		MyCameraComponent_2D->SetActive(false);
+		MyCameraComponent->SetActive(true);
+		Is_2D_View = false;
+	}
+
 
 	APlayerController* PlayerController = Cast<APlayerController>(Controller);
 	if (PlayerController && CurrentCamera) {
@@ -285,6 +317,12 @@ void AHero::TryPickUp() {
 	UE_LOG(LogTemp, Log, TEXT("TryPickUp Callable"));
 	for (AActor* Actor : OverlappingActors) {
 		if (AItemActor* Item = Cast<AItemActor>(Actor)) {
+			if (Item->ItemInfo.WeaponNumber == 1) {
+				FVector SpawnLocation(0.0f, 0.0f, -999.0f);
+				FRotator SpawnRotation(0.0f, 0.0f, 0.0f);
+				AWeaponBase* wuhu = GetWorld()->SpawnActor<AWeaponBase>(ConfigWeapon,SpawnLocation,SpawnRotation);
+				Item->ItemInfo.Actor_Ptr = wuhu;
+			}
 			AddItemToBackPack(Item->ItemInfo);
 			Item->Destroy();
 			break;
@@ -329,13 +367,17 @@ TArray<FBackPackStruct>& AHero::GetBackPackArray() {
 	return BackPackArray;
 }
 
+
+
 void AHero::EquipWeapon() {
 	for (int32 i = 0; i < EquipArray.Num(); i++) {
 		if (EquipArray[i].ItemType == EItemType::EIT_Weapon && EquipArray[i].WeaponNumber == 1) {
-			CurrentWeapon = GetWorld()->SpawnActor<AWeaponBase>(ConfigWeapon);
+
+			CurrentWeapon = EquipArray[i].Actor_Ptr;
 			CurrentWeapon->SetOwnerHero(this);
 			CurrentWeapon->AttachToComponent(MyMeshComponent, FAttachmentTransformRules::SnapToTargetIncludingScale, TEXT("Spine_Weapon1"));
 		}
+
 	}
 }
 void AHero::RemoveWeapon() {
@@ -343,7 +385,9 @@ void AHero::RemoveWeapon() {
 		if (EquipArray[i].ItemType != EItemType::EIT_Weapon) {
 			if (CurrentWeapon) {
 				CurrentWeapon->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-				CurrentWeapon->SetActorHiddenInGame(true);
+				FVector SpawnLocation(0.0f, 0.0f, -999.0f);
+				FRotator SpawnRotation(0.0f, 0.0f, 0.0f);
+				CurrentWeapon->SetActorLocationAndRotation(SpawnLocation, SpawnRotation);
 				CurrentWeapon = nullptr;
 			}
 		}

@@ -6,6 +6,10 @@
 #include "UObject/NoExportTypes.h"
 #include "AllDataDefine.generated.h"
 
+
+
+class AWeaponBase;
+
 /**
  * 
  */
@@ -60,10 +64,12 @@ public:
 	//类型
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
 		EItemType ItemType;
-	//wuqi
+	//武器数字，。。。。
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
 		int32 WeaponNumber;
-
+	//武器指针-指向实例化
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
+		AWeaponBase* Actor_Ptr;
 };
 
 

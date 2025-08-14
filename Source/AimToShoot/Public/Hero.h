@@ -11,7 +11,11 @@
 #include "Components/CapsuleComponent.h"
 #include "Components/SphereComponent.h"
 #include "DataDefine/AllDataDefine.h"
+#include "MosterBag/MosterBase.h"
 #include "Hero.generated.h"
+
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnMosterAttacked, ACharacter*, Attacker, AMosterBase*, Victim);
 
 UCLASS()
 class AIMTOSHOOT_API AHero : public ACharacter
@@ -57,6 +61,16 @@ public:
 		TSubclassOf<AWeaponBase> ConfigWeapon;
 	//当前武器实例化
 	AWeaponBase* CurrentWeapon = nullptr;
+
+public:
+
+	//多播事件-怪物Monster
+	UPROPERTY(BlueprintAssignable, Category = "Events")
+		FOnMosterAttacked OnMosterAttacked;
+
+	UFUNCTION(BlueprintCallable)
+		void AttackMoster(AMosterBase* Target);
+
 protected:
 	//背包数组
 	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category = "Inventory")
@@ -102,6 +116,9 @@ public:
 	//切换视图
 	UFUNCTION(BlueprintCallable, Category = "ToggleCharacterView")
 		void ToggleCharacterView();
+	UPROPERTY()
+		bool Is_2D_View;
+
 	//调用获取生命值和体力值
 	UFUNCTION(BlueprintCallable, Category = "CharacterState")
 		float GetCharaMaxHealth();
