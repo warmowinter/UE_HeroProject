@@ -15,7 +15,7 @@
 #include "Hero.generated.h"
 
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnMosterAttacked, ACharacter*, Attacker, AMosterBase*, Victim);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnMosterAttacked, ACharacter*, Attacker, AMosterBase*, Victim, const FHitResult&, Hit);
 
 UCLASS()
 class AIMTOSHOOT_API AHero : public ACharacter
@@ -58,9 +58,36 @@ public:
 	float StaminaDrainRate;
 	//配备武器类型
 	UPROPERTY(EditAnywhere, Category = "WeaponClass")
-		TSubclassOf<AWeaponBase> ConfigWeapon;
-	//当前武器实例化
-	AWeaponBase* CurrentWeapon = nullptr;
+		TSubclassOf<AWeaponBase> ConfigWeapon1;
+	UPROPERTY(EditAnywhere, Category = "WeaponClass")
+		TSubclassOf<AWeaponBase> ConfigWeapon2;
+	UPROPERTY(EditAnywhere, Category = "WeaponClass")
+		TSubclassOf<AWeaponBase> ConfigWeapon3;
+
+
+public:
+	UFUNCTION()
+		void GetWeaponFromEquipGrid(int32 Index);
+
+	UFUNCTION()
+		void InitializeEquipments();
+	UFUNCTION()
+		void EquipWeapon1();
+	UFUNCTION()
+		void EquipWeapon2();
+	UFUNCTION()
+		void EquipWeapon3();
+
+	//当前手上武器实例化
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category = "CharaWeapon")
+		AWeaponBase* CurrentWeapon = nullptr;
+	//背上装备的武器
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CharaWeapon")
+		AWeaponBase* EquipWeaponOnBack = nullptr;
+	UPROPERTY(EditDefaultsOnly, Category = "CharaWeapon")
+		TMap<int32, FName> WeaponSocketMap;
+
+
 
 public:
 
@@ -69,7 +96,7 @@ public:
 		FOnMosterAttacked OnMosterAttacked;
 
 	UFUNCTION(BlueprintCallable)
-		void AttackMoster(AMosterBase* Target);
+		void AttackMoster(AMosterBase* Target, const FHitResult& Hit);
 
 protected:
 	//背包数组
@@ -108,16 +135,30 @@ protected:
 		float CurrentStamina;//当前体力值
 
 
-
+	
 	bool Is_Run = false;//是否在快跑
 	bool Is_OpenBP = false;//是否打开了背包
 	bool Is_ChangeBullet = false; //是否在换弹
+	bool Is_AimState = false; // 是否持枪瞄准
+	bool Is_FireState = false;//是否开火
 public:
 	//切换视图
 	UFUNCTION(BlueprintCallable, Category = "ToggleCharacterView")
 		void ToggleCharacterView();
 	UPROPERTY()
 		bool Is_2D_View;
+
+	//动画实例调用接口
+	UFUNCTION(BlueprintCallable,Category = "GetCharaState")
+		bool GetCharaState();
+	UFUNCTION(BlueprintCallable, Category = "GetCharaState")
+		bool GetFireState();
+
+	//动画蒙太奇montage调用函数
+	UFUNCTION(BlueprintCallable, Category = "FireMontage")
+		void PlayFireMontage(UAnimMontage* Montage);
+
+
 
 	//调用获取生命值和体力值
 	UFUNCTION(BlueprintCallable, Category = "CharacterState")

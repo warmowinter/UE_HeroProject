@@ -68,8 +68,10 @@ AHero::AHero()
 	PickUpRange->SetSphereRadius(200.f);
 	PickUpRange->SetCollisionProfileName(TEXT("OverLapAll"));
 
-	//
-
+	//武器插槽
+	WeaponSocketMap.Add(1, "Spine_Weapon1");
+	WeaponSocketMap.Add(2, "spine_01_left");
+	WeaponSocketMap.Add(3, "spine_01_right");
 }
 
 // Called when the game starts or when spawned
@@ -86,7 +88,7 @@ void AHero::BeginPlay()
 	//背包初始化
 	BackPackArray.SetNum(12);
 	//装备数组初始化
-	EquipArray.SetNum(22);
+	EquipArray.SetNum(6);
 
 	//创建生命和体力值界面
 	if (HeroWidgetClass) {
@@ -151,17 +153,24 @@ void AHero::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	//fast run
 	PlayerInputComponent->BindAction("FastRun", IE_Pressed, this, &AHero::FastRun);
 	PlayerInputComponent->BindAction("FastRun", IE_Released, this, &AHero::StopFastRun);
-	//Fire
-	PlayerInputComponent->BindAction("CharaFire",IE_Pressed,this,&AHero::StartFire);
-	PlayerInputComponent->BindAction("CharaFire",IE_Released,this,&AHero::StopFire);
-	//change Bullet
-	PlayerInputComponent->BindAction("ChangeBullet", IE_Pressed, this, &AHero::NoticeChangeBullet);
+
 	//PickUp
 	PlayerInputComponent->BindAction("Pickup", IE_Pressed, this, &AHero::TryPickUp);
 	//Open BackPack
 	PlayerInputComponent->BindAction("OpenBP", IE_Pressed, this, &AHero::OpenBackPack);
-	//切换武器装备
-	PlayerInputComponent->BindAction("ChangeWeapon", IE_Pressed, this, &AHero::SwitchWeaponAttachment);
+
+	//武器相关
+	PlayerInputComponent->BindAction("Select 1", IE_Pressed, this, &AHero::EquipWeapon1);
+	PlayerInputComponent->BindAction("Select 2", IE_Pressed, this, &AHero::EquipWeapon2);
+	PlayerInputComponent->BindAction("Select 3", IE_Pressed, this, &AHero::EquipWeapon3);
+
+	PlayerInputComponent->BindAction("ChangeWeapon", IE_Pressed, this, &AHero::SwitchWeaponAttachment);	//切换武器装备
+
+	PlayerInputComponent->BindAction("CharaFire", IE_Pressed, this, &AHero::StartFire);		//Fire
+	PlayerInputComponent->BindAction("CharaFire", IE_Released, this, &AHero::StopFire);
+
+	PlayerInputComponent->BindAction("ChangeBullet", IE_Pressed, this, &AHero::NoticeChangeBullet);	//change Bullet
+
 
 	//move
 	PlayerInputComponent->BindAxis("Move Forward", this, &AHero::MoveForward);
@@ -175,11 +184,11 @@ void AHero::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 }
 
-void AHero::AttackMoster(AMosterBase* Target)
+void AHero::AttackMoster(AMosterBase* Target, const FHitResult& Hit)
 {
 	if (!Target)	return;
 	//命中或者啥啥啥-占个位置
-	OnMosterAttacked.Broadcast(this, Target);
+	OnMosterAttacked.Broadcast(this, Target, Hit);
 
 }
 
@@ -240,6 +249,8 @@ void AHero::ToggleCharacterView() {
 	}
 }
 
+
+
 float AHero::GetCharaMaxHealth() {
 	return this->MaxHealth;
 }
@@ -260,7 +271,7 @@ void AHero::CurrentTakeDamage(float DamageAmount) {
 void AHero::FastRun() {
 	if (CurrentStamina) {
 		Is_Run = true;
-		GetCharacterMovement()->MaxWalkSpeed = 1000.0f;
+		GetCharacterMovement()->MaxWalkSpeed = 600.0f;
 	}
 }
 
@@ -269,16 +280,12 @@ void AHero::StopFastRun() {
 	GetCharacterMovement()->MaxWalkSpeed = 200.0f;
 }
 
-void AHero::StartFire() {
-	if (CurrentWeapon && CurrentWeapon->GetAttachParentSocketName() == TEXT("hand_r_Weapon")) {
-		CurrentWeapon->WeaponStartFire();
-	}
-}
-void AHero::StopFire() {
-	if (CurrentWeapon) {
-		CurrentWeapon->WeaponStopFire();
-	}
-}
+/*-----------------------------------------------------------------------------------------------------------------------------------------
+角色背包模块-主要：通过角色的物品数组进行一系列操作
+背包结构：可查询AllDateDefine.h		拾取物品：TryPickUp()  --在检测到武器时自动创建Weapon类		添加物品：AddItemToBackPack(const FBackPackStruct& NewItem)
+打开背包/关闭背包：OpenBackPack()
+
+--------------------------------------------------------------------------------------------------------------------------------------------*/
 //我这个添加物品函数，是建立在数组已有背包结构全部初始化的信息，根据背包结构的信息来进行修改，达到物品添加的效果
 void AHero::AddItemToBackPack(const FBackPackStruct& NewItem) {
 	int32 EmptySlotIndex = -1;
@@ -286,7 +293,7 @@ void AHero::AddItemToBackPack(const FBackPackStruct& NewItem) {
 	if (NewItem.bIsStackable) {
 		// 先找可堆叠物品
 		for (int32 i = 0; i < BackPackArray.Num(); i++) {
-			if (BackPackArray[i].ItemID == NewItem.ItemID) {
+			if (BackPackArray[i].ItemID == NewItem.ItemID && BackPackArray[i].Quantity < BackPackArray[i].MaxStackNumber) {
 				BackPackArray[i].Quantity += NewItem.Quantity;
 				return;
 			}
@@ -317,10 +324,18 @@ void AHero::TryPickUp() {
 	UE_LOG(LogTemp, Log, TEXT("TryPickUp Callable"));
 	for (AActor* Actor : OverlappingActors) {
 		if (AItemActor* Item = Cast<AItemActor>(Actor)) {
+			FVector SpawnLocation(0.0f, 0.0f, -999.0f);
+			FRotator SpawnRotation(0.0f, 0.0f, 0.0f);
 			if (Item->ItemInfo.WeaponNumber == 1) {
-				FVector SpawnLocation(0.0f, 0.0f, -999.0f);
-				FRotator SpawnRotation(0.0f, 0.0f, 0.0f);
-				AWeaponBase* wuhu = GetWorld()->SpawnActor<AWeaponBase>(ConfigWeapon,SpawnLocation,SpawnRotation);
+				AWeaponBase* wuhu = GetWorld()->SpawnActor<AWeaponBase>(ConfigWeapon1,SpawnLocation,SpawnRotation);
+				Item->ItemInfo.Actor_Ptr = wuhu;
+			}
+			else if (Item->ItemInfo.WeaponNumber == 2) {
+				AWeaponBase* wuhu = GetWorld()->SpawnActor<AWeaponBase>(ConfigWeapon2, SpawnLocation, SpawnRotation);
+				Item->ItemInfo.Actor_Ptr = wuhu;
+			}
+			else if (Item->ItemInfo.WeaponNumber == 3) {
+				AWeaponBase* wuhu = GetWorld()->SpawnActor<AWeaponBase>(ConfigWeapon3, SpawnLocation, SpawnRotation);
 				Item->ItemInfo.Actor_Ptr = wuhu;
 			}
 			AddItemToBackPack(Item->ItemInfo);
@@ -362,45 +377,166 @@ void AHero::OpenBackPack() {
 	}
 
 }
-
+//类外获取当前背包数组
 TArray<FBackPackStruct>& AHero::GetBackPackArray() {
 	return BackPackArray;
 }
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------
+角色武器模块-主要：通过角色的装备数组进行一系列操作
+选择武器：GetWeaponFromEquipGrid(int32 Index)		武器挂接点初始化：InitializeEquipments()		武器移除：RemoveWeapon()
+快速切枪：SwitchWeaponAttachment()					武器换弹通知NoticeChangeBullet()				武器开火/停火：StartFire() / StopFire()
+武器射击动画播放：PlayFireMontage(UAnimMontage* Montage)
+--------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
-void AHero::EquipWeapon() {
-	for (int32 i = 0; i < EquipArray.Num(); i++) {
-		if (EquipArray[i].ItemType == EItemType::EIT_Weapon && EquipArray[i].WeaponNumber == 1) {
-
-			CurrentWeapon = EquipArray[i].Actor_Ptr;
-			CurrentWeapon->SetOwnerHero(this);
-			CurrentWeapon->AttachToComponent(MyMeshComponent, FAttachmentTransformRules::SnapToTargetIncludingScale, TEXT("Spine_Weapon1"));
-		}
-
+void AHero::StartFire() {
+	if (CurrentWeapon && CurrentWeapon->GetAttachParentSocketName() == TEXT("hand_r_Weapon")) {
+		Is_FireState = true;
+		CurrentWeapon->WeaponStartFire();
 	}
 }
-void AHero::RemoveWeapon() {
-	for (int32 i = 0; i < EquipArray.Num(); i++) {
-		if (EquipArray[i].ItemType != EItemType::EIT_Weapon) {
-			if (CurrentWeapon) {
-				CurrentWeapon->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-				FVector SpawnLocation(0.0f, 0.0f, -999.0f);
-				FRotator SpawnRotation(0.0f, 0.0f, 0.0f);
-				CurrentWeapon->SetActorLocationAndRotation(SpawnLocation, SpawnRotation);
-				CurrentWeapon = nullptr;
+//这个函数可能有隐患，当角色在射击过程中，切换武器了，那么停止开火这个就不会调用吧
+void AHero::StopFire() {
+	if (CurrentWeapon) {
+		Is_FireState = false;
+		CurrentWeapon->WeaponStopFire();
+	}
+}
+
+//选择武器瞄准,仅实验三把
+void AHero::GetWeaponFromEquipGrid(int32 Index) {
+	if (Index < 0 || Index >= 3)	return;
+	StopFire();//直接在切换时调用
+	AWeaponBase* NewWeapon = EquipArray[Index].Actor_Ptr;
+	if (!NewWeapon)	return;
+
+	if (CurrentWeapon) {
+		FName BackSocket = "";
+		for (int32 i = 0; i < 3; i++) {
+			if (CurrentWeapon == EquipArray[i].Actor_Ptr) {
+				BackSocket = WeaponSocketMap[i+1];
 			}
 		}
+		CurrentWeapon->AttachToComponent(MyMeshComponent, FAttachmentTransformRules::SnapToTargetNotIncludingScale, BackSocket);
+
+	}
+
+	CurrentWeapon = NewWeapon;
+	CurrentWeapon->SetOwnerHero(this);
+	CurrentWeapon->AttachToComponent(MyMeshComponent, FAttachmentTransformRules::SnapToTargetNotIncludingScale, "hand_r_Weapon");
+	bUseControllerRotationYaw = true;
+	GetCharacterMovement()->bOrientRotationToMovement = false;
+	Is_AimState = true;
+}
+
+
+void AHero::InitializeEquipments() {
+	for (int32 i = 0; i < 3; i++) {
+		if (EquipArray[i].Actor_Ptr != nullptr) {
+			FName SockerName;
+			switch (i)
+			{
+			case 0:SockerName = "Spine_Weapon1"; break;//背上
+			case 1:SockerName = "spine_01_left"; break;//左屁股
+			case 2:SockerName = "spine_01_right"; break;//右屁股
+			default:SockerName = "calf_r_Weapon"; break;//默认右腿咯，先只搞三把武器,这个就不先延伸
+			}
+			EquipArray[i].Actor_Ptr->AttachToComponent(MyMeshComponent, FAttachmentTransformRules::SnapToTargetNotIncludingScale, SockerName);
+
+		}
 	}
 }
 
+void AHero::EquipWeapon1() { 
+	UE_LOG(LogTemp, Log, TEXT("input select 1"));
+	GetWeaponFromEquipGrid(0); 
+}
+void AHero::EquipWeapon2() { 
+	UE_LOG(LogTemp, Log, TEXT("input select 2"));
+	GetWeaponFromEquipGrid(1); 
+}
+void AHero::EquipWeapon3() { 
+	UE_LOG(LogTemp, Log, TEXT("input select 3"));
+	GetWeaponFromEquipGrid(2); 
+}
+
+//装备武器，仅展示前两把武器，后期拓展再改
+//暂时不用，维护修改
+void AHero::EquipWeapon() {
+	//if (EquipArray[0].ItemType == EItemType::EIT_Weapon && EquipArray[0].WeaponNumber == 1) {
+	//	CurrentWeapon = EquipArray[0].Actor_Ptr;
+	//	CurrentWeapon->SetOwnerHero(this);
+	//	CurrentWeapon->AttachToComponent(MyMeshComponent, FAttachmentTransformRules::SnapToTargetIncludingScale, TEXT("Spine_Weapon1"));
+	//}
+
+}
+void AHero::RemoveWeapon() {
+	for (int32 i = 0; i < 3; i++) {
+		if (EquipArray[i].Actor_Ptr == nullptr) {
+
+			AWeaponBase* WeaponOnBack = nullptr;
+
+			FName SocketName;
+			switch (i)
+			{
+			case 0: SocketName = "Spine_Weapon1"; break;
+			case 1: SocketName = "spine_01_left"; break;
+			case 2: SocketName = "spine_01_right"; break;
+			default: SocketName = "calf_r_Weapon"; break;
+			}
+			TArray<AActor*>	AttachedWeapons;
+			GetAttachedActors(AttachedWeapons);
+			for (AActor* Actor : AttachedWeapons) {
+				AWeaponBase* Weapon = Cast<AWeaponBase>(Actor);
+				if (Weapon && (Weapon->GetAttachParentSocketName() == SocketName || Weapon->GetAttachParentSocketName() == "hand_r_Weapon")) {
+					WeaponOnBack = Weapon;
+					break;
+				}
+			}
+
+			if (WeaponOnBack) {
+				if (WeaponOnBack == CurrentWeapon) {
+					CurrentWeapon = nullptr;
+				}
+
+				WeaponOnBack->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+				FVector SpawnLocation(0.0f, 0.0f, -999.0f);
+				FRotator SpawnRotation(0.0f, 0.0f, 0.0f);
+				WeaponOnBack->SetActorLocationAndRotation(SpawnLocation, SpawnRotation);
+				bUseControllerRotationYaw = false;
+				GetCharacterMovement()->bOrientRotationToMovement = true;
+				Is_AimState = false;
+			}
+
+
+			//if (CurrentWeapon == EquipArray[i].Actor_Ptr) {
+			//	CurrentWeapon->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+			//	FVector SpawnLocation(0.0f, 0.0f, -999.0f);
+			//	FRotator SpawnRotation(0.0f, 0.0f, 0.0f);
+			//	CurrentWeapon->SetActorLocationAndRotation(SpawnLocation, SpawnRotation);
+			//	CurrentWeapon = nullptr;
+			//	bUseControllerRotationYaw = false;
+			//	GetCharacterMovement()->bOrientRotationToMovement = true;
+			//	Is_AimState = false;
+			//}
+		}
+	}
+}
+//快速切枪，这个后面再改，因为现在没做其他武器的手持挂接点
 void AHero::SwitchWeaponAttachment() {
 	if (CurrentWeapon) {
 		if (CurrentWeapon->GetAttachParentSocketName() == TEXT("Spine_Weapon1")) {
 			CurrentWeapon->AttachToComponent(MyMeshComponent, FAttachmentTransformRules::SnapToTargetIncludingScale, TEXT("hand_r_Weapon"));
+			GetCharacterMovement()->bOrientRotationToMovement = false;
+			bUseControllerRotationYaw = true;
+			Is_AimState = true;
 		}
 		else {
 			CurrentWeapon->AttachToComponent(MyMeshComponent, FAttachmentTransformRules::SnapToTargetIncludingScale, TEXT("Spine_Weapon1"));
+			GetCharacterMovement()->bOrientRotationToMovement = true;
+			bUseControllerRotationYaw = false;
+			Is_AimState = false;
 		}
 	}
 }
@@ -410,4 +546,20 @@ void AHero::NoticeChangeBullet() {
 		CurrentWeapon->ChangeBullet();
 		Is_ChangeBullet = true;
 	}
+}
+
+void AHero::PlayFireMontage(UAnimMontage* Montage) {
+	if (Montage && GetMesh()) {
+		GetMesh()->GetAnimInstance()->Montage_Play(Montage);
+		float Duration = GetMesh()->GetAnimInstance()->Montage_Play(Montage);
+		UE_LOG(LogTemp, Log, TEXT("Montage_Play called, Duration= %f"), Duration);
+	}
+}
+
+bool AHero::GetCharaState() {
+	return Is_AimState;
+}
+
+bool AHero::GetFireState() {
+	return Is_FireState;
 }

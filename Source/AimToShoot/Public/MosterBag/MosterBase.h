@@ -9,6 +9,7 @@
 
 class AHero;
 
+
 UCLASS()
 class AIMTOSHOOT_API AMosterBase : public ACharacter
 {
@@ -20,13 +21,20 @@ public:
 
 	//处理伤害通知
 	UFUNCTION()
-		void HandleAttacked(class ACharacter* Attacker, class AMosterBase* Victim);
+		void HandleAttacked(class ACharacter* Attacker, AMosterBase* Victim, const FHitResult& Hit);
+	//死亡通知
+	UFUNCTION()
+		void MosterDie();
 
 	//被命中拉仇恨，类似我的世界猪人效果
 	UFUNCTION(BlueprintCallable)
 		void ReceiveHitFrom(ACharacter* Attacker);
 	UFUNCTION(BlueprintCallable)
 		void OnNearbyCombat(ACharacter* Attacker, AMosterBase* Victim);
+
+
+
+
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Property")

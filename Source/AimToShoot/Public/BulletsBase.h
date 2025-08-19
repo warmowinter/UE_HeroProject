@@ -6,6 +6,9 @@
 #include "GameFramework/Actor.h"
 #include "BulletsBase.generated.h"
 
+class AMosterBase;
+class AWeaponBase;
+
 UCLASS()
 class AIMTOSHOOT_API ABulletsBase : public AActor
 {
@@ -22,6 +25,12 @@ public:
 		class UStaticMeshComponent* BullMeshComp;
 	UPROPERTY(VisibleAnywhere, Category = "Movement_A")
 		class UProjectileMovementComponent* ProjectileMovement;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Is_Hited")
+		AMosterBase* Is_Hited_Moster;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "WeaponInit")
+		AWeaponBase* Bind_Weapon;
+
 public:
 	UFUNCTION(BlueprintCallable, Category = "OnHit")
 		void OnHit(UPrimitiveComponent* HitComp,AActor* OtherActor,UPrimitiveComponent* OtherComp,FVector NormalImpulse,const FHitResult& Hit);

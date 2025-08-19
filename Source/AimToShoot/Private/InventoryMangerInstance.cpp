@@ -6,6 +6,6 @@
 
 void UInventoryMangerInstance::NoticeHero_EquipUpdate() {
 	Bind_Chara->RemoveWeapon();
-	Bind_Chara->EquipWeapon();
+	Bind_Chara->InitializeEquipments();
 
 }

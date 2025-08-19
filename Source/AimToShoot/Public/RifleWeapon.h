@@ -16,6 +16,5 @@ class AIMTOSHOOT_API ARifleWeapon : public AWeaponBase
 public:
 	ARifleWeapon();
 
-	void WeaponFiring() override;
 
 };

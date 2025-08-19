@@ -11,6 +11,7 @@
 
 
 class AHero;
+class AMosterBase;
 
 UCLASS()
 class AIMTOSHOOT_API AWeaponBase : public AActor
@@ -31,8 +32,11 @@ public:
 	void ChangeBullet();
 	void SetOwnerHero(AHero* InOwnerHero);
 public:
-	AHero* OwnerHero = nullptr;
-
+	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category = "Weapon_owner")
+		AHero* OwnerHero = nullptr;
+	
+	UFUNCTION()
+		void NoticeAHeroAttackInfo(AMosterBase* hurted, const FHitResult& Hit);
 
 protected:
 	FTimerHandle FireRateTimerHandle;

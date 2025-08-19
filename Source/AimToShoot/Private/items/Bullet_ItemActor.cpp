@@ -19,4 +19,5 @@ void ABullet_ItemActor::InitType() {
 	ItemInfo.bIsStackable = true;
 	ItemInfo.ItemType = EItemType::EIT_Armor;
 	ItemInfo.WeaponNumber = 0;
+	ItemInfo.MaxStackNumber = 30;
 }

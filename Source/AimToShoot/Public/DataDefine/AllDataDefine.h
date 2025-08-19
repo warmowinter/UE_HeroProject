@@ -43,8 +43,11 @@ public:
 		, Description(TEXT("Unknown Item"))
 		, Icon(nullptr)
 		, bIsStackable(false)
+		, MaxStackNumber(30)
 		, ItemType(EItemType::EIT_Unknown)
 		, WeaponNumber(0)
+		, Actor_Ptr(nullptr)
+
 	{}
 	//物品ID
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
@@ -61,6 +64,9 @@ public:
 	//堆叠
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
 		bool bIsStackable;
+	//最大堆叠数量
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
+		int32 MaxStackNumber;
 	//类型
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
 		EItemType ItemType;

@@ -18,4 +18,5 @@ void AWeapon_ItemActor::InitType() {
 	ItemInfo.bIsStackable = false;
 	ItemInfo.ItemType = EItemType::EIT_Weapon;
 	ItemInfo.WeaponNumber = 1;
+	ItemInfo.MaxStackNumber = 1;
 }

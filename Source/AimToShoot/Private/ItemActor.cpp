@@ -41,6 +41,7 @@ void AItemActor::InitType() {
 	ItemInfo.bIsStackable = false;
 	ItemInfo.ItemType = EItemType::EIT_Consumable;
 	ItemInfo.Actor_Ptr = nullptr;
+	ItemInfo.MaxStackNumber = 30;
 }
 
 void AItemActor::InitVisible(FBackPackStruct& Message) {

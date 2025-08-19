@@ -4,6 +4,7 @@
 #include "MosterBag/MosterBase.h"
 #include "Kismet/GameplayStatics.h"
 #include "Hero.h"
+#include "BulletsBase.h"
 
 
 // Sets default values
@@ -52,10 +53,21 @@ void AMosterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 }
 
 
-void AMosterBase::HandleAttacked(ACharacter* Attacker, AMosterBase* Victim)
+void AMosterBase::HandleAttacked(ACharacter* Attacker, AMosterBase* Victim, const FHitResult& Hit)
 {
-	//ռλ 
+	if (this == Victim) {
+		CurrentHealth -= 10;
+		if (CurrentHealth <= 0) {
+			MosterDie();
+		}
+		UE_LOG(LogTemp, Log, TEXT("damage CurrentHealth%"));
+	}
 }
+void AMosterBase::MosterDie() {
+	//可以考虑搞个特效，等后期吧
+	Destroy();
+}
+
 
 void AMosterBase::ReceiveHitFrom(ACharacter* Attacker)
 {
@@ -66,3 +78,4 @@ void AMosterBase::OnNearbyCombat(ACharacter* Attacker, AMosterBase* Victim)
 {
 	//ռλ
 }
+

@@ -1,0 +1,1843 @@
+﻿Log file open, 08/19/25 11:21:29
+LogWindows: Failed to load 'aqProf.dll' (GetLastError=126)
+LogWindows: File 'aqProf.dll' does not exist
+LogProfilingDebugging: Loading WinPixEventRuntime.dll for PIX profiling (from ../../../Engine/Binaries/ThirdParty/Windows/WinPixEventRuntime/x64).
+LogWindows: Failed to load 'VtuneApi.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi.dll' does not exist
+LogWindows: Failed to load 'VtuneApi32e.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi32e.dll' does not exist
+LogWindows: Started CrashReportClient (pid=25592)
+LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+LogInit: Display: Running engine for game: AimToShoot
+LogCore: UnrealTraceServer: Trace store launch successful
+LogCsvProfiler: Display: Metadata set : platform="Windows"
+LogCsvProfiler: Display: Metadata set : config="Development"
+LogCsvProfiler: Display: Metadata set : buildversion="++UE5+Release-5.0-CL-20979098"
+LogCsvProfiler: Display: Metadata set : engineversion="5.0.3-20979098+++UE5+Release-5.0"
+LogCsvProfiler: Display: Metadata set : commandline="" "E:\engine study\AimToShoot\AimToShoot.uproject" -skipcompile""
+LogCsvProfiler: Display: Metadata set : os="Windows 11 (24H2) [10.0.26100.4946] "
+LogCsvProfiler: Display: Metadata set : cpu="AuthenticAMD|AMD Ryzen 7 6800H with Radeon Graphics"
+LogCsvProfiler: Display: Metadata set : pgoenabled="0"
+LogCsvProfiler: Display: Metadata set : loginid="91b4c10743cac1ddf340c4a6ec9ed09a"
+LogCsvProfiler: Display: Metadata set : llm="0"
+LogPlatformFile: Not using cached read wrapper
+LogStats: Stats thread started at 1.201608
+LogICUInternationalization: ICU TimeZone Detection - Raw Offset: +8:00, Platform Override: ''
+LogInit: Session CrashGUID >====================================================
+         Session CrashGUID >   UECC-Windows-1B177120442D7A6D303C3FA36F81E8F1
+         Session CrashGUID >====================================================
+LogPluginManager: Mounting Engine plugin FastBuildController
+LogConfig: Display: Loading VulkanPC ini files took 0.19 seconds
+LogConfig: Display: Loading Android ini files took 0.19 seconds
+LogConfig: Display: Loading Mac ini files took 0.19 seconds
+LogConfig: Display: Loading IOS ini files took 0.19 seconds
+LogConfig: Display: Loading HoloLens ini files took 0.25 seconds
+LogPluginManager: Mounting Engine plugin MeshPainting
+LogConfig: Display: Loading Unix ini files took 0.28 seconds
+LogPluginManager: Mounting Engine plugin XGEController
+LogConfig: Display: Loading Windows ini files took 0.28 seconds
+LogConfig: Display: Loading TVOS ini files took 0.29 seconds
+LogPluginManager: Mounting Engine plugin Paper2D
+LogPluginManager: Mounting Engine plugin GameplayCameras
+LogPluginManager: Mounting Engine plugin CameraShakePreviewer
+LogPluginManager: Mounting Engine plugin AnimationSharing
+LogConfig: Display: Loading LinuxArm64 ini files took 0.32 seconds
+LogPluginManager: Mounting Engine plugin AISupport
+LogConfig: Display: Loading Linux ini files took 0.32 seconds
+LogPluginManager: Mounting Engine plugin EnvironmentQueryEditor
+LogPluginManager: Mounting Engine plugin CodeLiteSourceCodeAccess
+LogPluginManager: Mounting Engine plugin CLionSourceCodeAccess
+LogPluginManager: Mounting Engine plugin NullSourceCodeAccess
+LogPluginManager: Mounting Engine plugin GitSourceControl
+LogPluginManager: Mounting Engine plugin PerforceSourceControl
+LogPluginManager: Mounting Engine plugin PixWinPlugin
+LogPluginManager: Mounting Engine plugin PlasticSourceControl
+LogPluginManager: Mounting Engine plugin KDevelopSourceCodeAccess
+LogPluginManager: Mounting Engine plugin PluginUtils
+LogPluginManager: Mounting Engine plugin PropertyAccessNode
+LogPluginManager: Mounting Engine plugin RiderSourceCodeAccess
+LogPluginManager: Mounting Engine plugin OodleNetwork
+LogPluginManager: Mounting Engine plugin AnimationModifierLibrary
+LogPluginManager: Mounting Engine plugin SubversionSourceControl
+LogPluginManager: Mounting Engine plugin TextureFormatOodle
+LogPluginManager: Mounting Engine plugin TraceDataFilters
+LogPluginManager: Mounting Engine plugin UObjectPlugin
+LogPluginManager: Mounting Engine plugin VisualStudioCodeSourceCodeAccess
+LogPluginManager: Mounting Engine plugin XCodeSourceCodeAccess
+LogPluginManager: Mounting Engine plugin VisualStudioSourceCodeAccess
+LogPluginManager: Mounting Engine plugin BlendSpaceMotionAnalysis
+LogPluginManager: Mounting Engine plugin DatasmithContent
+LogPluginManager: Mounting Engine plugin ControlRigSpline
+LogPluginManager: Mounting Engine plugin ControlRig
+LogPluginManager: Mounting Engine plugin IKRig
+LogPluginManager: Mounting Engine plugin VariantManagerContent
+LogPluginManager: Mounting Engine plugin AutomationUtils
+LogPluginManager: Mounting Engine plugin BackChannel
+LogPluginManager: Mounting Engine plugin ChaosCloth
+LogPluginManager: Mounting Engine plugin ChaosEditor
+LogPluginManager: Mounting Engine plugin ChaosClothEditor
+LogPluginManager: Mounting Engine plugin ChaosNiagara
+LogPluginManager: Mounting Engine plugin ChaosSolverPlugin
+LogPluginManager: Mounting Engine plugin CharacterAI
+LogPluginManager: Mounting Engine plugin AssetManagerEditor
+LogPluginManager: Mounting Engine plugin CryptoKeys
+LogPluginManager: Mounting Engine plugin CurveEditorTools
+LogPluginManager: Mounting Engine plugin DataValidation
+LogPluginManager: Mounting Engine plugin FullBodyIK
+LogPluginManager: Mounting Engine plugin EditorDebugTools
+LogPluginManager: Mounting Engine plugin GeometryCollectionPlugin
+LogPluginManager: Mounting Engine plugin GeometryFlow
+LogPluginManager: Mounting Engine plugin MeshLODToolset
+LogPluginManager: Mounting Engine plugin MeshModelingToolsetExp
+LogPluginManager: Mounting Engine plugin OpenImageDenoise
+LogPluginManager: Mounting Engine plugin PlatformCrypto
+LogPluginManager: Mounting Engine plugin PlanarCut
+LogPluginManager: Mounting Engine plugin ProxyLODPlugin
+LogPluginManager: Mounting Engine plugin EditorScriptingUtilities
+LogPluginManager: Mounting Engine plugin PythonScriptPlugin
+LogPluginManager: Mounting Engine plugin FacialAnimation
+LogPluginManager: Mounting Engine plugin GameplayTagsEditor
+LogPluginManager: Mounting Engine plugin GeometryMode
+LogPluginManager: Mounting Engine plugin SkeletalReduction
+LogPluginManager: Mounting Engine plugin MacGraphicsSwitching
+LogPluginManager: Mounting Engine plugin MobileLauncherProfileWizard
+LogPluginManager: Mounting Engine plugin MaterialAnalyzer
+LogPluginManager: Mounting Engine plugin ModelingToolsEditorMode
+LogPluginManager: Mounting Engine plugin PluginBrowser
+LogPluginManager: Mounting Engine plugin SequencerAnimTools
+LogPluginManager: Mounting Engine plugin SpeedTreeImporter
+LogPluginManager: Mounting Engine plugin StylusInput
+LogPluginManager: Mounting Engine plugin WorldPartitionHLODUtilities
+LogPluginManager: Mounting Engine plugin Niagara
+LogPluginManager: Mounting Engine plugin AlembicImporter
+LogPluginManager: Mounting Engine plugin AndroidMedia
+LogPluginManager: Mounting Engine plugin AvfMedia
+LogPluginManager: Mounting Engine plugin Cargo
+LogPluginManager: Mounting Engine plugin ImgMedia
+LogPluginManager: Mounting Engine plugin MediaCompositing
+LogPluginManager: Mounting Engine plugin UdpMessaging
+LogPluginManager: Mounting Engine plugin TcpMessaging
+LogPluginManager: Mounting Engine plugin MediaPlayerEditor
+LogPluginManager: Mounting Engine plugin WebMMedia
+LogPluginManager: Mounting Engine plugin WmfMedia
+LogPluginManager: Mounting Engine plugin ActorSequence
+LogPluginManager: Mounting Engine plugin LevelSequenceEditor
+LogPluginManager: Mounting Engine plugin MatineeToLevelSequence
+LogPluginManager: Mounting Engine plugin TemplateSequence
+LogPluginManager: Mounting Engine plugin SequencerScripting
+LogPluginManager: Mounting Engine plugin OnlineBase
+LogPluginManager: Mounting Engine plugin OnlineSubsystem
+LogPluginManager: Mounting Engine plugin LauncherChunkInstaller
+LogPluginManager: Mounting Engine plugin OnlineSubsystemNull
+LogPluginManager: Mounting Engine plugin OnlineSubsystemUtils
+LogPluginManager: Mounting Engine plugin ActorLayerUtilities
+LogPluginManager: Mounting Engine plugin AndroidDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin AndroidMoviePlayer
+LogPluginManager: Mounting Engine plugin AndroidFileServer
+LogPluginManager: Mounting Engine plugin AndroidPermission
+LogPluginManager: Mounting Engine plugin AppleImageUtils
+LogPluginManager: Mounting Engine plugin AppleMoviePlayer
+LogPluginManager: Mounting Engine plugin ArchVisCharacter
+LogPluginManager: Mounting Engine plugin AssetTags
+LogPluginManager: Mounting Engine plugin AudioCapture
+LogPluginManager: Mounting Engine plugin CableComponent
+LogPluginManager: Mounting Engine plugin ChunkDownloader
+LogPluginManager: Mounting Engine plugin CustomMeshComponent
+LogPluginManager: Mounting Engine plugin AudioSynesthesia
+LogPluginManager: Mounting Engine plugin ExampleDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin GeometryCache
+LogPluginManager: Mounting Engine plugin GeometryProcessing
+LogPluginManager: Mounting Engine plugin GoogleCloudMessaging
+LogPluginManager: Mounting Engine plugin HairStrands
+LogPluginManager: Mounting Engine plugin GooglePAD
+LogPluginManager: Mounting Engine plugin IOSDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin LinuxDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin LocationServicesBPLibrary
+LogPluginManager: Mounting Engine plugin MeshModelingToolset
+LogPluginManager: Mounting Engine plugin MobilePatchingUtils
+LogPluginManager: Mounting Engine plugin PropertyAccessEditor
+LogPluginManager: Mounting Engine plugin ProceduralMeshComponent
+LogPluginManager: Mounting Engine plugin ResonanceAudio
+LogPluginManager: Mounting Engine plugin RuntimePhysXCooking
+LogPluginManager: Mounting Engine plugin SignificanceManager
+LogPluginManager: Mounting Engine plugin SoundFields
+LogPluginManager: Mounting Engine plugin Synthesis
+LogPluginManager: Mounting Engine plugin WindowsDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin WebMMoviePlayer
+LogPluginManager: Mounting Engine plugin WindowsMoviePlayer
+LogPluginManager: Mounting Engine plugin ContentBrowserClassDataSource
+LogPluginManager: Mounting Engine plugin ContentBrowserAssetDataSource
+LogPluginManager: Mounting Engine plugin ContentBrowserFileDataSource
+LogPluginManager: Mounting Engine plugin InterchangeEditor
+LogPluginManager: Mounting Engine plugin Interchange
+LogPluginManager: Mounting Engine plugin OnlineSubsystemGooglePlay
+LogPluginManager: Mounting Engine plugin OnlineSubsystemIOS
+LogPluginManager: Mounting Engine plugin OnlineServices
+LogPluginManager: Mounting Project plugin VisualStudioTools
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/2D/Paper2D/Content/' mounted to '/Paper2D/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Developer/AnimationSharing/Content/' mounted to '/AnimationSharing/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Enterprise/DatasmithContent/Content/' mounted to '/DatasmithContent/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Animation/ControlRigSpline/Content/' mounted to '/ControlRigSpline/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Animation/ControlRig/Content/' mounted to '/ControlRig/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Animation/IKRig/Content/' mounted to '/IKRig/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/ChaosClothEditor/Content/' mounted to '/ChaosClothEditor/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/ChaosNiagara/Content/' mounted to '/ChaosNiagara/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/ChaosSolverPlugin/Content/' mounted to '/ChaosSolverPlugin/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/FullBodyIK/Content/' mounted to '/FullBodyIK/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/GeometryCollectionPlugin/Content/' mounted to '/GeometryCollectionPlugin/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/GeometryFlow/Content/' mounted to '/GeometryFlow/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/MeshLODToolset/Content/' mounted to '/MeshLODToolset/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/MeshModelingToolsetExp/Content/' mounted to '/MeshModelingToolsetExp/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/PythonScriptPlugin/Content/' mounted to '/PythonScriptPlugin/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Editor/GeometryMode/Content/' mounted to '/GeometryMode/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Editor/ModelingToolsEditorMode/Content/' mounted to '/ModelingToolsEditorMode/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Editor/SpeedTreeImporter/Content/' mounted to '/SpeedTreeImporter/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/FX/Niagara/Content/' mounted to '/Niagara/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Marketplace/Cargo/Content/' mounted to '/Cargo/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Media/MediaCompositing/Content/' mounted to '/MediaCompositing/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/MovieScene/SequencerScripting/Content/' mounted to '/SequencerScripting/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/AudioSynesthesia/Content/' mounted to '/AudioSynesthesia/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/GeometryProcessing/Content/' mounted to '/GeometryProcessing/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/HairStrands/Content/' mounted to '/HairStrands/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/MeshModelingToolset/Content/' mounted to '/MeshModelingToolset/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/ResonanceAudio/Content/' mounted to '/ResonanceAudio/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/Synthesis/Content/' mounted to '/Synthesis/'
+SourceControl: Source control is disabled
+SourceControl: Source control is disabled
+PixWinPlugin: PIX capture plugin failed to initialize! Check that the process is launched from PIX.
+LogInit: Using libcurl 7.55.1-DEV
+LogInit:  - built for x86_64-pc-win32
+LogInit:  - supports SSL with OpenSSL/1.1.1
+LogInit:  - supports HTTP deflate (compression) using libz 1.2.8
+LogInit:  - other features:
+LogInit:      CURL_VERSION_SSL
+LogInit:      CURL_VERSION_LIBZ
+LogInit:      CURL_VERSION_IPV6
+LogInit:      CURL_VERSION_ASYNCHDNS
+LogInit:      CURL_VERSION_LARGEFILE
+LogInit:      CURL_VERSION_IDN
+LogInit:  CurlRequestOptions (configurable via config and command line):
+LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+LogInit:  - bUseHttpProxy = true  - Libcurl will use HTTP proxy
+LogInit:  - HttpProxyAddress = '127.0.0.1:17890'
+LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+LogInit:  - MaxHostConnections = 16  - Libcurl will limit the number of connections to a host
+LogInit:  - LocalHostAddr = Default
+LogInit:  - BufferSize = 65536
+LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+LogOnline: OSS: Created online subsystem instance for: NULL
+LogOnline: OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for module [NULL]
+LogInit: Build: ++UE5+Release-5.0-CL-20979098
+LogInit: Engine Version: 5.0.3-20979098+++UE5+Release-5.0
+LogInit: Compatible Engine Version: 5.0.0-19505902+++UE5+Release-5.0
+LogInit: Net CL: 19505902
+LogInit: OS: Windows 11 (24H2) [10.0.26100.4946] (), CPU: AMD Ryzen 7 6800H with Radeon Graphics         , GPU: AMD Radeon(TM) Graphics
+LogInit: Compiled (64-bit): Jul  7 2022 02:16:06
+LogInit: Compiled with Visual C++: 19.29.30138.00
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE5+Release-5.0
+LogInit: Command Line:  -skipcompile
+LogInit: Base Directory: D:/real engine/UE_5.0/Engine/Binaries/Win64/
+LogInit: Allocator: Mimalloc
+LogInit: Installed Engine Build: 1
+LogDevObjectVersion: Number of dev versions registered: 34
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 10
+LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 4
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 40
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 37
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 3
+LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 20
+LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 45
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 13
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 3
+LogDevObjectVersion:   Dev-LoadTimes (C2A15278-BFE7-4AFE-6C17-90FF531DF755): 1
+LogDevObjectVersion:   Private-Geometry (6EACA3D4-40EC-4CC1-B786-8BED09428FC5): 3
+LogDevObjectVersion:   Dev-AnimPhys (29E575DD-E0A3-4627-9D10-D276232CDCEA): 17
+LogDevObjectVersion:   Dev-Anim (AF43A65D-7FD3-4947-9873-3E8ED9C1BB05): 15
+LogDevObjectVersion:   Dev-ReflectionCapture (6B266CEC-1EC7-4B8F-A30B-E4D90942FC07): 1
+LogDevObjectVersion:   Dev-Automation (0DF73D61-A23F-47EA-B727-89E90C41499A): 1
+LogDevObjectVersion:   FortniteMain (601D1886-AC64-4F84-AA16-D3DE0DEAC7D6): 59
+LogDevObjectVersion:   FortniteRelease (E7086368-6B23-4C58-8439-1B7016265E91): 3
+LogDevObjectVersion:   Dev-Enterprise (9DFFBCD6-494F-0158-E221-12823C92A888): 10
+LogDevObjectVersion:   Dev-Niagara (F2AED0AC-9AFE-416F-8664-AA7FFA26D6FC): 1
+LogDevObjectVersion:   Dev-Destruction (174F1F0B-B4C6-45A5-B13F-2EE8D0FB917D): 10
+LogDevObjectVersion:   Dev-Physics-Ext (35F94A83-E258-406C-A318-09F59610247C): 41
+LogDevObjectVersion:   Dev-PhysicsMaterial-Chaos (B68FC16E-8B1B-42E2-B453-215C058844FE): 1
+LogDevObjectVersion:   Dev-CineCamera (B2E18506-4273-CFC2-A54E-F4BB758BBA07): 1
+LogDevObjectVersion:   Dev-VirtualProduction (64F58936-FD1B-42BA-BA96-7289D5D0FA4E): 1
+LogDevObjectVersion:   UE5-Main (697DD581-E64F-41AB-AA4A-51ECBEB7B628): 59
+LogDevObjectVersion:   UE5-Release (D89B5E42-24BD-4D46-8412-ACA8DF641779): 36
+LogDevObjectVersion:   UE5-PrivateFrosty (59DA5D52-1232-4948-B878-597870B8E98B): 8
+LogDevObjectVersion:   UE5-Dev-Cooker (26075A32-730F-4708-88E9-8C32F1599D05): 0
+LogDevObjectVersion:   Dev-MediaFramework (6F0ED827-A609-4895-9C91-998D90180EA4): 2
+LogDevObjectVersion:   UE5-Dev-LWCRendering (30D58BE3-95EA-4282-A6E3-B159D8EBB06A): 1
+LogInit: Presizing for max 25165824 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogInit: Object subsystem initialized
+LogConfig: CVar [[con.DebugLateDefault:1]] deferred - dummy variable created
+LogConfig: CVar [[con.DebugLateCheat:1]] deferred - dummy variable created
+LogConfig: CVar [[r.DetectAndWarnOfBadDrivers:0]] deferred - dummy variable created
+LogConfig: CVar [[LogNamedEventFilters:Frame *]] deferred - dummy variable created
+LogConfig: CVar [[framepro.ScopeMinTimeMicroseconds:10]] deferred - dummy variable created
+LogConfig: CVar [[QualityLevelMapping:high]] deferred - dummy variable created
+[2025.08.19-03.21.31:377][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererSettings] File [Engine]
+[2025.08.19-03.21.31:377][  0]LogConfig: CVar [[VisualizeCalibrationColorMaterialPath:/Engine/EngineMaterials/PPM_DefaultCalibrationColor.PPM_DefaultCalibrationColor]] deferred - dummy variable created
+[2025.08.19-03.21.31:377][  0]LogConfig: CVar [[VisualizeCalibrationGrayscaleMaterialPath:/Engine/EngineMaterials/PPM_DefaultCalibrationGrayscale.PPM_DefaultCalibrationGrayscale]] deferred - dummy variable created
+[2025.08.19-03.21.31:377][  0]LogConfig: CVar [[MaxSkinBones:(Default=65536,PerPlatform=(("Mobile", 256)))]] deferred - dummy variable created
+[2025.08.19-03.21.31:377][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererOverrideSettings] File [Engine]
+[2025.08.19-03.21.31:377][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.StreamingSettings] File [Engine]
+[2025.08.19-03.21.31:378][  0]LogConfig: CVar [[s.MaxPackageSummarySize:16384]] deferred - dummy variable created
+[2025.08.19-03.21.31:378][  0]LogConfig: CVar [[FixedBootOrder:/Script/Engine/Default__SoundBase]] deferred - dummy variable created
+[2025.08.19-03.21.31:378][  0]LogConfig: CVar [[FixedBootOrder:/Script/Engine/Default__MaterialInterface]] deferred - dummy variable created
+[2025.08.19-03.21.31:378][  0]LogConfig: CVar [[FixedBootOrder:/Script/Engine/Default__DeviceProfileManager]] deferred - dummy variable created
+[2025.08.19-03.21.31:378][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.GarbageCollectionSettings] File [Engine]
+[2025.08.19-03.21.31:378][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.NetworkSettings] File [Engine]
+[2025.08.19-03.21.31:378][  0]LogConfig: CVar [[NetworkEmulationProfiles:(ProfileName="Average",ToolTip="Simulates average internet conditions")]] deferred - dummy variable created
+[2025.08.19-03.21.31:378][  0]LogConfig: CVar [[NetworkEmulationProfiles:(ProfileName="Bad",ToolTip="Simulates laggy internet conditions")]] deferred - dummy variable created
+[2025.08.19-03.21.31:378][  0]LogConfig: Applying CVar settings from Section [/Script/UnrealEd.CookerSettings] File [Engine]
+[2025.08.19-03.21.31:378][  0]LogConfig: CVar [[DefaultPVRTCQuality:1]] deferred - dummy variable created
+[2025.08.19-03.21.31:378][  0]LogConfig: CVar [[DefaultASTCQualityBySpeed:1]] deferred - dummy variable created
+[2025.08.19-03.21.31:378][  0]LogConfig: CVar [[DefaultASTCQualityBySize:3]] deferred - dummy variable created
+[2025.08.19-03.21.31:378][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:WidgetBlueprint]] deferred - dummy variable created
+[2025.08.19-03.21.31:378][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:GroupActor]] deferred - dummy variable created
+[2025.08.19-03.21.31:378][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:MetaData]] deferred - dummy variable created
+[2025.08.19-03.21.31:378][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ObjectRedirector]] deferred - dummy variable created
+[2025.08.19-03.21.31:378][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:NavMeshRenderingComponent]] deferred - dummy variable created
+[2025.08.19-03.21.31:378][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ReflectionCaptureComponent]] deferred - dummy variable created
+[2025.08.19-03.21.31:378][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:TextRenderComponent]] deferred - dummy variable created
+[2025.08.19-03.21.31:378][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:Font]] deferred - dummy variable created
+[2025.08.19-03.21.31:378][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:InterpCurveEdSetup]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:MaterialExpression]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:MatineeActorCameraAnim]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:NiagaraEmitter]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:NiagaraScript]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ParticleEmitter]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ParticleLODLevel]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ParticleModule]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:SubUVAnimation]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:SoundNode]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:GameplayEffectUIData]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedClient:WidgetBlueprint]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedClient:GroupActor]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedClient:MetaData]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedClient:ObjectRedirector]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedClient:InterpCurveEdSetup]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedClient:MatineeActorCameraAnim]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[VersionedIntRValues:r.AllowStaticLighting]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[VersionedIntRValues:r.GBuffer]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[VersionedIntRValues:r.VelocityOutputPass]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[VersionedIntRValues:r.SelectiveBasePassOutputs]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[VersionedIntRValues:r.DBuffer]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[VersionedIntRValues:r.Shaders.Symbols]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[VersionedIntRValues:r.Shaders.GenerateSymbols]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[VersionedIntRValues:r.Shaders.WriteSymbols]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[VersionedIntRValues:r.Shaders.AllowUniqueSymbols]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[VersionedIntRValues:r.Shaders.ExtraData]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[VersionedIntRValues:r.Shaders.Optimize]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[VersionedIntRValues:r.CompileShadersForDevelopment]] deferred - dummy variable created
+[2025.08.19-03.21.31:379][  0]LogConfig: CVar [[VersionedIntRValues:r.MobileHDR]] deferred - dummy variable created
+[2025.08.19-03.21.31:381][  0]LogConfig: CVar [[VersionedIntRValues:r.UsePreExposure]] deferred - dummy variable created
+[2025.08.19-03.21.31:392][  0]LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [Scalability]
+[2025.08.19-03.21.31:392][  0]LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [Scalability]
+[2025.08.19-03.21.31:392][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [Scalability]
+[2025.08.19-03.21.31:392][  0]LogConfig: Applying CVar settings from Section [GlobalIlluminationQuality@3] File [Scalability]
+[2025.08.19-03.21.31:392][  0]LogConfig: Applying CVar settings from Section [ReflectionQuality@3] File [Scalability]
+[2025.08.19-03.21.31:392][  0]LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [Scalability]
+[2025.08.19-03.21.31:393][  0]LogConfig: Applying CVar settings from Section [TextureQuality@3] File [Scalability]
+[2025.08.19-03.21.31:393][  0]LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [Scalability]
+[2025.08.19-03.21.31:393][  0]LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [Scalability]
+[2025.08.19-03.21.31:393][  0]LogConfig: Applying CVar settings from Section [ShadingQuality@3] File [Scalability]
+[2025.08.19-03.21.31:393][  0]LogConfig: CVar [[r.HairStrands.Interpolation.UseSingleGuide:0]] deferred - dummy variable created
+[2025.08.19-03.21.31:457][  0]LogD3D12RHI: Aftermath initialized
+[2025.08.19-03.21.31:457][  0]LogD3D12RHI: Loading WinPixEventRuntime.dll for PIX profiling (from ../../../Engine/Binaries/ThirdParty/Windows/WinPixEventRuntime/x64).
+[2025.08.19-03.21.32:014][  0]LogD3D12RHI: Found D3D12 adapter 0: NVIDIA GeForce RTX 3060 Laptop GPU (Max supported Feature Level 12_1, shader model 6.6)
+[2025.08.19-03.21.32:014][  0]LogD3D12RHI: Adapter has 5996MB of dedicated video memory, 0MB of dedicated system memory, and 7778MB of shared system memory, 1 output[s]
+[2025.08.19-03.21.32:336][  0]LogD3D12RHI: Found D3D12 adapter 1: AMD Radeon(TM) Graphics (Max supported Feature Level 12_1, shader model 6.6)
+[2025.08.19-03.21.32:337][  0]LogD3D12RHI: Adapter has 485MB of dedicated video memory, 0MB of dedicated system memory, and 7778MB of shared system memory, 0 output[s]
+[2025.08.19-03.21.32:374][  0]LogD3D12RHI: Found D3D12 adapter 2: Microsoft Basic Render Driver (Max supported Feature Level 12_1, shader model 6.6)
+[2025.08.19-03.21.32:374][  0]LogD3D12RHI: Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 7778MB of shared system memory, 0 output[s]
+[2025.08.19-03.21.32:375][  0]LogD3D12RHI: Chosen D3D12 Adapter Id = 0
+[2025.08.19-03.21.32:375][  0]LogInit: Selected Device Profile: [WindowsEditor]
+[2025.08.19-03.21.32:375][  0]LogDeviceProfileManager: Applying CVar settings loaded from the selected device profile: [WindowsEditor]
+[2025.08.19-03.21.32:375][  0]LogHAL: Display: Platform has ~ 16 GB [16312721408 / 17179869184 / 16], which maps to Larger [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+[2025.08.19-03.21.32:375][  0]LogDeviceProfileManager: Going up to parent DeviceProfile [Windows]
+[2025.08.19-03.21.32:375][  0]LogDeviceProfileManager: Going up to parent DeviceProfile []
+[2025.08.19-03.21.32:375][  0]LogConfig: Applying CVar settings from Section [Startup] File [../../../Engine/Config/ConsoleVariables.ini]
+[2025.08.19-03.21.32:376][  0]LogConfig: Applying CVar settings from Section [ConsoleVariables] File [Engine]
+[2025.08.19-03.21.32:376][  0]LogConfig: Applying CVar settings from Section [ConsoleVariables] File [E:/engine study/AimToShoot/Saved/Config/WindowsEditor/Editor.ini]
+[2025.08.19-03.21.32:377][  0]LogInit: Computer: LAPTOP-JS17768L
+[2025.08.19-03.21.32:377][  0]LogInit: User: 18754
+[2025.08.19-03.21.32:377][  0]LogInit: CPU Page size=4096, Cores=8
+[2025.08.19-03.21.32:377][  0]LogInit: High frequency timer resolution =10.000000 MHz
+[2025.08.19-03.21.32:377][  0]LogMemory: Memory total: Physical=15.2GB (16GB approx)
+[2025.08.19-03.21.32:377][  0]LogMemory: Platform Memory Stats for WindowsEditor
+[2025.08.19-03.21.32:377][  0]LogMemory: Process Physical Memory: 307.70 MB used, 362.89 MB peak
+[2025.08.19-03.21.32:377][  0]LogMemory: Process Virtual Memory: 271.79 MB used, 271.79 MB peak
+[2025.08.19-03.21.32:377][  0]LogMemory: Physical Memory: 10831.48 MB used,  4725.54 MB free, 15557.02 MB total
+[2025.08.19-03.21.32:377][  0]LogMemory: Virtual Memory: 18328.23 MB used,  12785.82 MB free, 31114.05 MB total
+[2025.08.19-03.21.32:377][  0]LogCsvProfiler: Display: Metadata set : extradevelopmentmemorymb="0"
+[2025.08.19-03.21.32:402][  0]LogWindows: WindowsPlatformFeatures enabled
+[2025.08.19-03.21.32:524][  0]LogInit: Physics initialised using underlying interface: Chaos
+[2025.08.19-03.21.32:527][  0]LogInit: Overriding language with editor language configuration option (zh-Hans).
+[2025.08.19-03.21.32:527][  0]LogInit: Using OS detected locale (zh-CN).
+[2025.08.19-03.21.32:616][  0]LogTextLocalizationResource: LocRes '../../../Engine/Content/Localization/Editor/zh/Editor.locres' could not be opened for reading!
+[2025.08.19-03.21.32:616][  0]LogTextLocalizationResource: LocRes '../../../Engine/Content/Localization/EditorTutorials/zh/EditorTutorials.locres' could not be opened for reading!
+[2025.08.19-03.21.32:617][  0]LogTextLocalizationResource: LocRes '../../../Engine/Content/Localization/Keywords/zh/Keywords.locres' could not be opened for reading!
+[2025.08.19-03.21.32:617][  0]LogTextLocalizationResource: LocRes '../../../Engine/Content/Localization/Category/zh/Category.locres' could not be opened for reading!
+[2025.08.19-03.21.32:617][  0]LogTextLocalizationResource: LocRes '../../../Engine/Content/Localization/ToolTips/zh/ToolTips.locres' could not be opened for reading!
+[2025.08.19-03.21.32:619][  0]LogTextLocalizationResource: LocRes '../../../Engine/Content/Localization/Engine/zh/Engine.locres' could not be opened for reading!
+[2025.08.19-03.21.32:620][  0]LogTextLocalizationResource: LocRes '../../../Engine/Plugins/Online/OnlineSubsystem/Content/Localization/OnlineSubsystem/zh/OnlineSubsystem.locres' could not be opened for reading!
+[2025.08.19-03.21.32:620][  0]LogTextLocalizationResource: LocRes '../../../Engine/Plugins/Online/OnlineSubsystemUtils/Content/Localization/OnlineSubsystemUtils/zh/OnlineSubsystemUtils.locres' could not be opened for reading!
+[2025.08.19-03.21.32:621][  0]LogTextLocalizationResource: LocRes '../../../Engine/Plugins/Online/Android/OnlineSubsystemGooglePlay/Content/Localization/OnlineSubsystemGooglePlay/zh/OnlineSubsystemGooglePlay.locres' could not be opened for reading!
+[2025.08.19-03.21.32:621][  0]LogTextLocalizationResource: LocRes '../../../Engine/Plugins/Online/IOS/OnlineSubsystemIOS/Content/Localization/OnlineSubsystemIOS/zh/OnlineSubsystemIOS.locres' could not be opened for reading!
+[2025.08.19-03.21.32:651][  0]LogInit: Setting process to per monitor DPI aware
+[2025.08.19-03.21.32:684][  0]LogWindowsTextInputMethodSystem: Available input methods:
+[2025.08.19-03.21.32:684][  0]LogWindowsTextInputMethodSystem:   - 简体中文(中国大陆) - 微软拼音 (TSF IME).
+[2025.08.19-03.21.32:684][  0]LogWindowsTextInputMethodSystem:   - 英语(马来西亚) - (Keyboard).
+[2025.08.19-03.21.32:684][  0]LogWindowsTextInputMethodSystem: Activated input method: 简体中文(中国大陆) - 微软拼音 (TSF IME).
+[2025.08.19-03.21.32:800][  0]LogSlate: New Slate User Created.  User Index 0, Is Virtual User: 0
+[2025.08.19-03.21.32:800][  0]LogSlate: Slate User Registered.  User Index 0, Is Virtual User: 0
+[2025.08.19-03.21.33:415][  0]LogD3D12RHI: InitD3DDevice: -D3DDebug = off -D3D12GPUValidation = off
+[2025.08.19-03.21.33:432][  0]LogD3D12RHI: [Aftermath] Aftermath crash dumping enabled
+[2025.08.19-03.21.33:432][  0]LogD3D12RHI: Emitting draw events for PIX profiling.
+[2025.08.19-03.21.33:683][  0]LogD3D12RHI: [Aftermath] Aftermath enabled and primed
+[2025.08.19-03.21.33:683][  0]LogD3D12RHI: [Aftermath] Aftermath resource tracking enabled
+[2025.08.19-03.21.33:683][  0]LogD3D12RHI: ID3D12Device1 is supported.
+[2025.08.19-03.21.33:683][  0]LogD3D12RHI: ID3D12Device2 is supported.
+[2025.08.19-03.21.33:683][  0]LogD3D12RHI: ID3D12Device3 is supported.
+[2025.08.19-03.21.33:683][  0]LogD3D12RHI: ID3D12Device4 is supported.
+[2025.08.19-03.21.33:683][  0]LogD3D12RHI: ID3D12Device5 is supported.
+[2025.08.19-03.21.33:683][  0]LogD3D12RHI: ID3D12Device6 is supported.
+[2025.08.19-03.21.33:683][  0]LogD3D12RHI: ID3D12Device7 is supported.
+[2025.08.19-03.21.33:683][  0]LogD3D12RHI: D3D12 ray tracing tier 1.0 is supported.
+[2025.08.19-03.21.33:683][  0]LogD3D12RHI: D3D12 ray tracing tier 1.1 is supported.
+[2025.08.19-03.21.33:684][  0]LogD3D12RHI: Mesh shader tier 1.0 is supported
+[2025.08.19-03.21.33:684][  0]LogD3D12RHI: AtomicInt64OnTypedResource is supported
+[2025.08.19-03.21.33:684][  0]LogD3D12RHI: AtomicInt64OnGroupShared is supported
+[2025.08.19-03.21.33:684][  0]LogD3D12RHI: AtomicInt64OnDescriptorHeapResource is supported
+[2025.08.19-03.21.33:684][  0]LogD3D12RHI: Shader Model 6.6 atomic64 is supported
+[2025.08.19-03.21.33:731][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for 3D Queue 0
+[2025.08.19-03.21.33:745][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for Copy Queue 0
+[2025.08.19-03.21.33:768][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for Compute Queue 0
+[2025.08.19-03.21.33:788][  0]LogD3D12RHI: Display: Not using pipeline state disk cache per r.D3D12.PSO.DiskCache=0
+[2025.08.19-03.21.33:788][  0]LogD3D12RHI: Display: Not using driver-optimized pipeline state disk cache per r.D3D12.PSO.DriverOptimizedDiskCache=0
+[2025.08.19-03.21.33:900][  0]LogD3D12RHI:     GPU DeviceId: 0x2520 (for the marketing name, search the web for "GPU Device Id")
+[2025.08.19-03.21.33:900][  0]LogWindows: Attached monitors:
+[2025.08.19-03.21.33:900][  0]LogWindows:     resolution: 1920x1080, work area: (0, 0) -> (1920, 1020), device: '\\.\DISPLAY1' [PRIMARY]
+[2025.08.19-03.21.33:900][  0]LogWindows: Found 1 attached monitors.
+[2025.08.19-03.21.33:900][  0]LogWindows: EnumDisplayDevices:
+[2025.08.19-03.21.33:900][  0]LogWindows:    0. 'AMD Radeon(TM) Graphics' (P:1 D:1), name: '\\.\DISPLAY1'
+[2025.08.19-03.21.33:902][  0]LogWindows:    1. 'AMD Radeon(TM) Graphics' (P:0 D:0), name: '\\.\DISPLAY2'
+[2025.08.19-03.21.33:904][  0]LogWindows:    2. 'AMD Radeon(TM) Graphics' (P:0 D:0), name: '\\.\DISPLAY3'
+[2025.08.19-03.21.33:904][  0]LogWindows:    3. 'AMD Radeon(TM) Graphics' (P:0 D:0), name: '\\.\DISPLAY4'
+[2025.08.19-03.21.33:905][  0]LogWindows:    4. 'AMD Radeon(TM) Graphics' (P:0 D:0), name: '\\.\DISPLAY5'
+[2025.08.19-03.21.33:906][  0]LogWindows:    5. 'NVIDIA GeForce RTX 3060 Laptop GPU' (P:0 D:0), name: '\\.\DISPLAY6'
+[2025.08.19-03.21.33:907][  0]LogWindows:    6. 'NVIDIA GeForce RTX 3060 Laptop GPU' (P:0 D:0), name: '\\.\DISPLAY7'
+[2025.08.19-03.21.33:908][  0]LogWindows:    7. 'NVIDIA GeForce RTX 3060 Laptop GPU' (P:0 D:0), name: '\\.\DISPLAY8'
+[2025.08.19-03.21.33:909][  0]LogWindows:    8. 'NVIDIA GeForce RTX 3060 Laptop GPU' (P:0 D:0), name: '\\.\DISPLAY9'
+[2025.08.19-03.21.33:909][  0]LogWindows: DebugString: PrimaryIsNotTheChoosenAdapter PrimaryIsNotTheChoosenAdapter PrimaryIsNotTheChoosenAdapter PrimaryIsNotTheChoosenAdapter PrimaryIsNotTheChoosenAdapter FoundDriverCount:4 
+[2025.08.19-03.21.33:909][  0]LogD3D12RHI:     Adapter Name: NVIDIA GeForce RTX 3060 Laptop GPU
+[2025.08.19-03.21.33:909][  0]LogD3D12RHI:   Driver Version: 572.42 (internal:32.0.15.7242, unified:572.42)
+[2025.08.19-03.21.33:909][  0]LogD3D12RHI:      Driver Date: 2-12-2025
+[2025.08.19-03.21.33:909][  0]LogRHI: Texture pool is 3293 MB (70% of 4705 MB)
+[2025.08.19-03.21.33:909][  0]LogD3D12RHI: Async texture creation enabled
+[2025.08.19-03.21.33:909][  0]LogD3D12RHI: RHI has support for 64 bit atomics
+[2025.08.19-03.21.33:930][  0]LogRHI: GeForceNow SDK initialized: 0
+[2025.08.19-03.21.33:980][  0]LogTurnkeySupport: Running Turnkey SDK detection: ' -ScriptsForProject="E:/engine study/AimToShoot/AimToShoot.uproject" Turnkey -utf8output -WaitForUATMutex -command=VerifySdk -ReportFilename="E:/engine study/AimToShoot/Intermediate/TurnkeyReport_0.log" -log="E:/engine study/AimToShoot/Intermediate/TurnkeyLog_0.log" -project="E:/engine study/AimToShoot/AimToShoot.uproject"  -platform=all'
+[2025.08.19-03.21.33:980][  0]LogMonitoredProcess: Running Serialized UAT: [ cmd.exe /c ""D:/real engine/UE_5.0/Engine/Build/BatchFiles/RunUAT.bat"  -ScriptsForProject="E:/engine study/AimToShoot/AimToShoot.uproject" Turnkey -utf8output -WaitForUATMutex -command=VerifySdk -ReportFilename="E:/engine study/AimToShoot/Intermediate/TurnkeyReport_0.log" -log="E:/engine study/AimToShoot/Intermediate/TurnkeyLog_0.log" -project="E:/engine study/AimToShoot/AimToShoot.uproject"  -platform=all" ]
+[2025.08.19-03.21.34:128][  0]LogTextureFormatETC2: Display: ETC2 Texture loading DLL: TextureConverter.dll
+[2025.08.19-03.21.34:185][  0]LogTextureFormatOodle: Display: Oodle Texture TFO init; latest sdk version = 2.9.5
+[2025.08.19-03.21.34:185][  0]LogTextureFormatOodle: Display: Oodle Texture loading DLL: oo2tex_win64_2.9.5.dll
+[2025.08.19-03.21.34:221][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android'
+[2025.08.19-03.21.34:221][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTC'
+[2025.08.19-03.21.34:223][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXT'
+[2025.08.19-03.21.34:223][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2'
+[2025.08.19-03.21.34:223][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'AndroidClient'
+[2025.08.19-03.21.34:223][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTCClient'
+[2025.08.19-03.21.34:223][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXTClient'
+[2025.08.19-03.21.34:223][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2Client'
+[2025.08.19-03.21.34:223][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_Multi'
+[2025.08.19-03.21.34:223][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_MultiClient'
+[2025.08.19-03.21.34:335][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'HoloLens'
+[2025.08.19-03.21.34:335][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'HoloLensClient'
+[2025.08.19-03.21.34:358][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOS'
+[2025.08.19-03.21.34:358][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOSClient'
+[2025.08.19-03.21.34:379][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Linux'
+[2025.08.19-03.21.34:379][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxEditor'
+[2025.08.19-03.21.34:379][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxServer'
+[2025.08.19-03.21.34:380][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxClient'
+[2025.08.19-03.21.34:398][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxArm64'
+[2025.08.19-03.21.34:398][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxArm64Server'
+[2025.08.19-03.21.34:399][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxArm64Client'
+[2025.08.19-03.21.34:416][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOS'
+[2025.08.19-03.21.34:416][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOSClient'
+[2025.08.19-03.21.34:465][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Windows'
+[2025.08.19-03.21.34:465][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsEditor'
+[2025.08.19-03.21.34:465][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsServer'
+[2025.08.19-03.21.34:465][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsClient'
+[2025.08.19-03.21.34:465][  0]LogTargetPlatformManager: Display: Building Assets For WindowsEditor
+[2025.08.19-03.21.34:529][  0]LogAudioDebug: Display: Lib vorbis DLL was dynamically loaded.
+[2025.08.19-03.21.34:554][  0]LogTargetPlatformManager: Unable to find audio format BINKA from hinted modules, loading all potential format modules to find it
+[2025.08.19-03.21.34:554][  0]LogTargetPlatformManager: Loaded format module AudioFormatADPCM
+[2025.08.19-03.21.34:554][  0]LogTargetPlatformManager:   ADPCM
+[2025.08.19-03.21.34:554][  0]LogTargetPlatformManager:   PCM
+[2025.08.19-03.21.34:576][  0]LogTargetPlatformManager: Loaded format module AudioFormatBink
+[2025.08.19-03.21.34:576][  0]LogTargetPlatformManager:   BINKA
+[2025.08.19-03.21.34:576][  0]LogTargetPlatformManager: Loaded format module AudioFormatOgg
+[2025.08.19-03.21.34:576][  0]LogTargetPlatformManager:   OGG
+[2025.08.19-03.21.34:576][  0]LogTargetPlatformManager: Loaded format module AudioFormatOpus
+[2025.08.19-03.21.34:576][  0]LogTargetPlatformManager:   OPUS
+[2025.08.19-03.21.34:828][  0]LogTargetPlatformManager: Unable to find shader format SF_METAL from hinted modules, loading all potential format modules to find it
+[2025.08.19-03.21.34:872][  0]LogTargetPlatformManager: Loaded format module MetalShaderFormat
+[2025.08.19-03.21.34:872][  0]LogTargetPlatformManager:   SF_METAL
+[2025.08.19-03.21.34:872][  0]LogTargetPlatformManager:   SF_METAL_MRT
+[2025.08.19-03.21.34:872][  0]LogTargetPlatformManager:   SF_METAL_TVOS
+[2025.08.19-03.21.34:872][  0]LogTargetPlatformManager:   SF_METAL_MRT_TVOS
+[2025.08.19-03.21.34:872][  0]LogTargetPlatformManager:   SF_METAL_SM5
+[2025.08.19-03.21.34:872][  0]LogTargetPlatformManager:   SF_METAL_MACES3_1
+[2025.08.19-03.21.34:872][  0]LogTargetPlatformManager:   SF_METAL_MRT_MAC
+[2025.08.19-03.21.34:872][  0]LogTargetPlatformManager: Loaded format module ShaderFormatD3D
+[2025.08.19-03.21.34:872][  0]LogTargetPlatformManager:   PCD3D_SM6
+[2025.08.19-03.21.34:872][  0]LogTargetPlatformManager:   PCD3D_SM5
+[2025.08.19-03.21.34:872][  0]LogTargetPlatformManager:   PCD3D_ES31
+[2025.08.19-03.21.34:872][  0]LogTargetPlatformManager:   D3D_ES3_1_HOLOLENS
+[2025.08.19-03.21.34:873][  0]LogTargetPlatformManager: Loaded format module ShaderFormatOpenGL
+[2025.08.19-03.21.34:873][  0]LogTargetPlatformManager:   GLSL_150_ES31
+[2025.08.19-03.21.34:873][  0]LogTargetPlatformManager:   GLSL_ES3_1_ANDROID
+[2025.08.19-03.21.34:898][  0]LogTargetPlatformManager: Loaded format module ShaderFormatVectorVM
+[2025.08.19-03.21.34:898][  0]LogTargetPlatformManager:   VVM_1_0
+[2025.08.19-03.21.34:898][  0]LogTargetPlatformManager: Loaded format module VulkanShaderFormat
+[2025.08.19-03.21.34:898][  0]LogTargetPlatformManager:   SF_VULKAN_SM5
+[2025.08.19-03.21.34:898][  0]LogTargetPlatformManager:   SF_VULKAN_ES31_ANDROID
+[2025.08.19-03.21.34:898][  0]LogTargetPlatformManager:   SF_VULKAN_ES31
+[2025.08.19-03.21.34:898][  0]LogTargetPlatformManager:   SF_VULKAN_SM5_ANDROID
+[2025.08.19-03.21.34:900][  0]LogRendererCore: Ray tracing is disabled. Reason: r.RayTracing=0.
+[2025.08.19-03.21.34:900][  0]LogShaderCompilers: Display: Compiling shader autogen file: E:/engine study/AimToShoot/Intermediate/ShaderAutogen/PCD3D_SM5/AutogenShaderHeaders.ush
+[2025.08.19-03.21.34:901][  0]LogShaderCompilers: Display: Autogen file is unchanged, skipping write.
+[2025.08.19-03.21.34:901][  0]LogShaderCompilers: Display: Compiling shader autogen file: E:/engine study/AimToShoot/Intermediate/ShaderAutogen/PCD3D_ES31/AutogenShaderHeaders.ush
+[2025.08.19-03.21.34:903][  0]LogShaderCompilers: Display: Autogen file is unchanged, skipping write.
+[2025.08.19-03.21.34:913][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file E:/engine study/AimToShoot/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2025.08.19-03.21.34:913][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchy Hierarchy.
+[2025.08.19-03.21.34:914][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file E:/engine study/AimToShoot/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2025.08.19-03.21.34:914][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchy Hierarchy.
+[2025.08.19-03.21.34:938][  0]LogDerivedDataCache: Display: ../../../Engine/DerivedDataCache/Compressed.ddp: Opened pak cache for reading. (1230 MiB)
+[2025.08.19-03.21.34:939][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  EnterprisePak pak cache file ../../../Enterprise/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2025.08.19-03.21.34:939][  0]LogDerivedDataCache: Unable to find inner node EnterprisePak for hierarchy Hierarchy.
+[2025.08.19-03.21.34:965][  0]LogDerivedDataCache: Speed tests for C:/Users/18754/AppData/Local/UnrealEngine/Common/DerivedDataCache took 0.03 seconds
+[2025.08.19-03.21.34:965][  0]LogDerivedDataCache: Display: Performance to C:/Users/18754/AppData/Local/UnrealEngine/Common/DerivedDataCache: Latency=0.24ms. RandomReadSpeed=104.67MBs, RandomWriteSpeed=67.26MBs. Assigned SpeedClass 'Local'
+[2025.08.19-03.21.34:968][  0]LogDerivedDataCache: Using Local data cache path C:/Users/18754/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2025.08.19-03.21.34:968][  0]LogDerivedDataCache: Shared data cache path not found in *engine.ini, will not use an Shared cache.
+[2025.08.19-03.21.34:968][  0]LogDerivedDataCache: Unable to find inner node Shared for hierarchy Hierarchy.
+[2025.08.19-03.21.34:977][  0]LogVirtualization: VirtualizationSystem name found in ini file: None
+[2025.08.19-03.21.34:978][  0]LogVirtualization: FNullVirtualizationSystem mounted, virtualization will be disabled
+[2025.08.19-03.21.34:978][  0]LogShaderCompilers: Guid format shader working directory is 19 characters bigger than the processId version (E:/engine study/AimToShoot/Intermediate/Shaders/WorkingDirectory/11400/).
+[2025.08.19-03.21.34:979][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/18754/AppData/Local/Temp/UnrealShaderWorkingDir/62B665DC4051C1009F93C19DB0DFEE06/'.
+[2025.08.19-03.21.34:979][  0]LogXGEController: Cannot use XGE Controller as Incredibuild is not installed on this machine.
+[2025.08.19-03.21.34:980][  0]LogShaderCompilers: Display: Using Local Shader Compiler with 8 workers.
+[2025.08.19-03.21.36:807][  0]LogTurnkeySupport: Completed SDK detection: ExitCode = 0
+[2025.08.19-03.21.36:807][  0]LogSlate: Using FreeType 2.10.0
+[2025.08.19-03.21.36:808][  0]LogSlate: SlateFontServices - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2025.08.19-03.21.36:909][  0]LogAssetRegistry: FAssetRegistry took 0.0299 seconds to start up
+[2025.08.19-03.21.36:926][  0]LogEditorDomain: Display: EditorDomain is Disabled
+[2025.08.19-03.21.37:150][  0]LogSerialization: UsePackageTrailer: 'false'
+[2025.08.19-03.21.37:151][  0]LogTexture: Display: Texture Encode Speed: FinalIfAvailable (editor).
+[2025.08.19-03.21.38:154][  0]LogInit: Selected Device Profile: [WindowsEditor]
+[2025.08.19-03.21.38:154][  0]LogDeviceProfileManager: Active device profile: [0000065C4998FDC0][0000065C4A275000 50] WindowsEditor
+[2025.08.19-03.21.38:154][  0]LogDeviceProfileManager: Profiles: [0000065C49CEFC00][0000065C4A272800 50] Windows, [0000065C4998FDC0][0000065C4A275000 50] WindowsEditor, [0000065C49CEBB40][0000065C4A277800 50] WindowsServer, [0000065C49CEC5C0][0000065C30D50000 50] WindowsClient, [0000065C49CEB0C0][0000065C41450000 50] IOS, [0000065C49CEF880][0000065C4A27A000 50] iPadAir2, [0000065C4A300000][0000065C4A2B2800 50] IPadPro, [0000065C4A300380][0000065C4A2B5000 50] iPadAir3, [0000065C4A3024C0][0000065C4A2B7800 50] iPadAir4, [0000065C4A301340][0000065C4A270000 50] iPadMini4, [0000065C4A301C00][0000065C4A2B0000 50] iPadMini5, [0000065C4A300540][0000065C4A2BA000 50] iPadMini6, [0000065C4A307380][0000065C4A332800 50] iPhone6S, [0000065C4A307700][0000065C4A330000 50] iPhone7, [0000065C4A307A80][0000065C4A335000 50] iPodTouch7, [0000065C4A307C40][0000065C4A2BC800 50] iPhone6SPlus, [0000065C4A3071C0][0000065C41405000 50] iPhone7Plus, [0000065C4A304D00][0000065C4A33C800 50] iPhoneSE, [0000065C4A307540][0000065C4A312800 50] iPhone8, [0000065C4A301DC0][0000065C4A310000 50] iPhone8Plus, [0000065C4A304980][0000065C4A31A000 50] iPhoneX, [0000065C4A305B00][0000065C4A33A000 50] iPhoneXS, [0000065C4A302840][0000065C4A315000 50] iPhoneXSMax, [0000065C4A302300][0000065C4A317800 50] iPhoneXR, [0000065C4A303640][0000065C4A322800 50] iPhone11, [0000065C4A305780][0000065C4A320000 50] iPhone11Pro, [0000065C4A303F00][0000065C4A32A000 50] iPhone11ProMax, [0000065C4A302A00][0000065C4A31C800 50] iPhoneSE2, [0000065C4A3047C0][0000065C4A27C800 50] iPhone12Mini, [0000065C4A306900][0000065C4A327800 50] iPhone12, [0000065C4A300FC0][0000065C4A2D2800 50] iPhone12Pro, [0000065C4A301180][0000065C4A2D0000 50] iPhone12ProMax, [0000065C4A300A80][0000065C4A2DA000 50] iPhone13Mini, [0000065C4A305400][0000065C4A325000 50] iPhone13, [0000065C4A305CC0][0000065C4A2D5000 50] iPhone13Pro, [0000065C4A3016C0][0000065C4A2D7800 50] iPhone13ProMax, [0000065C4A304B40][0000065C4A2E2800 50] iPadPro105, [0000065C4A306AC0][0000065C4A2E0000 50] iPadPro129, [0000065C4A306E40][0000065C4A2EA000 50] iPadPro97, [0000065C4A301A40][0000065C4A2DC800 50] iPadPro2_129, [0000065C4A302680][0000065C4A337800 50] iPad5, [0000065C4A306200][0000065C4A2E7800 50] iPad6, [0000065C4A302D80][0000065C4A2F2800 50] iPad7, [0000065C4A305E80][0000065C4A2F0000 50] iPad8, [0000065C4A301880][0000065C4A2FA000 50] iPad9, [0000065C4A304EC0][0000065C4A2E5000 50] iPadPro11, [0000065C4A300700][0000065C4A2F5000 50] iPadPro2_11, [0000065C4A3039C0][0000065C4A2F7800 50] iPadPro3_11, [0000065C4A304280][0000065C4A342800 50] iPadPro3_129, [0000065C4A306040][0000065C4A340000 50] iPadPro4_129, [0000065C4A303800][0000065C4A34A000 50] iPadPro5_129, [0000065C4A302BC0][0000065C4A2FC800 50] AppleTV, [0000065C4A303100][0000065C4A32C800 50] AppleTV4K, [0000065C4A304440][0000065C4A347800 50] TVOS, [0000065C4A309680][0000065C4A352800 50] Mac, [0000065C4A309A00][0000065C4A355000 50] MacEditor, [0000065C4A309300][0000065C4A357800 50] MacClient, [0000065C4A3055C0][0000065C4A345000 50] MacServer, [0000065C4A309F40][0000065C4A365000 50] Linux, [0000065C4A30A2C0][0000065C4A360000 50] LinuxEditor, [0000065C4A307000][0000065C4A362800 50] LinuxArm64Editor, [0000065C4A3086C0][0000065C4A350000 50] LinuxArm64, [0000065C4A305240][0000065C4A367800 50] LinuxClient, [0000065C4A30A640][0000065C4A2EC800 50] LinuxArm64Client, [0000065C4A307FC0][0000065C4A34C800 50] LinuxServer, [0000065C4A3063C0][0000065C4A36A000 50] LinuxArm64Server, [0000065C4A3094C0][0000065C4A372800 50] Android, [0000065C4A300C40][0000065C4A370000 50] Android_Preview_OpenGL, [0000065C4A308DC0][0000065C4A37A000 50] Android_Preview_Vulkan, [0000065C4A306740][0000065C4A35C800 50] Android_Low, [0000065C4A3032C0][0000065C4A375000 50] Android_Mid, [0000065C4A300E00][0000065C4A377800 50] Android_High, [0000065C4A308A40][0000065C4A382800 50] Android_Default, [0000065C4A309BC0][0000065C4A380000 50] Android_Adreno4xx, [0000065C4A308F80][0000065C4A38A000 50] Android_Adreno5xx_Low, [0000065C4A302140][0000065C4A37C800 50] Android_Adreno5xx, [0000065C4A308C00][0000065C4A36C800 50] Android_Adreno6xx, [0000065C4A305940][0000065C4A387800 50] Android_Adreno6xx_Vulkan, [0000065C4A304600][0000065C4A392800 50] Android_Adreno7xx, [0000065C4A309840][0000065C4A390000 50] Android_Adreno7xx_Vulkan, [0000065C4A3040C0][0000065C4A39A000 50] Android_Mali_T6xx, [0000065C4A303D40][0000065C4A385000 50] Android_Mali_T7xx, [0000065C4A308880][0000065C4A395000 50] Android_Mali_T8xx, [0000065C4A306C80][0000065C4A397800 50] Android_Mali_G71, [0000065C4A302F40][0000065C4A3A2800 50] Android_Mali_G72, [0000065C4A30A800][0000065C4A3A0000 50] Android_Mali_G72_Vulkan, [0000065C4A309140][0000065C4A3AA000 50] Android_Mali_G76, [0000065C4A30B440][0000065C4A39C800 50] Android_Mali_G76_Vulkan, [0000065C4A30AB80][0000065C4A35A000 50] Android_Mali_G77, [0000065C4A301F80][0000065C4A3A7800 50] Android_Mali_G77_Vulkan, [0000065C4A303480][0000065C4A3B2800 50] Android_Mali_G78, [0000065C4A30B600][0000065C4A3B0000 50] Android_Mali_G78_Vulkan, [0000065C4A308340][0000065C4A3BA000 50] Android_Mali_G710, [0000065C4A30B980][0000065C4A3A5000 50] Android_Mali_G710_Vulkan, [0000065C4A303B80][0000065C4A3B5000 50] Android_Xclipse_920, [0000065C4A3078C0][0000065C4A3B7800 50] Android_Xclipse_920_Vulkan, [0000065C4A30C400][0000065C4A3C2800 50] Android_Vulkan_SM5, [0000065C4A30AF00][0000065C4A3C0000 50] Android_PowerVR_G6xxx, [0000065C4A308500][0000065C4A3CA000 50] Android_PowerVR_GT7xxx, [0000065C4A30BD00][0000065C4A3BC800 50] Android_PowerVR_GE8xxx, [0000065C4A30C5C0][0000065C4A38C800 50] Android_PowerVR_GM9xxx, [0000065C4A30B0C0][0000065C4A3C7800 50] Android_PowerVR_GM9xxx_Vulkan, [0000065C4A30C940][0000065C4A3D2800 50] Android_TegraK1, [0000065C4A305080][0000065C4A3D0000 50] Android_Unknown_Vulkan, [0000065C4A30D3C0][0000065C4A3DA000 50] Oculus_Quest, [0000065C4A30CB00][0000065C4A3C5000 50] Oculus_Quest2, [0000065C4A30BEC0][0000065C4A3D5000 50] HoloLens, 
+[2025.08.19-03.21.38:154][  0]LogCsvProfiler: Display: Metadata set : deviceprofile="WindowsEditor"
+[2025.08.19-03.21.38:204][  0]LogTurnkeySupport: Turnkey Platform: Win64: (Status=Valid, Installed=10.0.26100.0, AutoSDK=, MinAllowed=10.0.00000.0, MaxAllowed=10.9.99999.0, Flags="InstalledSdk_ValidVersionExists")
+[2025.08.19-03.21.38:262][  0]LogTexture: Display: Oodle Texture Encode Speed settings: Fast: RDO Off Lambda=0, Effort=Normal Final: RDO Off Lambda=0, Effort=Normal
+[2025.08.19-03.21.38:651][  0]LogMeshReduction: Using QuadricMeshReduction for automatic static mesh reduction
+[2025.08.19-03.21.38:651][  0]LogMeshReduction: Using SimplygonMeshReduction for automatic skeletal mesh reduction
+[2025.08.19-03.21.38:651][  0]LogMeshReduction: Using ProxyLODMeshReduction for automatic mesh merging
+[2025.08.19-03.21.38:651][  0]LogMeshReduction: No distributed automatic mesh merging module available
+[2025.08.19-03.21.38:651][  0]LogMeshMerging: No distributed automatic mesh merging module available
+[2025.08.19-03.21.38:730][  0]LogNetVersion: AimToShoot 1.0.0, NetCL: 19505902, EngineNetVer: 23, GameNetVer: 0 (Checksum: 505602641)
+[2025.08.19-03.21.38:968][  0]LogSlate: Border
+[2025.08.19-03.21.38:968][  0]LogSlate: BreadcrumbButton
+[2025.08.19-03.21.38:968][  0]LogSlate: Default
+[2025.08.19-03.21.38:969][  0]LogSlate: Icons.Save
+[2025.08.19-03.21.38:969][  0]LogSlate: Icons.Toolbar.Settings
+[2025.08.19-03.21.38:969][  0]LogSlate: ListView
+[2025.08.19-03.21.38:969][  0]LogSlate: SoftwareCursor_CardinalCross
+[2025.08.19-03.21.38:969][  0]LogSlate: SoftwareCursor_Grab
+[2025.08.19-03.21.38:969][  0]LogSlate: TableView.DarkRow
+[2025.08.19-03.21.38:969][  0]LogSlate: TableView.Row
+[2025.08.19-03.21.38:969][  0]LogSlate: TreeView
+[2025.08.19-03.21.39:376][  0]SourceControl: 源码管理已禁用
+[2025.08.19-03.21.39:421][  0]SourceControl: 源码管理已禁用
+[2025.08.19-03.21.39:421][  0]SourceControl: 源码管理已禁用
+[2025.08.19-03.21.39:575][  0]LogUObjectArray: 20557 objects as part of root set at end of initial load.
+[2025.08.19-03.21.39:575][  0]LogUObjectAllocator: 5584256 out of 0 bytes used by permanent object pool.
+[2025.08.19-03.21.39:575][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
+[2025.08.19-03.21.41:345][  0]LogPython: Using Python 3.9.7
+[2025.08.19-03.21.42:785][  0]LogNiagaraDebuggerClient: Niagara Debugger Client Initialized | Session: C51AECEC493E68C87E9251ABD3EAD5D1 | Instance: 9609A3364C18115275292F9A03413833 (LAPTOP-JS17768L-11400).
+[2025.08.19-03.21.42:969][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2025.08.19-03.21.43:003][  0]LogTcpMessaging: Initializing TcpMessaging bridge
+[2025.08.19-03.21.43:566][  0]SourceControl: 源码管理已禁用
+[2025.08.19-03.21.43:591][  0]SourceControl: 源码管理已禁用
+[2025.08.19-03.21.43:715][  0]SourceControl: 源码管理已禁用
+[2025.08.19-03.21.43:775][  0]LogUProjectInfo: Found projects:
+[2025.08.19-03.21.45:040][  0]LogOpenImageDenoise: OIDN starting up
+[2025.08.19-03.21.45:868][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
+[2025.08.19-03.21.46:007][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2025.08.19-03.21.46:007][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2025.08.19-03.21.46:453][  0]LogCollectionManager: Loaded 0 collections in 0.002066 seconds
+[2025.08.19-03.21.47:044][  0]LogFileCache: Scanning file cache for directory 'E:/engine study/AimToShoot/Saved/Collections/' took 0.00s
+[2025.08.19-03.21.47:044][  0]LogFileCache: Scanning file cache for directory 'E:/engine study/AimToShoot/Content/Developers/18754/Collections/' took 0.00s
+[2025.08.19-03.21.47:044][  0]LogFileCache: Scanning file cache for directory 'E:/engine study/AimToShoot/Content/Collections/' took 0.00s
+[2025.08.19-03.21.47:044][  0]LogEngine: Initializing Engine...
+[2025.08.19-03.21.47:065][  0]LogStylusInput: Initializing StylusInput subsystem.
+[2025.08.19-03.21.47:084][  0]LogStats: UGameplayTagsManager::InitializeManager -  0.000 s
+[2025.08.19-03.21.47:488][  0]LogInit: Initializing FReadOnlyCVARCache
+[2025.08.19-03.21.47:490][  0]LogSubsystemCollection: Failed to initialize subsystem dependency (WorldPartitionSubsystem)
+[2025.08.19-03.21.47:524][  0]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2025.08.19-03.21.47:588][  0]LogAIModule: Creating AISystem for world Untitled
+[2025.08.19-03.21.47:589][  0]LogAudio: Display: Initializing Audio Device Manager...
+[2025.08.19-03.21.47:662][  0]LogAudio: Display: Loading Default Audio Settings Objects...
+[2025.08.19-03.21.47:665][  0]LogAudio: Display: No default SoundConcurrencyObject specified (or failed to load).
+[2025.08.19-03.21.47:665][  0]LogAudio: Display: Registering Engine Module Parameter Interfaces...
+[2025.08.19-03.21.47:666][  0]LogAudio: Display: Audio Device Manager Initialized
+[2025.08.19-03.21.47:666][  0]LogAudio: Display: Creating Audio Device:                 Id: 1, Scope: Shared, Realtime: True
+[2025.08.19-03.21.47:666][  0]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2025.08.19-03.21.47:666][  0]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2025.08.19-03.21.47:666][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2025.08.19-03.21.47:666][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2025.08.19-03.21.47:666][  0]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2025.08.19-03.21.47:666][  0]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2025.08.19-03.21.47:666][  0]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2025.08.19-03.21.47:666][  0]LogAudio: Display: AudioDevice MaxSources: 32
+[2025.08.19-03.21.47:667][  0]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2025.08.19-03.21.47:667][  0]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2025.08.19-03.21.47:667][  0]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2025.08.19-03.21.47:708][  0]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2025.08.19-03.21.47:824][  0]LogAudioMixer: Display: Using Audio Hardware Device 耳机 (iKF-King-S)
+[2025.08.19-03.21.47:824][  0]LogAudioMixer: Display: Initializing Sound Submixes...
+[2025.08.19-03.21.47:833][  0]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2025.08.19-03.21.47:833][  0]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2025.08.19-03.21.47:834][  0]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=1
+[2025.08.19-03.21.47:834][  0]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=1
+[2025.08.19-03.21.47:838][  0]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=1
+[2025.08.19-03.21.47:838][  0]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=1
+[2025.08.19-03.21.47:838][  0]LogInit: FAudioDevice initialized.
+[2025.08.19-03.21.47:838][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'Untitled'.
+[2025.08.19-03.21.47:838][  0]LogNetVersion: Set ProjectVersion to 1.0.0.0. Version Checksum will be recalculated on next use.
+[2025.08.19-03.21.47:838][  0]LogInit: Texture streaming: Enabled
+[2025.08.19-03.21.47:932][  0]LogAnalytics: Display: [UEEditor.Rocket.Release] APIServer = https://datarouter.ol.epicgames.com/. AppVersion = 5.0.3-20979098+++UE5+Release-5.0
+[2025.08.19-03.21.47:962][  0]LogEngineSessionManager: EngineSessionManager initialized
+[2025.08.19-03.21.48:008][  0]LogCsvProfiler: Display: Metadata set : largeworldcoordinates="1"
+[2025.08.19-03.21.48:035][  0]LogLiveCoding: Display: Starting LiveCoding
+[2025.08.19-03.21.48:036][  0]LogLiveCoding: Display: LiveCodingConsole Arguments: AimToShootEditor Win64 Development
+[2025.08.19-03.21.50:938][  0]LogLiveCoding: Display: First instance in process group "UE_AimToShoot_0xe72c37e4", spawning console
+[2025.08.19-03.21.50:938][  0]LogLiveCoding: Display: Waiting for server
+[2025.08.19-03.21.50:938][  0]LogLiveCoding: Display: Successfully initialized, removing startup thread
+[2025.08.19-03.21.51:192][  0]LogInit: Transaction tracking system initialized
+[2025.08.19-03.21.51:349][  0]BlueprintLog: New page: 编辑器加载
+[2025.08.19-03.21.51:994][  0]LocalizationService: 本地化服务已禁用
+[2025.08.19-03.21.52:128][  0]TimingProfiler: Initialize
+[2025.08.19-03.21.52:128][  0]TimingProfiler: OnSessionChanged
+[2025.08.19-03.21.52:128][  0]LoadingProfiler: Initialize
+[2025.08.19-03.21.52:129][  0]LoadingProfiler: OnSessionChanged
+[2025.08.19-03.21.52:129][  0]NetworkingProfiler: Initialize
+[2025.08.19-03.21.52:129][  0]NetworkingProfiler: OnSessionChanged
+[2025.08.19-03.21.52:129][  0]MemoryProfiler: Initialize
+[2025.08.19-03.21.52:129][  0]MemoryProfiler: OnSessionChanged
+[2025.08.19-03.21.53:616][  0]LogFileCache: Scanning file cache for directory 'E:/engine study/AimToShoot/Content/' took 0.09s
+[2025.08.19-03.21.54:083][  0]LogLevelSequenceEditor: LevelSequenceEditor subsystem initialized.
+[2025.08.19-03.21.54:336][  0]LogInit: Display: Engine is initialized. Leaving FEngineLoop::Init()
+[2025.08.19-03.21.54:340][  0]SourceControl: 源码管理已禁用
+[2025.08.19-03.21.54:340][  0]LogUnrealEdMisc: Loading editor; pre map load, took 27.469
+[2025.08.19-03.21.54:340][  0]Cmd: MAP LOAD FILE="E:/engine study/AimToShoot/Content/Current_make/Map/TestMap.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2025.08.19-03.21.54:373][  0]LightingResults: New page: 光照构建
+[2025.08.19-03.21.54:390][  0]LogWorld: UWorld::CleanupWorld for Untitled, bSessionEnded=true, bCleanupResources=true
+[2025.08.19-03.21.54:395][  0]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.08.19-03.21.54:400][  0]MapCheck: New page: 地图检测
+[2025.08.19-03.21.54:400][  0]LightingResults: New page: 光照构建
+[2025.08.19-03.21.54:413][  0]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2025.08.19-03.21.54:444][  0]LogUObjectHash: Compacting FUObjectHashTables data took   0.57ms
+[2025.08.19-03.21.54:505][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'TestMap'.
+[2025.08.19-03.21.54:514][  0]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2025.08.19-03.21.54:514][  0]LogAIModule: Creating AISystem for world TestMap
+[2025.08.19-03.21.54:517][  0]LogWorldPartition: Display: WorldPartition initialize started...
+[2025.08.19-03.21.54:518][  0]LogWorldPartition: UWorldPartition::Initialize(IsEditor=1, IsGame=0, IsCooking=0)
+[2025.08.19-03.21.55:415][  0]LogWorldPartition: Display: WorldPartition initialize took 897 ms
+[2025.08.19-03.21.55:780][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2025.08.19-03.21.55:792][  0]LogUObjectHash: Compacting FUObjectHashTables data took   0.38ms
+[2025.08.19-03.21.55:793][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2025.08.19-03.21.55:795][  0]MapCheck: 地图检测完成：0个错误、0个警告、完成用时1.694毫秒。
+[2025.08.19-03.21.55:795][  0]LogFileHelpers: Loading map 'TestMap' took 1.454
+[2025.08.19-03.21.55:834][  0]LogUnrealEdMisc: Total Editor Startup Time, took 28.963
+[2025.08.19-03.21.55:835][  0]LogShaderCompilers: Display: ================================================
+[2025.08.19-03.21.55:835][  0]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2025.08.19-03.21.55:835][  0]LogShaderCompilers: Display: Total job queries 0, among them cache hits 0 (0.00%)
+[2025.08.19-03.21.55:835][  0]LogShaderCompilers: Display: Tracking 0 distinct input hashes that result in 0 distinct outputs (0.00%)
+[2025.08.19-03.21.55:835][  0]LogShaderCompilers: Display: RAM used: 0.00 MB (0.00 GB) of 819.20 MB (0.80 GB) budget. Usage: 0.00%
+[2025.08.19-03.21.55:835][  0]LogShaderCompilers: Display: === Shader Compilation stats ===
+[2025.08.19-03.21.55:835][  0]LogShaderCompilers: Display: Shaders Compiled: 0
+[2025.08.19-03.21.55:835][  0]LogShaderCompilers: Display: Jobs assigned 0, completed 0 (0.00%)
+[2025.08.19-03.21.55:835][  0]LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 0.00 s
+[2025.08.19-03.21.55:835][  0]LogShaderCompilers: Display: ================================================
+[2025.08.19-03.21.56:052][  0]LogSlate: The tab "LevelEditorToolBar" attempted to spawn in layout 'LevelEditor_Layout_v1.8' but failed for some reason. It will not be displayed.
+[2025.08.19-03.21.56:069][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.08.19-03.21.56:074][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.08.19-03.21.56:080][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.08.19-03.21.56:084][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.08.19-03.21.56:185][  0]LogPakFile: Display: Mounted Pak file 'D:/real engine/UE_5.0/FeaturePacks/StarterContent.upack', mount point: 'root:/'
+[2025.08.19-03.21.56:185][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2025.08.19-03.21.56:188][  0]LogPakFile: Display: Mounted Pak file 'D:/real engine/UE_5.0/FeaturePacks/TP_FirstPerson.upack', mount point: 'root:/'
+[2025.08.19-03.21.56:188][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2025.08.19-03.21.56:190][  0]LogPakFile: Display: Mounted Pak file 'D:/real engine/UE_5.0/FeaturePacks/TP_FirstPersonBP.upack', mount point: 'root:/'
+[2025.08.19-03.21.56:190][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2025.08.19-03.21.56:193][  0]LogPakFile: Display: Mounted Pak file 'D:/real engine/UE_5.0/FeaturePacks/TP_HandheldARBP.upack', mount point: 'root:/'
+[2025.08.19-03.21.56:193][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2025.08.19-03.21.56:198][  0]LogPakFile: Display: Mounted Pak file 'D:/real engine/UE_5.0/FeaturePacks/TP_ThirdPerson.upack', mount point: 'root:/'
+[2025.08.19-03.21.56:198][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2025.08.19-03.21.56:201][  0]LogPakFile: Display: Mounted Pak file 'D:/real engine/UE_5.0/FeaturePacks/TP_ThirdPersonBP.upack', mount point: 'root:/'
+[2025.08.19-03.21.56:201][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2025.08.19-03.21.56:204][  0]LogPakFile: Display: Mounted Pak file 'D:/real engine/UE_5.0/FeaturePacks/TP_TopDown.upack', mount point: 'root:/'
+[2025.08.19-03.21.56:204][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2025.08.19-03.21.56:206][  0]LogPakFile: Display: Mounted Pak file 'D:/real engine/UE_5.0/FeaturePacks/TP_TopDownBP.upack', mount point: 'root:/'
+[2025.08.19-03.21.56:206][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2025.08.19-03.21.56:210][  0]LogPakFile: Display: Mounted Pak file 'D:/real engine/UE_5.0/FeaturePacks/TP_VehicleAdvBP.upack', mount point: 'root:/'
+[2025.08.19-03.21.56:210][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2025.08.19-03.21.56:213][  0]LogPakFile: Display: Mounted Pak file 'D:/real engine/UE_5.0/FeaturePacks/TP_VirtualRealityBP.upack', mount point: 'root:/'
+[2025.08.19-03.21.56:213][  0]LogPakFile: Display: Mount point: 'root:/' is not mounted to a valid Root Path yet, assets in this pak file may not be accessible until a corresponding UFS Mount Point is added through FPackageName::RegisterMountPoint.
+[2025.08.19-03.21.56:214][  0]LogFeaturePack: Error: Error in Feature pack D:/real engine/UE_5.0/FeaturePacks/TP_VirtualRealityBP.upack. Failed to parse manifest: Invalid Json Token. Line: 43 Ch: 4
+[2025.08.19-03.21.56:974][  0]LogSlate: Took 0.000833 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2025.08.19-03.21.56:984][  0]LogSlate: Took 0.007840 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/DroidSansFallback.ttf' (3848K)
+[2025.08.19-03.21.56:988][  0]LogSlate: Took 0.000993 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' (160K)
+[2025.08.19-03.21.56:992][  0]LogSlate: Took 0.000791 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/DroidSansMono.ttf' (77K)
+[2025.08.19-03.21.57:047][  0]LogViewport: Scene viewport resized to 1488x614, mode Windowed.
+[2025.08.19-03.21.58:019][  0]LogStall: Startup...
+[2025.08.19-03.21.58:022][  0]LogStall: Startup complete.
+[2025.08.19-03.21.58:246][  0]LogLoad: (Engine Initialization) Total time: 31.37 seconds
+[2025.08.19-03.21.58:246][  0]LogLoad: (Engine Initialization) Total Blueprint compile time: 0.00 seconds
+[2025.08.19-03.21.58:279][  0]LogAssetRegistry: Asset discovery search completed in 21.3749 seconds
+[2025.08.19-03.21.58:294][  0]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000003 seconds (updated 0 objects)
+[2025.08.19-03.21.58:298][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2025.08.19-03.23.41:114][308]LogDerivedDataCache: C:/Users/18754/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:01.953 and deleted 0 file(s) with total size 0 MiB.
+[2025.08.19-03.25.15:880][627]LogDebuggerCommands: Repeating last play command: 选中的视口
+[2025.08.19-03.25.15:913][627]LogWorldPartition: Display: GenerateStreaming started...
+[2025.08.19-03.25.15:914][627]LogWorldPartition: Display: GetPartitionedActors started...
+[2025.08.19-03.25.15:914][627]LogWorldPartition: Display: ValidateSingleActorReferer started...
+[2025.08.19-03.25.15:914][627]LogWorldPartition: Display: ValidateSingleActorReferer took 7 us
+[2025.08.19-03.25.15:914][627]LogWorldPartition: Display: GetPartitionedActors took 449 us
+[2025.08.19-03.25.16:111][627]LogWorldPartition: Display: GenerateStreaming took 198 ms
+[2025.08.19-03.25.16:120][627]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2025.08.19-03.25.16:127][627]PIE: New page: PIE会话：TestMap（2025年8月19日 下午7:25:16）
+[2025.08.19-03.25.16:144][627]LogOnline: OSS: Created online subsystem instance for: NULL
+[2025.08.19-03.25.16:147][627]LogOnline: OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for module [NULL]
+[2025.08.19-03.25.16:150][627]LogPlayLevel: Creating play world package: /Game/Current_make/Map/UEDPIE_0_TestMap
+[2025.08.19-03.25.16:283][627]LogWorldPartition: Initial Data Layer Effective States Activated() Loaded()
+[2025.08.19-03.25.16:283][627]LogPlayLevel: PIE: StaticDuplicateObject took: (0.133405s)
+[2025.08.19-03.25.16:284][627]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Current_make/Map/TestMap.TestMap to /Game/Current_make/Map/UEDPIE_0_TestMap.TestMap (0.135269s)
+[2025.08.19-03.25.16:284][627]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2025.08.19-03.25.16:284][627]LogAIModule: Creating AISystem for world TestMap
+[2025.08.19-03.25.16:287][627]LogWorldPartition: Display: WorldPartition initialize started...
+[2025.08.19-03.25.16:287][627]LogWorldPartition: UWorldPartition::Initialize(IsEditor=0, IsGame=0, IsCooking=0)
+[2025.08.19-03.25.16:290][627]LogWorldPartition: Display: WorldPartition initialize took 4 ms
+[2025.08.19-03.25.16:292][627]LogPlayLevel: PIE: World Init took: (0.007520s)
+[2025.08.19-03.25.16:298][627]LogUObjectHash: Compacting FUObjectHashTables data took   0.42ms
+[2025.08.19-03.25.16:301][627]LogAudio: Display: Creating Audio Device:                 Id: 2, Scope: Unique, Realtime: True
+[2025.08.19-03.25.16:301][627]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2025.08.19-03.25.16:301][627]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2025.08.19-03.25.16:301][627]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2025.08.19-03.25.16:302][627]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2025.08.19-03.25.16:302][627]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2025.08.19-03.25.16:302][627]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2025.08.19-03.25.16:302][627]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2025.08.19-03.25.16:302][627]LogAudio: Display: AudioDevice MaxSources: 32
+[2025.08.19-03.25.16:302][627]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2025.08.19-03.25.16:302][627]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2025.08.19-03.25.16:302][627]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2025.08.19-03.25.16:307][627]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2025.08.19-03.25.16:374][627]LogAudioMixer: Display: Using Audio Hardware Device 耳机 (iKF-King-S)
+[2025.08.19-03.25.16:376][627]LogAudioMixer: Display: Initializing Sound Submixes...
+[2025.08.19-03.25.16:376][627]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2025.08.19-03.25.16:376][627]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2025.08.19-03.25.16:376][627]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=2
+[2025.08.19-03.25.16:376][627]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=2
+[2025.08.19-03.25.16:382][627]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=2
+[2025.08.19-03.25.16:382][627]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=2
+[2025.08.19-03.25.16:382][627]LogInit: FAudioDevice initialized.
+[2025.08.19-03.25.16:382][627]LogAudio: Display: Audio Device (ID: 2) registered with world 'TestMap'.
+[2025.08.19-03.25.17:731][627]LogLoad: Game class is 'BP_MyGameModeBase_C'
+[2025.08.19-03.25.17:736][627]LogWorld: Bringing World /Game/Current_make/Map/UEDPIE_0_TestMap.TestMap up for play (max tick rate 60) at 2025.08.19-11.25.17
+[2025.08.19-03.25.17:738][627]LogWorld: Bringing up level for play took: 0.005170
+[2025.08.19-03.25.17:743][627]LogOnline: OSS: Created online subsystem instance for: :Context_1
+[2025.08.19-03.25.17:789][627]LogSkeletalMesh: Display: 正在等待骨骼网格体就绪0/1（SKM_Manny）……
+[2025.08.19-03.25.17:870][627]LogWorldPartition: New Streaming Source: PlayerController_0 -> Position: X=-466.487 Y=1625.597 Z=451.988
+[2025.08.19-03.25.17:871][627]LogWorldPartition: UWorldPartitionStreamingPolicy: CellsToActivate(22), CellsToLoad(0), CellsToUnload(0)
+[2025.08.19-03.25.17:872][627]LogWorldPartition: UWorldPartitionStreamingPolicy: Sources[0] = X=-466.487 Y=1625.597 Z=451.988,P=-0.000000 Y=-87.822192 R=0.000000
+[2025.08.19-03.25.17:878][627]LogStreaming: Display: FlushAsyncLoading: 59 QueuedPackages, 0 AsyncPackages
+[2025.08.19-03.25.18:436][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/5/BA/040APLMSC20Z5GN6OZLHCE.StaticMesh_HLOD0_Instancing_10 being ready before playing
+[2025.08.19-03.25.18:437][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/5/BA/040APLMSC20Z5GN6OZLHCE.StaticMesh_HLOD0_Instancing_11 being ready before playing
+[2025.08.19-03.25.18:437][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/5/BA/040APLMSC20Z5GN6OZLHCE.StaticMesh_HLOD0_Instancing_6 being ready before playing
+[2025.08.19-03.25.18:437][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/5/BA/040APLMSC20Z5GN6OZLHCE.StaticMesh_HLOD0_Instancing_7 being ready before playing
+[2025.08.19-03.25.18:437][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/5/BA/040APLMSC20Z5GN6OZLHCE.StaticMesh_HLOD0_Instancing_8 being ready before playing
+[2025.08.19-03.25.18:437][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/5/BA/040APLMSC20Z5GN6OZLHCE.StaticMesh_HLOD0_Instancing_9 being ready before playing
+[2025.08.19-03.25.18:437][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/5/K8/N6QT6UAD5OC56YB3RV9MSS.StaticMesh_HLOD0_Instancing_2 being ready before playing
+[2025.08.19-03.25.18:437][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/5/ZP/PSDBV6ZLHZ449CE5KYINF1.StaticMesh_HLOD0_Instancing_10 being ready before playing
+[2025.08.19-03.25.18:437][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/5/ZP/PSDBV6ZLHZ449CE5KYINF1.StaticMesh_HLOD0_Instancing_11 being ready before playing
+[2025.08.19-03.25.18:437][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/5/ZP/PSDBV6ZLHZ449CE5KYINF1.StaticMesh_HLOD0_Instancing_12 being ready before playing
+[2025.08.19-03.25.18:437][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/5/ZP/PSDBV6ZLHZ449CE5KYINF1.StaticMesh_HLOD0_Instancing_13 being ready before playing
+[2025.08.19-03.25.18:437][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/5/ZP/PSDBV6ZLHZ449CE5KYINF1.StaticMesh_HLOD0_Instancing_7 being ready before playing
+[2025.08.19-03.25.18:437][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/5/ZP/PSDBV6ZLHZ449CE5KYINF1.StaticMesh_HLOD0_Instancing_8 being ready before playing
+[2025.08.19-03.25.18:437][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/5/ZP/PSDBV6ZLHZ449CE5KYINF1.StaticMesh_HLOD0_Instancing_9 being ready before playing
+[2025.08.19-03.25.18:437][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/9/73/D80NCSI78MRXN132JQ1KYO.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.08.19-03.25.18:437][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/E/IJ/RUD1L00Y6HJ4KG8N2WU2UV.StaticMesh_HLOD0_Instancing_5 being ready before playing
+[2025.08.19-03.25.18:437][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/E/IJ/RUD1L00Y6HJ4KG8N2WU2UV.StaticMesh_HLOD0_Instancing_6 being ready before playing
+[2025.08.19-03.25.18:438][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/E/IJ/RUD1L00Y6HJ4KG8N2WU2UV.StaticMesh_HLOD0_Instancing_7 being ready before playing
+[2025.08.19-03.25.18:438][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/E/IJ/RUD1L00Y6HJ4KG8N2WU2UV.StaticMesh_HLOD0_Instancing_8 being ready before playing
+[2025.08.19-03.25.18:438][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/E/IJ/RUD1L00Y6HJ4KG8N2WU2UV.StaticMesh_HLOD0_Instancing_9 being ready before playing
+[2025.08.19-03.25.18:438][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/E/CD/N7UZQKOYIF2FZODP6SQ9Q2.StaticMesh_HLOD0_Instancing_2 being ready before playing
+[2025.08.19-03.25.18:438][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/E/CD/N7UZQKOYIF2FZODP6SQ9Q2.StaticMesh_HLOD0_Instancing_3 being ready before playing
+[2025.08.19-03.25.18:438][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/6/5D/W7ETR41G7MX5XC7523ENSG.StaticMesh_HLOD0_Instancing_2 being ready before playing
+[2025.08.19-03.25.18:438][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/6/5D/W7ETR41G7MX5XC7523ENSG.StaticMesh_HLOD0_Instancing_3 being ready before playing
+[2025.08.19-03.25.18:438][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/6/QZ/0CP247QMRALBPDRYY73RR6.StaticMesh_HLOD0_Instancing_2 being ready before playing
+[2025.08.19-03.25.18:438][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/A/0T/1PV804W1N9B92Z9NEYPB5E.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.08.19-03.25.18:438][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/A/JA/AFPKV8MK087GD8TOIQO1F0.StaticMesh_HLOD0_Instancing_2 being ready before playing
+[2025.08.19-03.25.18:438][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/3/7U/QRTBH1D3TEFLHPVH5XDZDD.StaticMesh_HLOD0_Instancing_10 being ready before playing
+[2025.08.19-03.25.18:438][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/3/7U/QRTBH1D3TEFLHPVH5XDZDD.StaticMesh_HLOD0_Instancing_11 being ready before playing
+[2025.08.19-03.25.18:438][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/3/7U/QRTBH1D3TEFLHPVH5XDZDD.StaticMesh_HLOD0_Instancing_6 being ready before playing
+[2025.08.19-03.25.18:438][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/3/7U/QRTBH1D3TEFLHPVH5XDZDD.StaticMesh_HLOD0_Instancing_7 being ready before playing
+[2025.08.19-03.25.18:438][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/3/7U/QRTBH1D3TEFLHPVH5XDZDD.StaticMesh_HLOD0_Instancing_8 being ready before playing
+[2025.08.19-03.25.18:438][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/3/7U/QRTBH1D3TEFLHPVH5XDZDD.StaticMesh_HLOD0_Instancing_9 being ready before playing
+[2025.08.19-03.25.18:438][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/4/U2/4KJ5SS34SRELZ93JZTF3AP.StaticMesh_HLOD0_Instancing_2 being ready before playing
+[2025.08.19-03.25.18:439][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/4/U2/4KJ5SS34SRELZ93JZTF3AP.StaticMesh_HLOD0_Instancing_3 being ready before playing
+[2025.08.19-03.25.18:439][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/4/GX/HZ0O5LVUDT2ALWAHSJG5DU.StaticMesh_HLOD0_Instancing_4 being ready before playing
+[2025.08.19-03.25.18:439][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/4/GX/HZ0O5LVUDT2ALWAHSJG5DU.StaticMesh_HLOD0_Instancing_5 being ready before playing
+[2025.08.19-03.25.18:439][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/0/MB/QAU8MP51FATXXK1M77BNLT.StaticMesh_HLOD0_Instancing_3 being ready before playing
+[2025.08.19-03.25.18:439][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/0/MB/QAU8MP51FATXXK1M77BNLT.StaticMesh_HLOD0_Instancing_4 being ready before playing
+[2025.08.19-03.25.18:439][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/0/MB/QAU8MP51FATXXK1M77BNLT.StaticMesh_HLOD0_Instancing_5 being ready before playing
+[2025.08.19-03.25.18:439][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/0/0T/BMLO6LPJIGH3SWU9NUS0FO.StaticMesh_HLOD0_Instancing_2 being ready before playing
+[2025.08.19-03.25.18:439][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/0/0T/BMLO6LPJIGH3SWU9NUS0FO.StaticMesh_HLOD0_Instancing_3 being ready before playing
+[2025.08.19-03.25.18:439][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/C/NU/KLI0LUKV45KECXYREFQE5E.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.08.19-03.25.18:439][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/B/A8/7F0IUL0PGW2EFP17VE3QH3.StaticMesh_HLOD0_Instancing_2 being ready before playing
+[2025.08.19-03.25.18:439][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/7/AQ/ULZWUXOBBL99QCQVL06VJ6.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.08.19-03.25.18:439][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/7/V1/V1IMGG8L344COA3YUK17EL.StaticMesh_HLOD0_Instancing_2 being ready before playing
+[2025.08.19-03.25.18:439][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/7/V1/V1IMGG8L344COA3YUK17EL.StaticMesh_HLOD0_Instancing_3 being ready before playing
+[2025.08.19-03.25.18:439][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/7/8I/1YH88JJ2CC9NBYQWW4R841.StaticMesh_HLOD0_Instancing_2 being ready before playing
+[2025.08.19-03.25.18:440][627]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/__ExternalActors__/Current_make/Map/TestMap/7/RI/UNU5CGYC5H0BDQ4VX0370O.StaticMesh_HLOD0_Instancing_2 being ready before playing
+[2025.08.19-03.25.18:475][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X-1_Y-1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_2_2_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X-1_Y-1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_2_2_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:475][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X-2_Y-2_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_0_0_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X-2_Y-2_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_0_0_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:475][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X-1_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_2_4_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X-1_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_2_4_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:475][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X-1_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_2_5_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X-1_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_2_5_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:475][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X-1_Y-2_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_2_0_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X-1_Y-2_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_2_0_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:475][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X1_Y-2_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_7_0_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X1_Y-2_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_7_0_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:475][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L0_X0_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_4_4_0" parameter 'NormalTexture' assigned texture "BaseFlattenNormalMap_VT" requires non-virtual texture
+[2025.08.19-03.25.18:475][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X1_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_7_4_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X1_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_7_4_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:475][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X1_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_7_5_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X1_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_7_5_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:476][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X0_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_4_5_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X0_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_4_5_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:476][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X0_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_5_5_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X0_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_5_5_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:476][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X0_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_5_4_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X0_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_5_4_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:476][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X0_Y-1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_5_2_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X0_Y-1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_5_2_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:476][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X0_Y-1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_4_2_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X0_Y-1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_4_2_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:476][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X-2_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_0_5_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X-2_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_0_5_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:476][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X-2_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_0_4_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X-2_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_0_4_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:476][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X-1_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_1_5_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X-1_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_1_5_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:476][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X-1_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_0_6_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X-1_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_0_6_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:476][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X-1_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_1_6_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X-1_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_1_6_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:476][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X-1_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_2_6_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X-1_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_2_6_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:476][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X-1_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_1_7_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X-1_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_1_7_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:476][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X-1_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_1_4_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X-1_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_1_4_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:476][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X-1_Y1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_2_7_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X-1_Y1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_2_7_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:476][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X1_Y1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_7_7_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X1_Y1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_7_7_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:476][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X1_Y-1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_7_2_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X1_Y-1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_7_2_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:476][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X0_Y-2_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_5_0_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X0_Y-2_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_5_0_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X0_Y-2_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_4_0_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X0_Y-2_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_4_0_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X0_Y1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_4_7_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X0_Y1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_4_7_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X0_Y1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_5_7_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X0_Y1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_5_7_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X-1_Y-1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_1_0_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X-1_Y-1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_1_0_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X-1_Y-1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_1_1_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X-1_Y-1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_1_1_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X-1_Y-1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_0_1_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X-1_Y-1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_0_1_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X-1_Y-1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_1_2_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X-1_Y-1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_1_2_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X-1_Y-1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_2_1_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X-1_Y-1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_2_1_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X-2_Y-1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_0_2_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X-2_Y-1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_0_2_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X0_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_6_6_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X0_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_6_6_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X0_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_6_7_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X0_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_6_7_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X0_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_6_4_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X0_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_6_4_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X0_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_7_6_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X0_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_7_6_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X0_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_4_6_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X0_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_4_6_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X0_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_5_6_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X0_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_5_6_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X0_Y0_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_6_5_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X0_Y0_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_6_5_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L1_X-2_Y1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_0_7_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L1_X-2_Y1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_0_7_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X0_Y-1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_6_0_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X0_Y-1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_6_0_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:477][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X0_Y-1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_7_1_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X0_Y-1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_7_1_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:478][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X0_Y-1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_6_1_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X0_Y-1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_6_1_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:478][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X0_Y-1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_6_2_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X0_Y-1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_6_2_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:478][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X0_Y-1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_4_1_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X0_Y-1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_4_1_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:478][627]LogMaterial: Error: MaterialInstance "M_HLOD0_OpenWorld_MainGrid_L2_X0_Y-1_DL0LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_5_1_0" parameter 'NormalTexture' assigned texture "HLOD0_OpenWorld_MainGrid_L2_X0_Y-1_DL0T_LandscapeStreamingProxy_D7T4VF4LBP34PHV9XOEVM5TIG_1_5_1_0_Normal" requires non-virtual texture
+[2025.08.19-03.25.18:550][627]PIE: 登陆的服务器
+[2025.08.19-03.25.18:552][627]PIE: PIE总开始时间：2.658秒。
+[2025.08.19-03.25.21:593][772]LogTemp: TryPickUp Callable
+[2025.08.19-03.25.21:594][772]LogActor: Warning: BP_RifleWeapon_C /Game/Current_make/Map/UEDPIE_0_TestMap.TestMap:PersistentLevel.BP_RifleWeapon_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2025.08.19-03.25.21:596][772]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:596][772]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.21:597][772]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:597][772]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.21:597][772]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:597][772]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.21:597][772]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:597][772]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.21:597][772]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:597][772]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.21:597][772]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:597][772]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.21:597][772]LogTemp: Update item grid
+[2025.08.19-03.25.21:597][772]LogTemp: Show Icon
+[2025.08.19-03.25.21:597][772]LogTemp: Update item grid
+[2025.08.19-03.25.21:597][772]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:597][772]LogTemp: Update item grid
+[2025.08.19-03.25.21:597][772]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:597][772]LogTemp: Update item grid
+[2025.08.19-03.25.21:597][772]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:597][772]LogTemp: Update item grid
+[2025.08.19-03.25.21:597][772]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:597][772]LogTemp: Update item grid
+[2025.08.19-03.25.21:597][772]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:597][772]LogTemp: Update item grid
+[2025.08.19-03.25.21:598][772]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:598][772]LogTemp: Update item grid
+[2025.08.19-03.25.21:598][772]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:598][772]LogTemp: Update item grid
+[2025.08.19-03.25.21:598][772]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:598][772]LogTemp: Update item grid
+[2025.08.19-03.25.21:598][772]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:598][772]LogTemp: Update item grid
+[2025.08.19-03.25.21:598][772]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:598][772]LogTemp: Update item grid
+[2025.08.19-03.25.21:598][772]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:776][783]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:777][783]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.21:777][783]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:777][783]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.21:777][783]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:777][783]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.21:777][783]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:777][783]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.21:777][783]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:777][783]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.21:777][783]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:777][783]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.21:777][783]LogTemp: Update item grid
+[2025.08.19-03.25.21:777][783]LogTemp: Show Icon
+[2025.08.19-03.25.21:777][783]LogTemp: Update item grid
+[2025.08.19-03.25.21:777][783]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:777][783]LogTemp: Update item grid
+[2025.08.19-03.25.21:777][783]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:777][783]LogTemp: Update item grid
+[2025.08.19-03.25.21:777][783]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:779][783]LogTemp: Update item grid
+[2025.08.19-03.25.21:779][783]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:779][783]LogTemp: Update item grid
+[2025.08.19-03.25.21:779][783]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:779][783]LogTemp: Update item grid
+[2025.08.19-03.25.21:779][783]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:779][783]LogTemp: Update item grid
+[2025.08.19-03.25.21:779][783]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:779][783]LogTemp: Update item grid
+[2025.08.19-03.25.21:779][783]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:779][783]LogTemp: Update item grid
+[2025.08.19-03.25.21:779][783]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:779][783]LogTemp: Update item grid
+[2025.08.19-03.25.21:779][783]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:779][783]LogTemp: Update item grid
+[2025.08.19-03.25.21:779][783]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.21:779][783]LogTemp: open BackPack
+[2025.08.19-03.25.21:780][783]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> DoNotLock
+[2025.08.19-03.25.21:780][783]LogViewport: Display: Viewport HideCursorDuringCapture Changed, False -> True
+[2025.08.19-03.25.21:780][783]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently_IncludingInitialMouseDown -> CaptureDuringMouseDown
+[2025.08.19-03.25.22:493][826]LogViewport: Display: Viewport MouseLockMode Changed, DoNotLock -> LockOnCapture
+[2025.08.19-03.25.22:493][826]LogViewport: Display: Viewport MouseCaptureMode Changed, CaptureDuringMouseDown -> CapturePermanently
+[2025.08.19-03.25.23:644][895]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.23:644][895]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.23:644][895]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.23:644][895]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.23:644][895]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.23:644][895]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.23:645][895]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.23:645][895]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.23:645][895]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.23:645][895]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.23:645][895]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.23:645][895]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.23:645][895]LogTemp: Update item grid
+[2025.08.19-03.25.23:645][895]LogTemp: Show Icon
+[2025.08.19-03.25.23:645][895]LogTemp: Update item grid
+[2025.08.19-03.25.23:645][895]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.23:645][895]LogTemp: Update item grid
+[2025.08.19-03.25.23:645][895]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.23:645][895]LogTemp: Update item grid
+[2025.08.19-03.25.23:645][895]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.23:645][895]LogTemp: Update item grid
+[2025.08.19-03.25.23:645][895]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.23:646][895]LogTemp: Update item grid
+[2025.08.19-03.25.23:646][895]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.23:646][895]LogTemp: Update item grid
+[2025.08.19-03.25.23:646][895]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.23:646][895]LogTemp: Update item grid
+[2025.08.19-03.25.23:646][895]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.23:646][895]LogTemp: Update item grid
+[2025.08.19-03.25.23:646][895]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.23:646][895]LogTemp: Update item grid
+[2025.08.19-03.25.23:646][895]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.23:647][895]LogTemp: Update item grid
+[2025.08.19-03.25.23:647][895]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.23:647][895]LogTemp: Update item grid
+[2025.08.19-03.25.23:647][895]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.23:647][895]LogTemp: open BackPack
+[2025.08.19-03.25.23:647][895]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> DoNotLock
+[2025.08.19-03.25.23:647][895]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently -> CaptureDuringMouseDown
+[2025.08.19-03.25.24:292][934]LogTemp: press of mouse left
+[2025.08.19-03.25.24:326][936]LogTemp: Show Icon
+[2025.08.19-03.25.24:642][955]LogTemp: song kai shu biao zuo jian
+[2025.08.19-03.25.24:642][955]LogTemp: man zu jiao huan shu ju
+[2025.08.19-03.25.24:642][955]LogTemp: Show Icon
+[2025.08.19-03.25.24:642][955]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.24:861][968]LogViewport: Display: Viewport MouseLockMode Changed, DoNotLock -> LockOnCapture
+[2025.08.19-03.25.24:861][968]LogViewport: Display: Viewport MouseCaptureMode Changed, CaptureDuringMouseDown -> CapturePermanently
+[2025.08.19-03.25.25:277][993]LogTemp: TryPickUp Callable
+[2025.08.19-03.25.25:277][993]LogActor: Warning: BP_RifleWeapon_C /Game/Current_make/Map/UEDPIE_0_TestMap.TestMap:PersistentLevel.BP_RifleWeapon_C_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2025.08.19-03.25.25:277][993]LogTemp: Show Icon
+[2025.08.19-03.25.25:277][993]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.25:278][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:278][993]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.25:278][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:278][993]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.25:278][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:278][993]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.25:278][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:278][993]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.25:278][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:278][993]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.25:278][993]LogTemp: Update item grid
+[2025.08.19-03.25.25:278][993]LogTemp: Show Icon
+[2025.08.19-03.25.25:278][993]LogTemp: Update item grid
+[2025.08.19-03.25.25:278][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:278][993]LogTemp: Update item grid
+[2025.08.19-03.25.25:278][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:278][993]LogTemp: Update item grid
+[2025.08.19-03.25.25:279][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:279][993]LogTemp: Update item grid
+[2025.08.19-03.25.25:279][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:279][993]LogTemp: Update item grid
+[2025.08.19-03.25.25:279][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:279][993]LogTemp: Update item grid
+[2025.08.19-03.25.25:279][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:279][993]LogTemp: Update item grid
+[2025.08.19-03.25.25:279][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:279][993]LogTemp: Update item grid
+[2025.08.19-03.25.25:279][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:279][993]LogTemp: Update item grid
+[2025.08.19-03.25.25:279][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:279][993]LogTemp: Update item grid
+[2025.08.19-03.25.25:279][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:279][993]LogTemp: Update item grid
+[2025.08.19-03.25.25:279][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:444][  3]LogTemp: TryPickUp Callable
+[2025.08.19-03.25.25:444][  3]LogTemp: Show Icon
+[2025.08.19-03.25.25:444][  3]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.25:444][  3]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:444][  3]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.25:444][  3]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:444][  3]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.25:444][  3]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:444][  3]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.25:444][  3]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:445][  3]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.25:445][  3]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:445][  3]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.25:445][  3]LogTemp: Update item grid
+[2025.08.19-03.25.25:445][  3]LogTemp: Show Icon
+[2025.08.19-03.25.25:445][  3]LogTemp: Update item grid
+[2025.08.19-03.25.25:445][  3]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:445][  3]LogTemp: Update item grid
+[2025.08.19-03.25.25:445][  3]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:445][  3]LogTemp: Update item grid
+[2025.08.19-03.25.25:445][  3]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:445][  3]LogTemp: Update item grid
+[2025.08.19-03.25.25:445][  3]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:445][  3]LogTemp: Update item grid
+[2025.08.19-03.25.25:446][  3]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:446][  3]LogTemp: Update item grid
+[2025.08.19-03.25.25:446][  3]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:446][  3]LogTemp: Update item grid
+[2025.08.19-03.25.25:446][  3]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:446][  3]LogTemp: Update item grid
+[2025.08.19-03.25.25:446][  3]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:446][  3]LogTemp: Update item grid
+[2025.08.19-03.25.25:446][  3]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:446][  3]LogTemp: Update item grid
+[2025.08.19-03.25.25:446][  3]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:446][  3]LogTemp: Update item grid
+[2025.08.19-03.25.25:446][  3]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:711][ 19]LogTemp: TryPickUp Callable
+[2025.08.19-03.25.25:711][ 19]LogTemp: Show Icon
+[2025.08.19-03.25.25:711][ 19]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.25:711][ 19]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:711][ 19]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.25:711][ 19]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:711][ 19]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.25:711][ 19]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:711][ 19]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.25:711][ 19]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:711][ 19]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.25:711][ 19]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:711][ 19]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.25:711][ 19]LogTemp: Update item grid
+[2025.08.19-03.25.25:711][ 19]LogTemp: Show Icon
+[2025.08.19-03.25.25:712][ 19]LogTemp: Update item grid
+[2025.08.19-03.25.25:712][ 19]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:712][ 19]LogTemp: Update item grid
+[2025.08.19-03.25.25:712][ 19]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:712][ 19]LogTemp: Update item grid
+[2025.08.19-03.25.25:712][ 19]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:712][ 19]LogTemp: Update item grid
+[2025.08.19-03.25.25:712][ 19]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:712][ 19]LogTemp: Update item grid
+[2025.08.19-03.25.25:712][ 19]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:712][ 19]LogTemp: Update item grid
+[2025.08.19-03.25.25:712][ 19]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:712][ 19]LogTemp: Update item grid
+[2025.08.19-03.25.25:712][ 19]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:712][ 19]LogTemp: Update item grid
+[2025.08.19-03.25.25:712][ 19]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:712][ 19]LogTemp: Update item grid
+[2025.08.19-03.25.25:712][ 19]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:712][ 19]LogTemp: Update item grid
+[2025.08.19-03.25.25:712][ 19]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.25:712][ 19]LogTemp: Update item grid
+[2025.08.19-03.25.25:712][ 19]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:326][ 56]LogTemp: Show Icon
+[2025.08.19-03.25.26:326][ 56]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.26:326][ 56]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:326][ 56]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.26:326][ 56]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:326][ 56]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.26:326][ 56]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:326][ 56]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.26:326][ 56]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:328][ 56]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.26:328][ 56]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:328][ 56]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.26:328][ 56]LogTemp: Update item grid
+[2025.08.19-03.25.26:328][ 56]LogTemp: Show Icon
+[2025.08.19-03.25.26:328][ 56]LogTemp: Update item grid
+[2025.08.19-03.25.26:328][ 56]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:328][ 56]LogTemp: Update item grid
+[2025.08.19-03.25.26:328][ 56]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:328][ 56]LogTemp: Update item grid
+[2025.08.19-03.25.26:328][ 56]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:328][ 56]LogTemp: Update item grid
+[2025.08.19-03.25.26:328][ 56]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:328][ 56]LogTemp: Update item grid
+[2025.08.19-03.25.26:328][ 56]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:328][ 56]LogTemp: Update item grid
+[2025.08.19-03.25.26:328][ 56]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:328][ 56]LogTemp: Update item grid
+[2025.08.19-03.25.26:328][ 56]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:328][ 56]LogTemp: Update item grid
+[2025.08.19-03.25.26:329][ 56]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:329][ 56]LogTemp: Update item grid
+[2025.08.19-03.25.26:329][ 56]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:329][ 56]LogTemp: Update item grid
+[2025.08.19-03.25.26:329][ 56]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:329][ 56]LogTemp: Update item grid
+[2025.08.19-03.25.26:329][ 56]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:329][ 56]LogTemp: open BackPack
+[2025.08.19-03.25.26:329][ 56]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> DoNotLock
+[2025.08.19-03.25.26:329][ 56]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently -> CaptureDuringMouseDown
+[2025.08.19-03.25.26:460][ 64]LogTemp: TryPickUp Callable
+[2025.08.19-03.25.26:460][ 64]LogActor: Warning: BP_RifleWeapon_C /Game/Current_make/Map/UEDPIE_0_TestMap.TestMap:PersistentLevel.BP_RifleWeapon_C_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2025.08.19-03.25.26:461][ 64]LogTemp: Show Icon
+[2025.08.19-03.25.26:461][ 64]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.26:461][ 64]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:461][ 64]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.26:461][ 64]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:461][ 64]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.26:461][ 64]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:461][ 64]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.26:461][ 64]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:461][ 64]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.26:461][ 64]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:461][ 64]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.26:461][ 64]LogTemp: Update item grid
+[2025.08.19-03.25.26:461][ 64]LogTemp: Show Icon
+[2025.08.19-03.25.26:461][ 64]LogTemp: Update item grid
+[2025.08.19-03.25.26:461][ 64]LogTemp: Show Icon
+[2025.08.19-03.25.26:461][ 64]LogTemp: Update item grid
+[2025.08.19-03.25.26:461][ 64]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:461][ 64]LogTemp: Update item grid
+[2025.08.19-03.25.26:463][ 64]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:463][ 64]LogTemp: Update item grid
+[2025.08.19-03.25.26:463][ 64]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:463][ 64]LogTemp: Update item grid
+[2025.08.19-03.25.26:463][ 64]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:463][ 64]LogTemp: Update item grid
+[2025.08.19-03.25.26:463][ 64]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:463][ 64]LogTemp: Update item grid
+[2025.08.19-03.25.26:463][ 64]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:463][ 64]LogTemp: Update item grid
+[2025.08.19-03.25.26:463][ 64]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:463][ 64]LogTemp: Update item grid
+[2025.08.19-03.25.26:463][ 64]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:463][ 64]LogTemp: Update item grid
+[2025.08.19-03.25.26:463][ 64]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.26:463][ 64]LogTemp: Update item grid
+[2025.08.19-03.25.26:463][ 64]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.27:209][109]LogTemp: press of mouse left
+[2025.08.19-03.25.27:242][111]LogTemp: Show Icon
+[2025.08.19-03.25.27:492][126]LogTemp: song kai shu biao zuo jian
+[2025.08.19-03.25.27:492][126]LogTemp: man zu jiao huan shu ju
+[2025.08.19-03.25.27:492][126]LogTemp: Show Icon
+[2025.08.19-03.25.27:492][126]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.27:925][152]LogTemp: press of mouse left
+[2025.08.19-03.25.27:942][153]LogTemp: Show Icon
+[2025.08.19-03.25.28:393][180]LogTemp: song kai shu biao zuo jian
+[2025.08.19-03.25.28:393][180]LogTemp: man zu jiao huan shu ju
+[2025.08.19-03.25.28:393][180]LogTemp: Show Icon
+[2025.08.19-03.25.28:393][180]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.28:559][190]LogViewport: Display: Viewport MouseLockMode Changed, DoNotLock -> LockOnCapture
+[2025.08.19-03.25.28:560][190]LogViewport: Display: Viewport MouseCaptureMode Changed, CaptureDuringMouseDown -> CapturePermanently
+[2025.08.19-03.25.30:959][334]LogTemp: input select 1
+[2025.08.19-03.25.31:328][356]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.31:378][359]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.31:427][362]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.31:477][365]LogTemp: damage CurrentHealth
+[2025.08.19-03.25.31:479][365]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.31:529][368]LogTemp: damage CurrentHealth
+[2025.08.19-03.25.31:532][368]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.31:578][371]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.31:628][374]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.31:677][377]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.31:728][380]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.31:778][383]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.32:844][447]LogTemp: input select 2
+[2025.08.19-03.25.33:412][481]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.33:462][484]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.33:629][494]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.33:679][497]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.33:978][515]LogTemp: input select 3
+[2025.08.19-03.25.34:230][530]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.34:279][533]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.34:763][562]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.34:812][565]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.34:863][568]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.34:913][571]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.34:963][574]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.35:013][577]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.35:428][602]LogTemp: input select 1
+[2025.08.19-03.25.35:596][612]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.35:646][615]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.35:697][618]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.35:896][630]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.35:947][633]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.36:331][656]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.36:380][659]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.36:430][662]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.36:481][665]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.36:530][668]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.36:581][671]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.36:630][674]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.36:680][677]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.36:730][680]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.36:780][683]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.36:813][685]LogTemp: input select 2
+[2025.08.19-03.25.37:681][737]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.37:730][740]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.37:780][743]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.37:830][746]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.38:646][795]LogTemp: Show Icon
+[2025.08.19-03.25.38:646][795]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.38:646][795]LogTemp: Show Icon
+[2025.08.19-03.25.38:646][795]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.38:646][795]LogTemp: Show Icon
+[2025.08.19-03.25.38:647][795]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.38:647][795]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.38:647][795]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.38:647][795]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.38:647][795]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.38:647][795]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.38:647][795]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.38:647][795]LogTemp: Update item grid
+[2025.08.19-03.25.38:647][795]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.38:647][795]LogTemp: Update item grid
+[2025.08.19-03.25.38:647][795]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.38:647][795]LogTemp: Update item grid
+[2025.08.19-03.25.38:647][795]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.38:647][795]LogTemp: Update item grid
+[2025.08.19-03.25.38:647][795]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.38:647][795]LogTemp: Update item grid
+[2025.08.19-03.25.38:647][795]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.38:647][795]LogTemp: Update item grid
+[2025.08.19-03.25.38:647][795]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.38:648][795]LogTemp: Update item grid
+[2025.08.19-03.25.38:648][795]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.38:648][795]LogTemp: Update item grid
+[2025.08.19-03.25.38:648][795]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.38:648][795]LogTemp: Update item grid
+[2025.08.19-03.25.38:648][795]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.38:648][795]LogTemp: Update item grid
+[2025.08.19-03.25.38:648][795]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.38:648][795]LogTemp: Update item grid
+[2025.08.19-03.25.38:648][795]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.38:648][795]LogTemp: Update item grid
+[2025.08.19-03.25.38:648][795]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.38:648][795]LogTemp: open BackPack
+[2025.08.19-03.25.38:648][795]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> DoNotLock
+[2025.08.19-03.25.38:648][795]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently -> CaptureDuringMouseDown
+[2025.08.19-03.25.39:595][852]LogTemp: press of mouse left
+[2025.08.19-03.25.39:662][856]LogTemp: Show Icon
+[2025.08.19-03.25.40:330][896]LogViewport: Display: Viewport MouseLockMode Changed, DoNotLock -> LockOnCapture
+[2025.08.19-03.25.40:331][896]LogViewport: Display: Viewport MouseCaptureMode Changed, CaptureDuringMouseDown -> CapturePermanently
+[2025.08.19-03.25.40:680][917]LogTemp: Show Icon
+[2025.08.19-03.25.40:680][917]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.40:680][917]LogTemp: Show Icon
+[2025.08.19-03.25.40:680][917]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.40:680][917]LogTemp: Show Icon
+[2025.08.19-03.25.40:680][917]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.40:680][917]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.40:680][917]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.40:680][917]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.40:680][917]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.40:680][917]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.40:680][917]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.40:680][917]LogTemp: Update item grid
+[2025.08.19-03.25.40:680][917]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.40:680][917]LogTemp: Update item grid
+[2025.08.19-03.25.40:680][917]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.40:680][917]LogTemp: Update item grid
+[2025.08.19-03.25.40:680][917]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.40:680][917]LogTemp: Update item grid
+[2025.08.19-03.25.40:680][917]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.40:682][917]LogTemp: Update item grid
+[2025.08.19-03.25.40:682][917]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.40:682][917]LogTemp: Update item grid
+[2025.08.19-03.25.40:682][917]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.40:682][917]LogTemp: Update item grid
+[2025.08.19-03.25.40:682][917]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.40:682][917]LogTemp: Update item grid
+[2025.08.19-03.25.40:682][917]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.40:682][917]LogTemp: Update item grid
+[2025.08.19-03.25.40:682][917]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.40:682][917]LogTemp: Update item grid
+[2025.08.19-03.25.40:682][917]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.40:682][917]LogTemp: Update item grid
+[2025.08.19-03.25.40:682][917]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.40:682][917]LogTemp: Update item grid
+[2025.08.19-03.25.40:682][917]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.40:682][917]LogTemp: open BackPack
+[2025.08.19-03.25.40:682][917]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> DoNotLock
+[2025.08.19-03.25.40:682][917]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently -> CaptureDuringMouseDown
+[2025.08.19-03.25.41:112][943]LogTemp: press of mouse left
+[2025.08.19-03.25.41:145][945]LogTemp: Show Icon
+[2025.08.19-03.25.41:545][969]LogTemp: song kai shu biao zuo jian
+[2025.08.19-03.25.41:545][969]LogTemp: man zu jiao huan shu ju
+[2025.08.19-03.25.41:545][969]LogTemp: Show Icon
+[2025.08.19-03.25.41:545][969]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.41:630][974]LogViewport: Display: Viewport MouseLockMode Changed, DoNotLock -> LockOnCapture
+[2025.08.19-03.25.41:630][974]LogViewport: Display: Viewport MouseCaptureMode Changed, CaptureDuringMouseDown -> CapturePermanently
+[2025.08.19-03.25.42:163][  6]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.42:163][  6]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.42:163][  6]LogTemp: Show Icon
+[2025.08.19-03.25.42:163][  6]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.42:163][  6]LogTemp: Show Icon
+[2025.08.19-03.25.42:163][  6]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.42:163][  6]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.42:163][  6]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.42:163][  6]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.42:163][  6]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.42:163][  6]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.42:163][  6]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.42:163][  6]LogTemp: Update item grid
+[2025.08.19-03.25.42:164][  6]LogTemp: Show Icon
+[2025.08.19-03.25.42:164][  6]LogTemp: Update item grid
+[2025.08.19-03.25.42:164][  6]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.42:164][  6]LogTemp: Update item grid
+[2025.08.19-03.25.42:164][  6]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.42:164][  6]LogTemp: Update item grid
+[2025.08.19-03.25.42:164][  6]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.42:164][  6]LogTemp: Update item grid
+[2025.08.19-03.25.42:164][  6]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.42:164][  6]LogTemp: Update item grid
+[2025.08.19-03.25.42:164][  6]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.42:164][  6]LogTemp: Update item grid
+[2025.08.19-03.25.42:164][  6]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.42:164][  6]LogTemp: Update item grid
+[2025.08.19-03.25.42:164][  6]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.42:164][  6]LogTemp: Update item grid
+[2025.08.19-03.25.42:164][  6]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.42:164][  6]LogTemp: Update item grid
+[2025.08.19-03.25.42:164][  6]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.42:164][  6]LogTemp: Update item grid
+[2025.08.19-03.25.42:164][  6]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.42:165][  6]LogTemp: Update item grid
+[2025.08.19-03.25.42:165][  6]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.42:165][  6]LogTemp: open BackPack
+[2025.08.19-03.25.42:165][  6]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> DoNotLock
+[2025.08.19-03.25.42:165][  6]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently -> CaptureDuringMouseDown
+[2025.08.19-03.25.42:712][ 39]LogTemp: press of mouse left
+[2025.08.19-03.25.42:762][ 42]LogTemp: Show Icon
+[2025.08.19-03.25.43:112][ 63]LogTemp: song kai shu biao zuo jian
+[2025.08.19-03.25.43:112][ 63]LogTemp: man zu jiao huan shu ju
+[2025.08.19-03.25.43:112][ 63]LogTemp: Show Icon
+[2025.08.19-03.25.43:112][ 63]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.43:662][ 96]LogTemp: press of mouse left
+[2025.08.19-03.25.43:729][100]LogTemp: Show Icon
+[2025.08.19-03.25.44:278][133]LogTemp: song kai shu biao zuo jian
+[2025.08.19-03.25.44:278][133]LogTemp: man zu jiao huan shu ju
+[2025.08.19-03.25.44:279][133]LogTemp: Show Icon
+[2025.08.19-03.25.44:279][133]LogTemp: Show Icon
+[2025.08.19-03.25.44:464][144]LogViewport: Display: Viewport MouseLockMode Changed, DoNotLock -> LockOnCapture
+[2025.08.19-03.25.44:464][144]LogViewport: Display: Viewport MouseCaptureMode Changed, CaptureDuringMouseDown -> CapturePermanently
+[2025.08.19-03.25.44:763][162]LogTemp: input select 3
+[2025.08.19-03.25.45:679][217]LogTemp: input select 3
+[2025.08.19-03.25.47:564][330]LogTemp: input select 1
+[2025.08.19-03.25.48:448][383]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.48:498][386]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.48:548][389]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.48:598][392]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.49:014][417]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.49:064][420]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.49:114][423]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.49:414][441]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.49:464][444]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.49:516][447]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.49:564][450]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.49:615][453]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.49:815][465]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.49:864][468]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.49:916][471]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.49:964][474]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.50:015][477]LogTemp: Warning: Rifle Fire
+[2025.08.19-03.25.52:200][608]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.52:201][608]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.52:201][608]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.52:201][608]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.52:201][608]LogTemp: Show Icon
+[2025.08.19-03.25.52:201][608]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.52:201][608]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.52:201][608]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.52:201][608]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.52:201][608]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.52:201][608]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.52:201][608]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.52:201][608]LogTemp: Update item grid
+[2025.08.19-03.25.52:201][608]LogTemp: Show Icon
+[2025.08.19-03.25.52:201][608]LogTemp: Update item grid
+[2025.08.19-03.25.52:201][608]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.52:201][608]LogTemp: Update item grid
+[2025.08.19-03.25.52:202][608]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.52:202][608]LogTemp: Update item grid
+[2025.08.19-03.25.52:202][608]LogTemp: Show Icon
+[2025.08.19-03.25.52:202][608]LogTemp: Update item grid
+[2025.08.19-03.25.52:202][608]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.52:202][608]LogTemp: Update item grid
+[2025.08.19-03.25.52:202][608]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.52:202][608]LogTemp: Update item grid
+[2025.08.19-03.25.52:202][608]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.52:202][608]LogTemp: Update item grid
+[2025.08.19-03.25.52:202][608]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.52:202][608]LogTemp: Update item grid
+[2025.08.19-03.25.52:202][608]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.52:202][608]LogTemp: Update item grid
+[2025.08.19-03.25.52:202][608]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.52:202][608]LogTemp: Update item grid
+[2025.08.19-03.25.52:202][608]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.52:202][608]LogTemp: Update item grid
+[2025.08.19-03.25.52:202][608]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.52:202][608]LogTemp: open BackPack
+[2025.08.19-03.25.52:202][608]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> DoNotLock
+[2025.08.19-03.25.52:202][608]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently -> CaptureDuringMouseDown
+[2025.08.19-03.25.52:633][634]LogViewport: Display: Viewport MouseLockMode Changed, DoNotLock -> LockOnCapture
+[2025.08.19-03.25.52:633][634]LogViewport: Display: Viewport MouseCaptureMode Changed, CaptureDuringMouseDown -> CapturePermanently
+[2025.08.19-03.25.53:567][690]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.53:567][690]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.53:567][690]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.53:568][690]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.53:568][690]LogTemp: Show Icon
+[2025.08.19-03.25.53:568][690]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.53:568][690]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.53:568][690]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.53:568][690]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.53:568][690]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.53:568][690]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.53:568][690]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.53:568][690]LogTemp: Update item grid
+[2025.08.19-03.25.53:568][690]LogTemp: Show Icon
+[2025.08.19-03.25.53:568][690]LogTemp: Update item grid
+[2025.08.19-03.25.53:568][690]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.53:568][690]LogTemp: Update item grid
+[2025.08.19-03.25.53:568][690]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.53:568][690]LogTemp: Update item grid
+[2025.08.19-03.25.53:568][690]LogTemp: Show Icon
+[2025.08.19-03.25.53:568][690]LogTemp: Update item grid
+[2025.08.19-03.25.53:568][690]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.53:568][690]LogTemp: Update item grid
+[2025.08.19-03.25.53:568][690]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.53:568][690]LogTemp: Update item grid
+[2025.08.19-03.25.53:568][690]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.53:568][690]LogTemp: Update item grid
+[2025.08.19-03.25.53:568][690]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.53:568][690]LogTemp: Update item grid
+[2025.08.19-03.25.53:568][690]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.53:570][690]LogTemp: Update item grid
+[2025.08.19-03.25.53:570][690]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.53:570][690]LogTemp: Update item grid
+[2025.08.19-03.25.53:570][690]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.53:570][690]LogTemp: Update item grid
+[2025.08.19-03.25.53:570][690]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.53:570][690]LogTemp: open BackPack
+[2025.08.19-03.25.53:570][690]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> DoNotLock
+[2025.08.19-03.25.53:570][690]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently -> CaptureDuringMouseDown
+[2025.08.19-03.25.54:149][725]LogTemp: press of mouse left
+[2025.08.19-03.25.54:199][728]LogTemp: Show Icon
+[2025.08.19-03.25.54:733][760]LogTemp: song kai shu biao zuo jian
+[2025.08.19-03.25.54:733][760]LogTemp: man zu jiao huan shu ju
+[2025.08.19-03.25.54:733][760]LogTemp: Show Icon
+[2025.08.19-03.25.54:733][760]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.54:838][766]LogViewport: Display: Viewport MouseLockMode Changed, DoNotLock -> LockOnCapture
+[2025.08.19-03.25.54:838][766]LogViewport: Display: Viewport MouseCaptureMode Changed, CaptureDuringMouseDown -> CapturePermanently
+[2025.08.19-03.25.57:438][922]LogTemp: TryPickUp Callable
+[2025.08.19-03.25.57:438][922]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:438][922]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.57:438][922]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:438][922]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.57:438][922]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:438][922]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.57:438][922]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:438][922]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.57:438][922]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:438][922]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.57:438][922]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:438][922]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.57:438][922]LogTemp: Update item grid
+[2025.08.19-03.25.57:439][922]LogTemp: Show Icon
+[2025.08.19-03.25.57:439][922]LogTemp: Update item grid
+[2025.08.19-03.25.57:439][922]LogTemp: Show Icon
+[2025.08.19-03.25.57:439][922]LogTemp: Update item grid
+[2025.08.19-03.25.57:439][922]LogTemp: Show Icon
+[2025.08.19-03.25.57:439][922]LogTemp: Update item grid
+[2025.08.19-03.25.57:439][922]LogTemp: Show Icon
+[2025.08.19-03.25.57:439][922]LogTemp: Update item grid
+[2025.08.19-03.25.57:439][922]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:439][922]LogTemp: Update item grid
+[2025.08.19-03.25.57:439][922]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:439][922]LogTemp: Update item grid
+[2025.08.19-03.25.57:439][922]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:439][922]LogTemp: Update item grid
+[2025.08.19-03.25.57:439][922]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:439][922]LogTemp: Update item grid
+[2025.08.19-03.25.57:439][922]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:439][922]LogTemp: Update item grid
+[2025.08.19-03.25.57:439][922]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:439][922]LogTemp: Update item grid
+[2025.08.19-03.25.57:439][922]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:440][922]LogTemp: Update item grid
+[2025.08.19-03.25.57:440][922]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:689][937]LogTemp: TryPickUp Callable
+[2025.08.19-03.25.57:689][937]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:689][937]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.57:689][937]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:689][937]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.57:689][937]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:689][937]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.57:689][937]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:689][937]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.57:689][937]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:689][937]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.57:689][937]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:689][937]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.57:689][937]LogTemp: Update item grid
+[2025.08.19-03.25.57:690][937]LogTemp: Show Icon
+[2025.08.19-03.25.57:690][937]LogTemp: Update item grid
+[2025.08.19-03.25.57:690][937]LogTemp: Show Icon
+[2025.08.19-03.25.57:690][937]LogTemp: Update item grid
+[2025.08.19-03.25.57:690][937]LogTemp: Show Icon
+[2025.08.19-03.25.57:690][937]LogTemp: Update item grid
+[2025.08.19-03.25.57:690][937]LogTemp: Show Icon
+[2025.08.19-03.25.57:690][937]LogTemp: Update item grid
+[2025.08.19-03.25.57:690][937]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:690][937]LogTemp: Update item grid
+[2025.08.19-03.25.57:690][937]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:690][937]LogTemp: Update item grid
+[2025.08.19-03.25.57:690][937]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:690][937]LogTemp: Update item grid
+[2025.08.19-03.25.57:690][937]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:690][937]LogTemp: Update item grid
+[2025.08.19-03.25.57:690][937]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:690][937]LogTemp: Update item grid
+[2025.08.19-03.25.57:690][937]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:690][937]LogTemp: Update item grid
+[2025.08.19-03.25.57:690][937]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.57:690][937]LogTemp: Update item grid
+[2025.08.19-03.25.57:690][937]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.58:620][993]LogTemp: TryPickUp Callable
+[2025.08.19-03.25.58:620][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.58:620][993]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.58:620][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.58:620][993]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.58:620][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.58:620][993]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.58:621][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.58:621][993]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.58:621][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.58:621][993]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.58:621][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.58:621][993]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.58:621][993]LogTemp: Update item grid
+[2025.08.19-03.25.58:621][993]LogTemp: Show Icon
+[2025.08.19-03.25.58:621][993]LogTemp: Update item grid
+[2025.08.19-03.25.58:621][993]LogTemp: Show Icon
+[2025.08.19-03.25.58:621][993]LogTemp: Update item grid
+[2025.08.19-03.25.58:621][993]LogTemp: Show Icon
+[2025.08.19-03.25.58:621][993]LogTemp: Update item grid
+[2025.08.19-03.25.58:621][993]LogTemp: Show Icon
+[2025.08.19-03.25.58:621][993]LogTemp: Update item grid
+[2025.08.19-03.25.58:621][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.58:622][993]LogTemp: Update item grid
+[2025.08.19-03.25.58:622][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.58:622][993]LogTemp: Update item grid
+[2025.08.19-03.25.58:622][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.58:622][993]LogTemp: Update item grid
+[2025.08.19-03.25.58:622][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.58:622][993]LogTemp: Update item grid
+[2025.08.19-03.25.58:622][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.58:622][993]LogTemp: Update item grid
+[2025.08.19-03.25.58:622][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.58:622][993]LogTemp: Update item grid
+[2025.08.19-03.25.58:622][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.58:622][993]LogTemp: Update item grid
+[2025.08.19-03.25.58:622][993]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.59:037][ 18]LogTemp: TryPickUp Callable
+[2025.08.19-03.25.59:038][ 18]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.59:038][ 18]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.59:038][ 18]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.59:038][ 18]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.59:038][ 18]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.59:038][ 18]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.59:038][ 18]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.59:038][ 18]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.59:038][ 18]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.59:038][ 18]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.59:038][ 18]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.59:038][ 18]LogTemp: Update Weapon Grid
+[2025.08.19-03.25.59:038][ 18]LogTemp: Update item grid
+[2025.08.19-03.25.59:038][ 18]LogTemp: Show Icon
+[2025.08.19-03.25.59:038][ 18]LogTemp: Update item grid
+[2025.08.19-03.25.59:039][ 18]LogTemp: Show Icon
+[2025.08.19-03.25.59:039][ 18]LogTemp: Update item grid
+[2025.08.19-03.25.59:039][ 18]LogTemp: Show Icon
+[2025.08.19-03.25.59:039][ 18]LogTemp: Update item grid
+[2025.08.19-03.25.59:039][ 18]LogTemp: Show Icon
+[2025.08.19-03.25.59:039][ 18]LogTemp: Update item grid
+[2025.08.19-03.25.59:039][ 18]LogTemp: Show Icon
+[2025.08.19-03.25.59:039][ 18]LogTemp: Update item grid
+[2025.08.19-03.25.59:039][ 18]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.59:039][ 18]LogTemp: Update item grid
+[2025.08.19-03.25.59:039][ 18]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.59:040][ 18]LogTemp: Update item grid
+[2025.08.19-03.25.59:040][ 18]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.59:040][ 18]LogTemp: Update item grid
+[2025.08.19-03.25.59:040][ 18]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.59:040][ 18]LogTemp: Update item grid
+[2025.08.19-03.25.59:040][ 18]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.59:040][ 18]LogTemp: Update item grid
+[2025.08.19-03.25.59:040][ 18]LogTemp:  Icon  is nullptr
+[2025.08.19-03.25.59:040][ 18]LogTemp: Update item grid
+[2025.08.19-03.25.59:040][ 18]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.02:903][250]LogTemp: TryPickUp Callable
+[2025.08.19-03.26.02:904][250]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.02:904][250]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.02:904][250]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.02:904][250]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.02:904][250]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.02:904][250]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.02:904][250]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.02:904][250]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.02:905][250]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.02:905][250]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.02:905][250]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.02:905][250]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.02:905][250]LogTemp: Update item grid
+[2025.08.19-03.26.02:905][250]LogTemp: Show Icon
+[2025.08.19-03.26.02:905][250]LogTemp: Update item grid
+[2025.08.19-03.26.02:905][250]LogTemp: Show Icon
+[2025.08.19-03.26.02:905][250]LogTemp: Update item grid
+[2025.08.19-03.26.02:905][250]LogTemp: Show Icon
+[2025.08.19-03.26.02:906][250]LogTemp: Update item grid
+[2025.08.19-03.26.02:906][250]LogTemp: Show Icon
+[2025.08.19-03.26.02:906][250]LogTemp: Update item grid
+[2025.08.19-03.26.02:906][250]LogTemp: Show Icon
+[2025.08.19-03.26.02:906][250]LogTemp: Update item grid
+[2025.08.19-03.26.02:906][250]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.02:906][250]LogTemp: Update item grid
+[2025.08.19-03.26.02:906][250]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.02:906][250]LogTemp: Update item grid
+[2025.08.19-03.26.02:906][250]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.02:906][250]LogTemp: Update item grid
+[2025.08.19-03.26.02:906][250]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.02:906][250]LogTemp: Update item grid
+[2025.08.19-03.26.02:906][250]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.02:906][250]LogTemp: Update item grid
+[2025.08.19-03.26.02:906][250]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.02:906][250]LogTemp: Update item grid
+[2025.08.19-03.26.02:906][250]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.03:154][265]LogTemp: TryPickUp Callable
+[2025.08.19-03.26.03:154][265]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.03:154][265]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.03:154][265]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.03:154][265]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.03:154][265]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.03:154][265]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.03:154][265]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.03:154][265]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.03:154][265]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.03:155][265]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.03:155][265]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.03:155][265]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.03:155][265]LogTemp: Update item grid
+[2025.08.19-03.26.03:155][265]LogTemp: Show Icon
+[2025.08.19-03.26.03:155][265]LogTemp: Update item grid
+[2025.08.19-03.26.03:155][265]LogTemp: Show Icon
+[2025.08.19-03.26.03:155][265]LogTemp: Update item grid
+[2025.08.19-03.26.03:155][265]LogTemp: Show Icon
+[2025.08.19-03.26.03:155][265]LogTemp: Update item grid
+[2025.08.19-03.26.03:155][265]LogTemp: Show Icon
+[2025.08.19-03.26.03:155][265]LogTemp: Update item grid
+[2025.08.19-03.26.03:155][265]LogTemp: Show Icon
+[2025.08.19-03.26.03:155][265]LogTemp: Update item grid
+[2025.08.19-03.26.03:155][265]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.03:155][265]LogTemp: Update item grid
+[2025.08.19-03.26.03:155][265]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.03:155][265]LogTemp: Update item grid
+[2025.08.19-03.26.03:155][265]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.03:155][265]LogTemp: Update item grid
+[2025.08.19-03.26.03:155][265]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.03:155][265]LogTemp: Update item grid
+[2025.08.19-03.26.03:155][265]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.03:157][265]LogTemp: Update item grid
+[2025.08.19-03.26.03:157][265]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.03:157][265]LogTemp: Update item grid
+[2025.08.19-03.26.03:157][265]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:021][317]LogTemp: TryPickUp Callable
+[2025.08.19-03.26.04:021][317]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:021][317]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.04:021][317]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:021][317]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.04:021][317]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:022][317]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.04:022][317]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:022][317]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.04:022][317]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:022][317]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.04:022][317]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:022][317]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.04:022][317]LogTemp: Update item grid
+[2025.08.19-03.26.04:022][317]LogTemp: Show Icon
+[2025.08.19-03.26.04:022][317]LogTemp: Update item grid
+[2025.08.19-03.26.04:022][317]LogTemp: Show Icon
+[2025.08.19-03.26.04:022][317]LogTemp: Update item grid
+[2025.08.19-03.26.04:022][317]LogTemp: Show Icon
+[2025.08.19-03.26.04:022][317]LogTemp: Update item grid
+[2025.08.19-03.26.04:023][317]LogTemp: Show Icon
+[2025.08.19-03.26.04:023][317]LogTemp: Update item grid
+[2025.08.19-03.26.04:023][317]LogTemp: Show Icon
+[2025.08.19-03.26.04:023][317]LogTemp: Update item grid
+[2025.08.19-03.26.04:023][317]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:023][317]LogTemp: Update item grid
+[2025.08.19-03.26.04:023][317]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:023][317]LogTemp: Update item grid
+[2025.08.19-03.26.04:023][317]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:023][317]LogTemp: Update item grid
+[2025.08.19-03.26.04:023][317]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:023][317]LogTemp: Update item grid
+[2025.08.19-03.26.04:023][317]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:023][317]LogTemp: Update item grid
+[2025.08.19-03.26.04:023][317]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:023][317]LogTemp: Update item grid
+[2025.08.19-03.26.04:023][317]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:287][333]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:287][333]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.04:287][333]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:287][333]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.04:287][333]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:287][333]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.04:287][333]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:287][333]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.04:287][333]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:287][333]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.04:287][333]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:287][333]LogTemp: Update Weapon Grid
+[2025.08.19-03.26.04:287][333]LogTemp: Update item grid
+[2025.08.19-03.26.04:287][333]LogTemp: Show Icon
+[2025.08.19-03.26.04:287][333]LogTemp: Update item grid
+[2025.08.19-03.26.04:287][333]LogTemp: Show Icon
+[2025.08.19-03.26.04:287][333]LogTemp: Update item grid
+[2025.08.19-03.26.04:287][333]LogTemp: Show Icon
+[2025.08.19-03.26.04:289][333]LogTemp: Update item grid
+[2025.08.19-03.26.04:289][333]LogTemp: Show Icon
+[2025.08.19-03.26.04:289][333]LogTemp: Update item grid
+[2025.08.19-03.26.04:289][333]LogTemp: Show Icon
+[2025.08.19-03.26.04:289][333]LogTemp: Update item grid
+[2025.08.19-03.26.04:289][333]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:289][333]LogTemp: Update item grid
+[2025.08.19-03.26.04:289][333]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:289][333]LogTemp: Update item grid
+[2025.08.19-03.26.04:289][333]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:289][333]LogTemp: Update item grid
+[2025.08.19-03.26.04:289][333]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:289][333]LogTemp: Update item grid
+[2025.08.19-03.26.04:289][333]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:289][333]LogTemp: Update item grid
+[2025.08.19-03.26.04:289][333]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:289][333]LogTemp: Update item grid
+[2025.08.19-03.26.04:290][333]LogTemp:  Icon  is nullptr
+[2025.08.19-03.26.04:290][333]LogTemp: open BackPack
+[2025.08.19-03.26.04:290][333]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> DoNotLock
+[2025.08.19-03.26.04:290][333]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently -> CaptureDuringMouseDown
+[2025.08.19-03.26.04:871][368]LogViewport: Display: Viewport MouseLockMode Changed, DoNotLock -> LockOnCapture
+[2025.08.19-03.26.04:871][368]LogViewport: Display: Viewport MouseCaptureMode Changed, CaptureDuringMouseDown -> CapturePermanently
+[2025.08.19-03.26.05:224][386]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.08.19-03.26.05:224][386]LogWorld: BeginTearingDown for /Game/Current_make/Map/UEDPIE_0_TestMap
+[2025.08.19-03.26.05:251][386]LogWorld: UWorld::CleanupWorld for TestMap, bSessionEnded=true, bCleanupResources=true
+[2025.08.19-03.26.05:256][386]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.08.19-03.26.05:287][386]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2025.08.19-03.26.05:292][386]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.08.19-03.26.05:301][386]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.08.19-03.26.05:315][386]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=2
+[2025.08.19-03.26.05:319][386]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=2
+[2025.08.19-03.26.05:355][386]LogUObjectHash: Compacting FUObjectHashTables data took   0.80ms
+[2025.08.19-03.26.05:400][387]LogPlayLevel: Display: Destroying online subsystem :Context_1
+[2025.08.19-03.26.12:596][801]LogSlate: Took 0.001275 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/FontAwesome.ttf' (139K)
+[2025.08.19-03.26.12:618][801]LogSlate: Took 0.001148 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2025.08.19-03.26.13:006][805]LogSkeletalMesh: Display: 正在等待骨骼网格体就绪0/1（SKM_Quinn_Simple）……
+[2025.08.19-03.26.14:621][880]LogSkeletalMesh: Display: 正在等待骨骼网格体就绪0/1（SKM_Manny_Simple）……
+[2025.08.19-03.39.10:031][897]LogEditorClassViewer: Warning: AssetRegistry Blueprint /Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.BP_ThirdPersonCharacter is missing tag value for GeneratedClass. Blueprint will not be available to ClassViewer when unloaded.
+[2025.08.19-03.39.10:069][897]LogEditorClassViewer: Warning: Class /Engine/Tutorial/InWorldBlueprintEditing/TutorialAssets/IWBE_Blutility.IWBE_Blutility_C has parent /Script/Blutility.PlacedEditorUtilityBase, but this parent is not found. The Class will not be shown in ClassViewer.
+[2025.08.19-03.39.10:214][897]LogSlate: Took 0.001074 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-BoldCondensed.ttf' (158K)
+[2025.08.19-03.39.21:342][429]Running D:/real engine/UE_5.0/Engine/Binaries/DotNET/UnrealBuildTool/UnrealBuildTool.exe  -projectfiles -project="E:/engine study/AimToShoot/AimToShoot.uproject" -game -rocket -progress
+[2025.08.19-03.39.22:236][429]Log file: C:\Users\18754\AppData\Local\UnrealBuildTool\Log_GPF.txt
+[2025.08.19-03.39.22:236][429]Discovering modules, targets and source code for project...
+[2025.08.19-03.39.27:664][429]Binding IntelliSense data...
+[2025.08.19-03.39.33:094][429]Binding IntelliSense data... 100%
+[2025.08.19-03.39.33:094][429]Writing project files...
+[2025.08.19-03.39.41:848][429]Writing project files... 100%
+[2025.08.19-03.39.41:957][429]LogLiveCoding: Display: Starting Live Coding compile.
+[2025.08.19-03.39.42:038][429]LogVSAccessor: Warning: Visual Studio is open but could not be queried - it may be blocked by a modal operation
+[2025.08.19-03.39.42:040][429]LogSlate: Window '添加C++类' being destroyed
+[2025.08.19-03.39.42:058][429]LogVSAccessor: Warning: Visual Studio is open but could not be queried - it may be blocked by a modal operation
+[2025.08.19-03.39.42:197][430]LogVSAccessor: Warning: Visual Studio is open but could not be queried - it may be blocked by a modal operation
+[2025.08.19-03.39.42:494][431]LogVSAccessor: Warning: Visual Studio is open but could not be queried - it may be blocked by a modal operation
+[2025.08.19-03.39.42:858][432]LogVSAccessor: Warning: Visual Studio is open but could not be queried - it may be blocked by a modal operation
+[2025.08.19-03.39.43:188][433]LogVSAccessor: Warning: Visual Studio is open but could not be queried - it may be blocked by a modal operation
+[2025.08.19-03.39.43:556][434]LogVSAccessor: Warning: Visual Studio is open but could not be queried - it may be blocked by a modal operation
+[2025.08.19-03.39.43:851][435]LogVSAccessor: Warning: Visual Studio is open but could not be queried - it may be blocked by a modal operation
+[2025.08.19-03.39.44:160][436]LogVSAccessor: Warning: Visual Studio is open but could not be queried - it may be blocked by a modal operation
+[2025.08.19-03.39.44:421][437]LogVSAccessor: Warning: Visual Studio is open but could not be queried - it may be blocked by a modal operation
+[2025.08.19-03.39.44:762][438]LogVSAccessor: Warning: Visual Studio is open but could not be queried - it may be blocked by a modal operation

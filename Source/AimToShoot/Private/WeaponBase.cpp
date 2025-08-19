@@ -3,6 +3,7 @@
 
 #include "WeaponBase.h"
 #include "Hero.h"
+#include "MosterBag/MosterBase.h"
 #include "DataDefine/AllDataDefine.h"
 
 
@@ -59,10 +60,36 @@ void AWeaponBase::WeaponStopFire() {
 
 void AWeaponBase::WeaponFiring() {
 	UE_LOG(LogTemp, Log, TEXT("WeaponBase Firing"));
+	if (CurrentAmmo <= 0) {
+		UE_LOG(LogTemp, Log, TEXT("No Ammo"));
+		return;
+	}
+	CurrentAmmo--;
+	if (BulletClass) {
+		FVector MuzzleLocation = SkeleMesh->GetSocketLocation("FIreMuzzle");
+		FRotator MuzzleRotation = SkeleMesh->GetSocketRotation("FIreMuzzle");
+
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.Owner = this;
+		SpawnParams.Instigator = GetInstigator();
+
+		ABulletsBase* Bullet_A = GetWorld()->SpawnActor<ABulletsBase>(BulletClass, MuzzleLocation, MuzzleRotation, SpawnParams);
+		Bullet_A->Bind_Weapon = this;
+		if (Bullet_A) {
+			FVector LaunchDirection = MuzzleRotation.Vector();
+			Bullet_A->FireInDirection(LaunchDirection);
+		}
+
+	}
 }
 
 void AWeaponBase::SetOwnerHero(AHero* InOwnerHero) {
 	OwnerHero = InOwnerHero;
+}
+
+void AWeaponBase::NoticeAHeroAttackInfo(AMosterBase* hurted, const FHitResult& Hit)
+{
+	OwnerHero->AttackMoster(hurted, Hit);
 }
 
 void AWeaponBase::ChangeBullet() {

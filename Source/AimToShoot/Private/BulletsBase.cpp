@@ -3,6 +3,8 @@
 
 #include "BulletsBase.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "MosterBag/MosterBase.h"
+#include "WeaponBase.h"
 #include "Components/SphereComponent.h"
 #include "Kismet/GamePlayStatics.h"
 // Sets default values
@@ -28,6 +30,10 @@ ABulletsBase::ABulletsBase()
 	ProjectileMovement->bShouldBounce = false;
 	//3s后销毁
 	InitialLifeSpan = 3.0f;
+	//被击中者初始化
+
+	Is_Hited_Moster = nullptr;
+	Bind_Weapon = nullptr;
 }
 
 // Called when the game starts or when spawned
@@ -50,7 +56,8 @@ void ABulletsBase::FireInDirection(const FVector& ShootDirection) {
 
 void ABulletsBase::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit) {
 	if (OtherActor && OtherActor != this && OtherActor != GetOwner()) {
-		UGameplayStatics::ApplyDamage(OtherActor, 20.0f, GetInstigatorController(), this, nullptr);
+		/*UGameplayStatics::ApplyDamage(OtherActor, 20.0f, GetInstigatorController(), this, nullptr);*/
+		Bind_Weapon->NoticeAHeroAttackInfo(Cast<AMosterBase>(OtherActor), Hit);
 		Destroy();
 	}
 }
