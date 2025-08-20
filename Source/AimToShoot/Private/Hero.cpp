@@ -269,7 +269,7 @@ void AHero::CurrentTakeDamage(float DamageAmount) {
 }
 
 void AHero::FastRun() {
-	if (CurrentStamina) {
+	if (CurrentStamina && !Is_AimState) {
 		Is_Run = true;
 		GetCharacterMovement()->MaxWalkSpeed = 600.0f;
 	}

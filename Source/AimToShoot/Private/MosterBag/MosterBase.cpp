@@ -13,8 +13,9 @@ AMosterBase::AMosterBase()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-
-
+	MonsterMesh = GetMesh();
+	MonsterMesh->SetRelativeLocation(FVector(0.0f, 0.0f, -90.0f));
+	MonsterMesh->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
 
 	MaxHealth = 20.0f;
 	CurrentHealth = MaxHealth;

@@ -26,7 +26,7 @@ public:
 	// Sets default values for this character's properties
 	AHero();
 	//角色组件属性：角色网格体可编辑，暴露在蓝图，弹簧臂和摄像机
-	UPROPERTY()
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category = "MeshComponent")
 		USkeletalMeshComponent* MyMeshComponent;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 		class USpringArmComponent* SpringRob;

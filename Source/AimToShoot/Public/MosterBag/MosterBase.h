@@ -19,6 +19,10 @@ public:
 	// Sets default values for this character's properties
 	AMosterBase();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mesh")
+		USkeletalMeshComponent* MonsterMesh;
+
+public:
 	//处理伤害通知
 	UFUNCTION()
 		void HandleAttacked(class ACharacter* Attacker, AMosterBase* Victim, const FHitResult& Hit);

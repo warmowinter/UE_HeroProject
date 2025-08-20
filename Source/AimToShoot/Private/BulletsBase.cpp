@@ -24,8 +24,8 @@ ABulletsBase::ABulletsBase()
 
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovement"));
 	ProjectileMovement->UpdatedComponent = CollisionComp;
-	ProjectileMovement->InitialSpeed = 3000.0f;
-	ProjectileMovement->MaxSpeed = 3000.0f;
+	ProjectileMovement->InitialSpeed = 9000.0f;
+	ProjectileMovement->MaxSpeed = 9000.0f;
 	ProjectileMovement->bRotationFollowsVelocity = true;
 	ProjectileMovement->bShouldBounce = false;
 	//3sºóÏú»Ù
