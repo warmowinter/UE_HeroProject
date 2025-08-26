@@ -98,6 +98,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void AttackMoster(AMosterBase* Target, const FHitResult& Hit);
 
+
 protected:
 	//背包数组
 	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category = "Inventory")
@@ -121,6 +122,10 @@ protected:
 	void TurnAtRate(float rate);
 	void LookUpRate(float rate);
 
+/**************************************************************************************************************************************************************
+角色状态栏
+健康值——体力值——
+***************************************************************************************************************************************************************/
 
 protected:
 	//角色状态State
@@ -141,12 +146,22 @@ protected:
 	bool Is_ChangeBullet = false; //是否在换弹
 	bool Is_AimState = false; // 是否持枪瞄准
 	bool Is_FireState = false;//是否开火
+	bool Is_Crouch = false;//是否蹲伏
+
 public:
 	//切换视图
 	UFUNCTION(BlueprintCallable, Category = "ToggleCharacterView")
 		void ToggleCharacterView();
 	UPROPERTY()
 		bool Is_2D_View;
+
+	//类外获取状态
+	UFUNCTION(BlueprintCallable, Category = "GetCrouchState")
+		bool GetHeroIsCrouch();
+
+	//montageAnim
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Montage_play")
+		UAnimMontage* Montage_Attack;
 
 	//动画实例调用接口
 	UFUNCTION(BlueprintCallable,Category = "GetCharaState")
@@ -169,8 +184,11 @@ public:
 	friend void UHero_Widget::UpDateStamina(AHero* Object);
 
 	//奔跑
-		void FastRun();
-		void StopFastRun();
+	void FastRun();
+	void StopFastRun();
+	//Crouch
+	void StartCrouch();
+	void StopCrouch();
 	//受击函数
 	void CurrentTakeDamage(float DamageAmount);
 	//开火函数,
@@ -185,7 +203,8 @@ public:
 	//打开背包函数
 	void OpenBackPack();
 	//外界获取背包数组
-	TArray<FBackPackStruct>& GetBackPackArray();
+	UFUNCTION(BlueprintCallable,Category = "GetBackPackArray")
+		TArray<FBackPackStruct>& GetBackPackArray();
 
 	//装备武器
 	void EquipWeapon();

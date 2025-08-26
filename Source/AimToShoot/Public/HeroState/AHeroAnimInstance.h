@@ -31,14 +31,26 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Anim")
 		bool bIsInAir;
-
+	//获取角色速度
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Anim")
 		float X_Speed;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Anim")
 		float Y_Speed;
-
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Anim")
+		bool Is_Crouch;
+	//瞄准/开火状态
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Anim")
 		bool IsEquipWeapon;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Anim")
 		bool IsFireState;
+
+	//俯仰角和偏航角
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Anim")
+		float PitchAngle;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Anim")
+		float YawAngle;
+
+
+public:
+	void CalculateRotator();
 };

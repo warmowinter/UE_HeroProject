@@ -8,7 +8,7 @@
 
 
 class AHero;
-
+class USphereComponent;
 
 UCLASS()
 class AIMTOSHOOT_API AMosterBase : public ACharacter
@@ -21,6 +21,8 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mesh")
 		USkeletalMeshComponent* MonsterMesh;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SphereComp")
+		USphereComponent* SphereComp;
 
 public:
 	//处理伤害通知
@@ -29,6 +31,9 @@ public:
 	//死亡通知
 	UFUNCTION()
 		void MosterDie();
+	UFUNCTION()
+		void OnDeathAnimationFinished();
+
 
 	//被命中拉仇恨，类似我的世界猪人效果
 	UFUNCTION(BlueprintCallable)
@@ -37,8 +42,11 @@ public:
 		void OnNearbyCombat(ACharacter* Attacker, AMosterBase* Victim);
 
 
-
-
+	void DoSphereTrace();
+public:
+	//类外获取函数集合
+	UFUNCTION()
+		bool GetMonsterAttackState();
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Property")
@@ -55,6 +63,16 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		AHero* Player;
 
+	//怪物状态
+	bool IsDead;//怪物是否死亡
+	bool EnemyIsNearby;//敌人是否在附近
+	bool IsAttack;//怪物是否攻击
+
+
+protected:
+	//怪物Montage相关
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MonsterMontage")
+		UAnimMontage* DeathMontage;
 
 protected:
 	// Called when the game starts or when spawned

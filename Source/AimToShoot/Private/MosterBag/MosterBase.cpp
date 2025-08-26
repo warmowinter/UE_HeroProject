@@ -5,6 +5,9 @@
 #include "Kismet/GameplayStatics.h"
 #include "Hero.h"
 #include "BulletsBase.h"
+#include "MosterBag/AIControllMachine/Monster_AIController.h"
+#include "BehaviorTree/BlackboardComponent.h"
+#include "Components/SphereComponent.h"
 
 
 // Sets default values
@@ -17,10 +20,15 @@ AMosterBase::AMosterBase()
 	MonsterMesh->SetRelativeLocation(FVector(0.0f, 0.0f, -90.0f));
 	MonsterMesh->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
 
+	SphereComp = CreateDefaultSubobject<USphereComponent>(TEXT("SphereComp"));
+	SphereComp->InitSphereRadius(150.f);
+	SphereComp->SetCollisionProfileName(TEXT("Pawn"));
+
 	MaxHealth = 20.0f;
 	CurrentHealth = MaxHealth;
 	MaxWalk = 300.0f;
 	AttackBase = 10.0f;
+	IsDead = false;
 }
 
 // Called when the game starts or when spawned
@@ -44,6 +52,20 @@ void AMosterBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+
+	DoSphereTrace();
+
+	if (AMonster_AIController* AICon = Cast<AMonster_AIController>(this->GetController())) {
+		if (UBlackboardComponent* BBComp = AICon->GetBlackboardComponent()) {
+			bool bSeePlayer = BBComp->GetValueAsBool("IsSeenPlayer");
+			if (bSeePlayer && !IsDead && EnemyIsNearby) {
+				IsAttack = true;
+			}
+			else {
+				IsAttack = false;
+			}
+		}
+	}
 }
 
 // Called to bind functionality to input
@@ -59,24 +81,94 @@ void AMosterBase::HandleAttacked(ACharacter* Attacker, AMosterBase* Victim, cons
 	if (this == Victim) {
 		CurrentHealth -= 10;
 		if (CurrentHealth <= 0) {
+			IsDead = true;
 			MosterDie();
 		}
-		UE_LOG(LogTemp, Log, TEXT("damage CurrentHealth%"));
+		UE_LOG(LogTemp, Log, TEXT("damage CurrentHealth:%d"),CurrentHealth);
 	}
 }
 void AMosterBase::MosterDie() {
 	//可以考虑搞个特效，等后期吧
-	Destroy();
+	AController* Mon_Controller = GetController();
+	if (Mon_Controller) {
+		Mon_Controller->StopMovement();
+		Mon_Controller->UnPossess();
+	}
+
+	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
+	if (DeathMontage) {
+		UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+		if (AnimInstance) {
+			//AnimInstance->Montage_Play(DeathMontage);
+			float MontageDuration = AnimInstance->Montage_Play(DeathMontage);
+			if (MontageDuration > 0.f) {
+				FTimerHandle TimerHandle;
+				GetWorldTimerManager().SetTimer(TimerHandle, this, &AMosterBase::OnDeathAnimationFinished,MontageDuration,false);
+
+			}
+		}
+	}
+	else {
+		Destroy();
+	}
+}
+//死亡延迟
+void AMosterBase::OnDeathAnimationFinished()
+{
+	SetLifeSpan(1.0f);
 }
 
 
 void AMosterBase::ReceiveHitFrom(ACharacter* Attacker)
 {
-	//ռλ
+	//后续等做受击检测
 }
 
 void AMosterBase::OnNearbyCombat(ACharacter* Attacker, AMosterBase* Victim)
 {
 	//ռλ
+}
+
+void AMosterBase::DoSphereTrace()
+{
+	FVector Start = GetActorLocation();
+	FVector End = Start + GetActorForwardVector() * 40.f;
+	float Radius = 60.f;
+	ETraceTypeQuery TraceChannel = UEngineTypes::ConvertToTraceType(ECC_GameTraceChannel1);
+	bool bTraceComplex = false;
+	TArray<AActor*> ActorsToIgnore;
+	ActorsToIgnore.Add(this);
+	EDrawDebugTrace::Type DrawDebugType = EDrawDebugTrace::ForOneFrame;
+
+	FHitResult HitResult;
+	bool bHit = UKismetSystemLibrary::SphereTraceSingle(
+		GetWorld(),
+		Start,
+		End,
+		Radius,
+		TraceChannel,
+		false,
+		ActorsToIgnore,
+		DrawDebugType,
+		HitResult,
+		true
+	);
+
+
+	if (bHit) {
+		AActor* HitActor = Cast<AHero>(HitResult.GetActor());
+		if (HitActor) {
+			 EnemyIsNearby = true;
+		}
+	}
+	else {
+		EnemyIsNearby = false;
+	}
+}
+
+bool AMosterBase::GetMonsterAttackState()
+{
+	return IsAttack;
 }
 

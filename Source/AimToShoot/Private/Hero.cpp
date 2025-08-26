@@ -7,6 +7,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "InventoryMangerInstance.h"
+#include "MyTool.h"
 #include "GameFramework/SpringArmComponent.h"
 
 // Sets default values
@@ -153,6 +154,9 @@ void AHero::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	//fast run
 	PlayerInputComponent->BindAction("FastRun", IE_Pressed, this, &AHero::FastRun);
 	PlayerInputComponent->BindAction("FastRun", IE_Released, this, &AHero::StopFastRun);
+	//Crouch
+	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &AHero::StartCrouch);
+	PlayerInputComponent->BindAction("Crouch", IE_Released, this, &AHero::StopCrouch);
 
 	//PickUp
 	PlayerInputComponent->BindAction("Pickup", IE_Pressed, this, &AHero::TryPickUp);
@@ -228,6 +232,11 @@ void AHero::LookUpRate(float rate) {
 }
 
 
+bool AHero::GetHeroIsCrouch()
+{
+	return Is_Crouch;
+}
+
 void AHero::ToggleCharacterView() {
 	if (!Is_2D_View) {
 		CurrentCamera = MyCameraComponent_2D;
@@ -278,6 +287,16 @@ void AHero::FastRun() {
 void AHero::StopFastRun() {
 	Is_Run = false;
 	GetCharacterMovement()->MaxWalkSpeed = 200.0f;
+}
+
+void AHero::StartCrouch()
+{
+	Is_Crouch = true;
+}
+
+void AHero::StopCrouch()
+{
+	Is_Crouch = false;
 }
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------
