@@ -12,7 +12,7 @@ APistolWeapon_ItemActor::APistolWeapon_ItemActor() {
 
 void APistolWeapon_ItemActor::InitType()
 {
-	ItemInfo.ItemID = 5;
+	ItemInfo.ItemID = 1002;
 	ItemInfo.Quantity = 1;
 	ItemInfo.Description = TEXT("This is PistolWeapon");
 	ItemInfo.Icon = ItemTexture2D;

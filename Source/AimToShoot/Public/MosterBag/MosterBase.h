@@ -27,7 +27,7 @@ public:
 public:
 	//处理伤害通知
 	UFUNCTION()
-		void HandleAttacked(class ACharacter* Attacker, AMosterBase* Victim, const FHitResult& Hit);
+		void HandleAttacked(class AHero* Attacker, AMosterBase* Victim, const FHitResult& Hit);
 	//死亡通知
 	UFUNCTION()
 		void MosterDie();

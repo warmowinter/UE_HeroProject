@@ -70,9 +70,10 @@ AHero::AHero()
 	PickUpRange->SetCollisionProfileName(TEXT("OverLapAll"));
 
 	//武器插槽
-	WeaponSocketMap.Add(1, "Spine_Weapon1");
-	WeaponSocketMap.Add(2, "spine_01_left");
-	WeaponSocketMap.Add(3, "spine_01_right");
+	WeaponSocketMap.Add(16, "Spine_Weapon1");
+	WeaponSocketMap.Add(17, "spine_01_left");
+	WeaponSocketMap.Add(18, "spine_01_right");
+
 }
 
 // Called when the game starts or when spawned
@@ -87,7 +88,7 @@ void AHero::BeginPlay()
 	CurrentStamina = MaxStamina;
 	StaminaDrainRate = 10.0f;
 	//背包初始化
-	BackPackArray.SetNum(12);
+	BackPackArray.SetNum(21);
 	//装备数组初始化
 	EquipArray.SetNum(6);
 
@@ -109,9 +110,14 @@ void AHero::BeginPlay()
 		}
 	}
 
-	//背包管理绑定角色
-	UInventoryMangerInstance* BPSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UInventoryMangerInstance>();
-	BPSubsystem->Bind_Chara = this;
+	//绑定委托
+	if (BackPackUI) {
+		BackPackUI->OnOrganizePress.AddDynamic(this, &AHero::NoticeOrganize);
+		BackPackUI->OnSwapIndex_Array.AddDynamic(this, &AHero::NoticeSwapIndex);
+	}
+
+	BPSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UInventoryMangerInstance>();
+
 	////配置枪
 	//if (ConfigWeapon) {
 	//	FActorSpawnParameters SpawnParams;
@@ -307,98 +313,93 @@ void AHero::StopCrouch()
 --------------------------------------------------------------------------------------------------------------------------------------------*/
 //我这个添加物品函数，是建立在数组已有背包结构全部初始化的信息，根据背包结构的信息来进行修改，达到物品添加的效果
 void AHero::AddItemToBackPack(const FBackPackStruct& NewItem) {
-	int32 EmptySlotIndex = -1;
+	//int32 EmptySlotIndex = -1;
 
-	if (NewItem.bIsStackable) {
-		// 先找可堆叠物品
-		for (int32 i = 0; i < BackPackArray.Num(); i++) {
-			if (BackPackArray[i].ItemID == NewItem.ItemID && BackPackArray[i].Quantity < BackPackArray[i].MaxStackNumber) {
-				BackPackArray[i].Quantity += NewItem.Quantity;
-				return;
-			}
-			if (BackPackArray[i].ItemID == 0 && EmptySlotIndex == -1) {
-				EmptySlotIndex = i;
-			}
-		}
-	}
-	else {
-		// 不可堆叠物品直接找空位
-		for (int32 i = 0; i < BackPackArray.Num(); i++) {
-			if (BackPackArray[i].ItemID == 0) {
-				BackPackArray[i] = NewItem;
-				return;
-			}
-		}
-	}
+	//if (NewItem.bIsStackable) {
+	//	// 先找可堆叠物品
+	//	for (int32 i = 0; i < BackPackArray.Num(); i++) {
+	//		if (BackPackArray[i].ItemID == NewItem.ItemID && BackPackArray[i].Quantity < BackPackArray[i].MaxStackNumber) {
+	//			BackPackArray[i].Quantity += NewItem.Quantity;
+	//			return;
+	//		}
+	//		if (BackPackArray[i].ItemID == 0 && EmptySlotIndex == -1) {
+	//			EmptySlotIndex = i;
+	//		}
+	//	}
+	//}
+	//else {
+	//	// 不可堆叠物品直接找空位
+	//	for (int32 i = 0; i < BackPackArray.Num(); i++) {
+	//		if (BackPackArray[i].ItemID == 0) {
+	//			BackPackArray[i] = NewItem;
+	//			return;
+	//		}
+	//	}
+	//}
 
-	// 如果可堆叠但没找到相同物品，就用空位
-	if (EmptySlotIndex != -1) {
-		BackPackArray[EmptySlotIndex] = NewItem;
-	}
+	//// 如果可堆叠但没找到相同物品，就用空位
+	//if (EmptySlotIndex != -1) {
+	//	BackPackArray[EmptySlotIndex] = NewItem;
+	//}
 }
 //拾取函数
 void AHero::TryPickUp() {
-	TArray<AActor*> OverlappingActors;
-	PickUpRange->GetOverlappingActors(OverlappingActors, AItemActor::StaticClass());
-	UE_LOG(LogTemp, Log, TEXT("TryPickUp Callable"));
-	for (AActor* Actor : OverlappingActors) {
-		if (AItemActor* Item = Cast<AItemActor>(Actor)) {
-			FVector SpawnLocation(0.0f, 0.0f, -999.0f);
-			FRotator SpawnRotation(0.0f, 0.0f, 0.0f);
-			if (Item->ItemInfo.WeaponNumber == 1) {
-				AWeaponBase* wuhu = GetWorld()->SpawnActor<AWeaponBase>(ConfigWeapon1,SpawnLocation,SpawnRotation);
-				Item->ItemInfo.Actor_Ptr = wuhu;
-			}
-			else if (Item->ItemInfo.WeaponNumber == 2) {
-				AWeaponBase* wuhu = GetWorld()->SpawnActor<AWeaponBase>(ConfigWeapon2, SpawnLocation, SpawnRotation);
-				Item->ItemInfo.Actor_Ptr = wuhu;
-			}
-			else if (Item->ItemInfo.WeaponNumber == 3) {
-				AWeaponBase* wuhu = GetWorld()->SpawnActor<AWeaponBase>(ConfigWeapon3, SpawnLocation, SpawnRotation);
-				Item->ItemInfo.Actor_Ptr = wuhu;
-			}
-			AddItemToBackPack(Item->ItemInfo);
-			Item->Destroy();
-			break;
-		}
-	}
-	NoticeRefresh();
+	BPSubsystem->TryPickUp(this);
 }
 
 void AHero::NoticeRefresh() {
-	if (BackPackUI) {
-		BackPackUI->RefreshBackPack(BackPackArray, EquipArray);
-	}
+	//if (BackPackUI) {
+	//	BackPackUI->RefreshBackPack(this);
+	//}
+}
+
+void AHero::NoticeOrganize(UBackPackWidget* INFO_UI)
+{
+	if (INFO_UI != BackPackUI)	return;
+
+	BPSubsystem->OrganizeBackPack(this);
+}
+
+void AHero::NoticeSwapIndex(UBackPackWidget* BP_UI, int32 source_Index, int32 targe_Index)
+{
+	if (BP_UI != BackPackUI)	return;
+
+	BPSubsystem->swap_PlayerArrayIndex(this, source_Index, targe_Index);
 }
 
 void AHero::OpenBackPack() {
-	APlayerController* PC = Cast<APlayerController>(GetController());
+	//APlayerController* PC = Cast<APlayerController>(GetController());
 
-	if (!Is_OpenBP) {
-		if (!BackPackUI)	return;
-		BackPackUI->SetVisibility(ESlateVisibility::Visible);
-		NoticeRefresh();
-		UE_LOG(LogTemp, Log, TEXT("open BackPack"));
-		Is_OpenBP = true;
+	//if (!Is_OpenBP) {
+	//	if (!BackPackUI)	return;
+	//	BackPackUI->SetVisibility(ESlateVisibility::Visible);
+	//	NoticeRefresh();
+	//	UE_LOG(LogTemp, Log, TEXT("open BackPack"));
+	//	Is_OpenBP = true;
 
-		PC->bShowMouseCursor = true;
-		FInputModeGameAndUI InputMode;
-		InputMode.SetWidgetToFocus(BackPackUI->TakeWidget());
-		InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
-		PC->SetInputMode(InputMode);
-	}
-	else {
-		BackPackUI->SetVisibility(ESlateVisibility::Hidden);
-		Is_OpenBP = false;
-		PC->bShowMouseCursor = false;
-		FInputModeGameOnly InputMode;
-		PC->SetInputMode(InputMode);
-	}
-
+	//	PC->bShowMouseCursor = true;
+	//	FInputModeGameAndUI InputMode;
+	//	InputMode.SetWidgetToFocus(BackPackUI->TakeWidget());
+	//	InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
+	//	PC->SetInputMode(InputMode);
+	//}
+	//else {
+	//	BackPackUI->SetVisibility(ESlateVisibility::Hidden);
+	//	Is_OpenBP = false;
+	//	PC->bShowMouseCursor = false;
+	//	FInputModeGameOnly InputMode;
+	//	PC->SetInputMode(InputMode);
+	//}
+	BPSubsystem->I_OpenBackPack(this);
 }
 //类外获取当前背包数组
 TArray<FBackPackStruct>& AHero::GetBackPackArray() {
 	return BackPackArray;
+}
+
+TArray<FBackPackStruct>& AHero::GetEquipArray()
+{
+	return EquipArray;
 }
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------
@@ -425,16 +426,16 @@ void AHero::StopFire() {
 
 //选择武器瞄准,仅实验三把
 void AHero::GetWeaponFromEquipGrid(int32 Index) {
-	if (Index < 0 || Index >= 3)	return;
+	if (Index < 16 || Index >= 19)	return;
 	StopFire();//直接在切换时调用
-	AWeaponBase* NewWeapon = EquipArray[Index].Actor_Ptr;
+	AWeaponBase* NewWeapon = BackPackArray[Index].Actor_Ptr;
 	if (!NewWeapon)	return;
 
 	if (CurrentWeapon) {
 		FName BackSocket = "";
-		for (int32 i = 0; i < 3; i++) {
-			if (CurrentWeapon == EquipArray[i].Actor_Ptr) {
-				BackSocket = WeaponSocketMap[i+1];
+		for (int32 i = 16; i < 19; i++) {
+			if (CurrentWeapon == BackPackArray[i].Actor_Ptr) {
+				BackSocket = WeaponSocketMap[i];
 			}
 		}
 		CurrentWeapon->AttachToComponent(MyMeshComponent, FAttachmentTransformRules::SnapToTargetNotIncludingScale, BackSocket);
@@ -451,17 +452,17 @@ void AHero::GetWeaponFromEquipGrid(int32 Index) {
 
 
 void AHero::InitializeEquipments() {
-	for (int32 i = 0; i < 3; i++) {
-		if (EquipArray[i].Actor_Ptr != nullptr) {
+	for (int32 i = 16; i < 19; i++) {
+		if (BackPackArray[i].Actor_Ptr != nullptr) {
 			FName SockerName;
 			switch (i)
 			{
-			case 0:SockerName = "Spine_Weapon1"; break;//背上
-			case 1:SockerName = "spine_01_left"; break;//左屁股
-			case 2:SockerName = "spine_01_right"; break;//右屁股
+			case 16:SockerName = "Spine_Weapon1"; break;//背上
+			case 17:SockerName = "spine_01_left"; break;//左屁股
+			case 18:SockerName = "spine_01_right"; break;//右屁股
 			default:SockerName = "calf_r_Weapon"; break;//默认右腿咯，先只搞三把武器,这个就不先延伸
 			}
-			EquipArray[i].Actor_Ptr->AttachToComponent(MyMeshComponent, FAttachmentTransformRules::SnapToTargetNotIncludingScale, SockerName);
+			BackPackArray[i].Actor_Ptr->AttachToComponent(MyMeshComponent, FAttachmentTransformRules::SnapToTargetNotIncludingScale, SockerName);
 
 		}
 	}
@@ -469,15 +470,15 @@ void AHero::InitializeEquipments() {
 
 void AHero::EquipWeapon1() { 
 	UE_LOG(LogTemp, Log, TEXT("input select 1"));
-	GetWeaponFromEquipGrid(0); 
+	GetWeaponFromEquipGrid(16); 
 }
 void AHero::EquipWeapon2() { 
 	UE_LOG(LogTemp, Log, TEXT("input select 2"));
-	GetWeaponFromEquipGrid(1); 
+	GetWeaponFromEquipGrid(17); 
 }
 void AHero::EquipWeapon3() { 
 	UE_LOG(LogTemp, Log, TEXT("input select 3"));
-	GetWeaponFromEquipGrid(2); 
+	GetWeaponFromEquipGrid(18); 
 }
 
 //装备武器，仅展示前两把武器，后期拓展再改
@@ -491,17 +492,17 @@ void AHero::EquipWeapon() {
 
 }
 void AHero::RemoveWeapon() {
-	for (int32 i = 0; i < 3; i++) {
-		if (EquipArray[i].Actor_Ptr == nullptr) {
+	for (int32 i = 16; i < 19; i++) {
+		if (BackPackArray[i].Actor_Ptr == nullptr) {
 
 			AWeaponBase* WeaponOnBack = nullptr;
 
 			FName SocketName;
 			switch (i)
 			{
-			case 0: SocketName = "Spine_Weapon1"; break;
-			case 1: SocketName = "spine_01_left"; break;
-			case 2: SocketName = "spine_01_right"; break;
+			case 16: SocketName = "Spine_Weapon1"; break;
+			case 17: SocketName = "spine_01_left"; break;
+			case 18: SocketName = "spine_01_right"; break;
 			default: SocketName = "calf_r_Weapon"; break;
 			}
 			TArray<AActor*>	AttachedWeapons;
@@ -542,6 +543,76 @@ void AHero::RemoveWeapon() {
 		}
 	}
 }
+
+
+void AHero::SyncEquipmentsWithBackPack() {
+	for (int32 i = 16; i < 19; i++) {
+		FName SocketName;
+		switch (i)
+		{
+		case 16: SocketName = "Spine_Weapon1"; break;
+		case 17: SocketName = "spine_01_left"; break;
+		case 18: SocketName = "spine_01_right"; break;
+		default: SocketName = "calf_r_Weapon"; break;
+		}
+
+		// ① 先清理该 Socket 上的旧武器
+
+		TArray<AActor*> AttachedWeapons;
+		GetAttachedActors(AttachedWeapons);
+
+		for (AActor* Actor : AttachedWeapons) {
+			AWeaponBase* Weapon = Cast<AWeaponBase>(Actor);
+			if (Weapon && Weapon->GetAttachParentSocketName() == SocketName) {
+				Weapon->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+
+				// 如果该武器已经不在背包数组里，说明被替换掉了 → 直接销毁
+				bool bStillInBackpack = false;
+				for (int32 j = 16; j < 19; j++) {
+					if (BackPackArray[j].Actor_Ptr == Weapon) {
+						bStillInBackpack = true;
+						break;
+					}
+				}
+
+				if (!bStillInBackpack) {
+					if (Weapon == CurrentWeapon) {
+						// 旧武器就是当前手持武器 → 清空状态
+						CurrentWeapon = nullptr;
+						bUseControllerRotationYaw = false;
+						GetCharacterMovement()->bOrientRotationToMovement = true;
+						Is_AimState = false;
+					}
+					FVector SpawnLocation(0.0f, 0.0f, -999.0f);
+					FRotator SpawnRotation(0.0f, 0.0f, 0.0f);
+					Weapon->SetActorLocationAndRotation(SpawnLocation, SpawnRotation);
+				}
+			}
+		}
+
+		// ② 如果背包里该格子有武器 → 挂到对应 Socket
+		if (BackPackArray[i].Actor_Ptr) {
+			AWeaponBase* Weapon = BackPackArray[i].Actor_Ptr;
+			// 如果是当前武器 → 挂到手上
+			if (Weapon == CurrentWeapon) {
+				Weapon->AttachToComponent(MyMeshComponent,
+					FAttachmentTransformRules::SnapToTargetNotIncludingScale,
+					"hand_r_Weapon");
+			}
+			else {
+				Weapon->AttachToComponent(MyMeshComponent,
+					FAttachmentTransformRules::SnapToTargetNotIncludingScale,
+					SocketName);
+			}
+		}
+	}
+}
+
+
+
+
+
+
 //快速切枪，这个后面再改，因为现在没做其他武器的手持挂接点
 void AHero::SwitchWeaponAttachment() {
 	if (CurrentWeapon) {

@@ -22,6 +22,11 @@ AWeaponBase::AWeaponBase()
 	CurrentAmmo = 30;
 }
 
+float AWeaponBase::GetBaseDamage()
+{
+	return BaseDamage;
+}
+
 // Called when the game starts or when spawned
 void AWeaponBase::BeginPlay()
 {

@@ -12,7 +12,7 @@ ABullet_ItemActor::ABullet_ItemActor() {
 }
 
 void ABullet_ItemActor::InitType() {
-	ItemInfo.ItemID = 1;
+	ItemInfo.ItemID = 1500;
 	ItemInfo.Quantity = 1;
 	ItemInfo.Description = TEXT("This is Bullet");
 	ItemInfo.Icon = ItemTexture2D;

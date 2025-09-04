@@ -82,17 +82,6 @@ void AMonster_AIController::OnTargetPerceptionUpdated(AActor* Actor, FAIStimulus
 		bool sfs = Stimulus.WasSuccessfullySensed();
 		BlackboardComponent->SetValueAsBool(IsSeenPlayerKey, sfs);
 
-
-		if (ControlledPawn) {
-			if (MoveComp) {
-				if (sfs) {
-					MoveComp->MaxWalkSpeed = 500.f;
-				}
-				else {
-					MoveComp->MaxWalkSpeed = 200.f;
-				}
-			}
-		}
 	}
 
 

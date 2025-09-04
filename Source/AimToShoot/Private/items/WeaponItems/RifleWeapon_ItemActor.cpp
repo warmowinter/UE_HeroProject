@@ -12,7 +12,7 @@ ARifleWeapon_ItemActor::ARifleWeapon_ItemActor() {
 
 
 void ARifleWeapon_ItemActor::InitType() {
-	ItemInfo.ItemID = 2;
+	ItemInfo.ItemID = 1001;
 	ItemInfo.Quantity = 1;
 	ItemInfo.Description = TEXT("This is RifleWeapon");
 	ItemInfo.Icon = ItemTexture2D;

@@ -75,20 +75,22 @@ bool UItemSlotWidget::NativeOnDrop(const FGeometry& InGeometry, const FDragDropE
             FromSlot->BP_Struct->IsValidIndex(FromSlot->SlotIndex)){
             UE_LOG(LogTemp, Log, TEXT("man zu jiao huan shu ju"));
             // 交换数据
-            FBackPackStruct Temp = (*BP_Struct)[SlotIndex];
-            (*BP_Struct)[SlotIndex] = (*FromSlot->BP_Struct)[FromSlot->SlotIndex];
-            (*FromSlot->BP_Struct)[FromSlot->SlotIndex] = Temp;
+            //广播给背包界面类，间接中转事件，交由角色通过背包管理系统来处理逻辑，再通知回来。解耦
+            OnDropGridInput.Broadcast(OwnerBackPack, SlotIndex, FromSlot->SlotIndex);
+            //FBackPackStruct Temp = (*BP_Struct)[SlotIndex];
+            //(*BP_Struct)[SlotIndex] = (*FromSlot->BP_Struct)[FromSlot->SlotIndex];
+            //(*FromSlot->BP_Struct)[FromSlot->SlotIndex] = Temp;
 
-            // 刷新两个格子
-            UpdateSlot(BP_Struct, SlotIndex);
-            FromSlot->UpdateSlot(FromSlot->BP_Struct, FromSlot->SlotIndex);
+            //// 刷新两个格子
+            //UpdateSlot(BP_Struct, SlotIndex);
+            //FromSlot->UpdateSlot(FromSlot->BP_Struct, FromSlot->SlotIndex);
 
-            if (GetWorld() && GetWorld()->GetGameInstance()){
-                UInventoryMangerInstance* BPSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UInventoryMangerInstance>();
-                if (BPSubsystem){
-                    BPSubsystem->NoticeHero_EquipUpdate();
-                }
-            }
+            //if (GetWorld() && GetWorld()->GetGameInstance()){
+            //    UInventoryMangerInstance* BPSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UInventoryMangerInstance>();
+            //    if (BPSubsystem){
+            //        /*BPSubsystem->NoticeHero_EquipUpdate();*///这里需要明确角色指针从何而来
+            //    }
+            //}
 
             return true;
         }

@@ -11,7 +11,7 @@ AWeapon_ItemActor::AWeapon_ItemActor() {
 }
 
 void AWeapon_ItemActor::InitType() {
-	ItemInfo.ItemID = 2;
+	ItemInfo.ItemID = 1000;
 	ItemInfo.Quantity = 1;
 	ItemInfo.Description = TEXT("This is Weapon");
 	ItemInfo.Icon = ItemTexture2D;

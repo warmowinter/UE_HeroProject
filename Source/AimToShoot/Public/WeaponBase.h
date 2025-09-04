@@ -54,7 +54,9 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "WeaponProperty")
 		TSubclassOf<ABulletsBase> BulletClass;
 
-	
+public:
+	UFUNCTION()
+		float GetBaseDamage();
 
 protected:
 	// Called when the game starts or when spawned

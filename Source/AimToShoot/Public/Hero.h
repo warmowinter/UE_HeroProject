@@ -15,7 +15,10 @@
 #include "Hero.generated.h"
 
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnMosterAttacked, ACharacter*, Attacker, AMosterBase*, Victim, const FHitResult&, Hit);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnMosterAttacked, AHero*, Attacker, AMosterBase*, Victim, const FHitResult&, Hit);
+
+
+class UInventoryMangerInstance;
 
 UCLASS()
 class AIMTOSHOOT_API AHero : public ACharacter
@@ -49,7 +52,9 @@ public:
 	//UI背包界面实例化
 	UPROPERTY(BlueprintReadWrite, Category = "BackPackUI")
 		UBackPackWidget* BackPackUI;
-
+	//背包管理系统关联
+	UPROPERTY(BlueprintReadWrite, Category = "InventoryManger")
+		UInventoryMangerInstance* BPSubsystem;
 
 	//拾取范围组件
 	UPROPERTY(VisibleAnywhere)
@@ -200,16 +205,29 @@ public:
 	void AddItemToBackPack(const FBackPackStruct& NewItem);
 	//通知背包刷新的函数
 	void NoticeRefresh();
+	//通知背包整理的函数
+	UFUNCTION()
+		void NoticeOrganize(UBackPackWidget* INFO_UI);
+	UFUNCTION()
+		void NoticeSwapIndex(UBackPackWidget* BP_UI, int32 source_Index, int32 targe_Index);
+
 	//打开背包函数
 	void OpenBackPack();
 	//外界获取背包数组
 	UFUNCTION(BlueprintCallable,Category = "GetBackPackArray")
 		TArray<FBackPackStruct>& GetBackPackArray();
 
+	UFUNCTION(BlueprintCallable, Category = "GetEquipArray")
+		TArray<FBackPackStruct>& GetEquipArray();
+
 	//装备武器
 	void EquipWeapon();
 	//卸下武器
 	void RemoveWeapon();
+	
+	//完整初始化武器
+	void SyncEquipmentsWithBackPack();
+
 	//切换武器附着点
 	void SwitchWeaponAttachment();
 

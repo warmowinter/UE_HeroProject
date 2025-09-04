@@ -5,15 +5,15 @@
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
 #include "DataDefine/AllDataDefine.h"
+#include "BackPackWidget.h"
+#include "Delegates/DelegateCombinations.h"
 #include "ItemSlotWidget.generated.h"
 
 /**
  * 
  */
-class UBackPackWidget;
 
-
-
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnDropGridInput,UBackPackWidget*, Inventory_UI,int32,source_grid,int32,targe_grid );
 
 
 UCLASS()
@@ -22,13 +22,19 @@ class AIMTOSHOOT_API UItemSlotWidget : public UUserWidget
 	GENERATED_BODY()
 
 public:
-    // 更新格子（传数组指针，避免拷贝）
+    UPROPERTY()
+        UBackPackWidget* OwnerBackPack = nullptr;
+    UPROPERTY(BlueprintAssignable)
+        FOnDropGridInput OnDropGridInput;
+
+    // 更新格子
     void UpdateSlot(TArray<FBackPackStruct>* InItemData, int32 InIndex);
 
     // 清空格子
     void ClearSlot();
 
     void SetGridType(ESlotType GetType);
+
 
 protected:
     virtual FReply NativeOnMouseButtonDown(const FGeometry& InGeometry, const FPointerEvent& InMouseEvent) override;

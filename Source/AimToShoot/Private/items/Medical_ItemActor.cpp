@@ -13,7 +13,7 @@ AMedical_ItemActor::AMedical_ItemActor() {
 }
 
 void AMedical_ItemActor::InitType() {
-	ItemInfo.ItemID = 3;
+	ItemInfo.ItemID = 2000;
 	ItemInfo.Quantity = 1;
 	ItemInfo.Description = TEXT("This is Medical");
 	ItemInfo.Icon = ItemTexture2D;

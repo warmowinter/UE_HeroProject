@@ -76,10 +76,11 @@ void AMosterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 }
 
 
-void AMosterBase::HandleAttacked(ACharacter* Attacker, AMosterBase* Victim, const FHitResult& Hit)
+void AMosterBase::HandleAttacked(AHero* Attacker, AMosterBase* Victim, const FHitResult& Hit)
 {
 	if (this == Victim) {
-		CurrentHealth -= 10;
+
+		CurrentHealth -= Attacker->CurrentWeapon->GetBaseDamage() * 5.f;
 		if (CurrentHealth <= 0) {
 			IsDead = true;
 			MosterDie();
