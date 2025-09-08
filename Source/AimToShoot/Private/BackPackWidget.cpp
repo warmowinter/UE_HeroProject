@@ -35,8 +35,14 @@ void UBackPackWidget::NativeConstruct() {
     if (Button_Consumable) {
         Button_Consumable->OnClicked.AddDynamic(this, &UBackPackWidget::OnConsumableButtonClicked);
     }
+
+    if (Button_All) {
+        Button_All->OnClicked.AddDynamic(this, &UBackPackWidget::OnChoiceAllButtonClicked);
+    }
+
     BPToSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UInventoryMangerInstance>();
     BPToSubsystem->OnBackPackWidgetUpdated.AddDynamic(this, &UBackPackWidget::RefreshBackPack);
+
 }
 
 // 初始化：创建格子
@@ -66,7 +72,11 @@ void UBackPackWidget::InitializeBackPack()
         GridPanel_A->AddChildToGrid(ItemSlot, Row, Col);
     }
 
-    //装备特殊格子初始化
+
+ /**********************************************************************************************************************
+ 拖拽完装备特殊格子广播-交由背包系统管理
+ 
+************************************************************************************************************************/
     Slot_Weapon1->SetGridType(ESlotType::Equipment);
     Slot_Weapon1->OwnerBackPack = this;
     Slot_Weapon1->OnDropGridInput.AddDynamic(this, &UBackPackWidget::HandleGridSwapIndex);
@@ -95,6 +105,11 @@ void UBackPackWidget::InitializeBackPack()
 
 }
 
+/**********************************************************************************************************************
+背包界面按钮点击触发广播事件
+*
+************************************************************************************************************************/
+
 void UBackPackWidget::OnOrganizeButtonClicked()
 {
     OnOrganizePress.Broadcast(this);
@@ -103,22 +118,32 @@ void UBackPackWidget::OnOrganizeButtonClicked()
 
 void UBackPackWidget::OnQualityButtonClicked()
 {
+    OnOrganize_APress.Broadcast(this);
     UE_LOG(LogTemp, Log, TEXT("Quality sort"));
 }
 
 void UBackPackWidget::OnNumButtonClicked()
 {
+    OnOrganize_BPress.Broadcast(this);
     UE_LOG(LogTemp, Log, TEXT("NUm sort"));
 }
 
 void UBackPackWidget::OnWeaponButtonClicked()
 {
+    OnChoiceWeaponsButton.Broadcast();
     UE_LOG(LogTemp, Log, TEXT("Choice Weapon Categoty"));
 }
 
 void UBackPackWidget::OnConsumableButtonClicked()
 {
+    OnChoiceConsumablesButton.Broadcast();
     UE_LOG(LogTemp, Log, TEXT("Choice Consumable Categoty"));
+}
+
+void UBackPackWidget::OnChoiceAllButtonClicked()
+{
+    OnChoiceAllButton.Broadcast();
+    UE_LOG(LogTemp, Log, TEXT("Choice All Categoty"));
 }
 
 void UBackPackWidget::HandleGridSwapIndex(UBackPackWidget* BP_UI, int32 source_Index, int32 targe_Index)
@@ -139,6 +164,6 @@ void UBackPackWidget::RefreshBackPack(AHero* Player)
     for (int32 i = 0; i < SlotWidgets.Num(); i++)
     {
         UE_LOG(LogTemp, Log, TEXT("Update item grid"));
-        SlotWidgets[i]->UpdateSlot(&(Player->GetBackPackArray()), i);
+        SlotWidgets[i]->UpdateSlot(&(Player->GetDisPlayShowArray()), i);
     }
 }

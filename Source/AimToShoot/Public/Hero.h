@@ -108,6 +108,9 @@ protected:
 	//背包数组
 	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category = "Inventory")
 		TArray<FBackPackStruct> BackPackArray;
+	//对外显示的背包数组
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Inventory")
+		TArray<FBackPackStruct> DisPlayArray;
 	//装备格数组
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Equip_State")
 		TArray<FBackPackStruct>	EquipArray;
@@ -127,12 +130,13 @@ protected:
 	void TurnAtRate(float rate);
 	void LookUpRate(float rate);
 
+protected:
+
 /**************************************************************************************************************************************************************
 角色状态栏
 健康值——体力值——
 ***************************************************************************************************************************************************************/
 
-protected:
 	//角色状态State
 	UPROPERTY(EditAnywhere, Category = "State")
 		float MaxHealth;//健康值
@@ -153,6 +157,49 @@ protected:
 	bool Is_FireState = false;//是否开火
 	bool Is_Crouch = false;//是否蹲伏
 
+
+
+/**************************************************************************************************************************************************************
+背包栏目，包含属性和状态以及哈希索引
+是否打开背包 Is_OpenBag | 是否选择武器页面 Is_ChoiceWeaponPage | 是否选择消耗品页面 Is_ChoicConsumablePage
+***************************************************************************************************************************************************************/
+	int32 InventoryCapacity;
+
+	bool Is_OpenBag = false;
+	bool Is_ChoiceWeaponPage = false;
+	bool Is_ChoicConsumablePage = false;
+
+	/*TMap<int32, int32> SourceToTarget;*///杀鸡用牛刀，我仅仅一个简单的数组就行
+	TArray<int32> SourceToTarget; //哈希索引
+public:
+
+/**************************************************************************************************************************************************************
+背包状态类切换函数
+
+***************************************************************************************************************************************************************/
+	
+	UFUNCTION(BlueprintCallable)
+		void NoticeChangePageToWeapon();
+	UFUNCTION(BlueprintCallable)
+		void NoticeChangePageToConsumable();
+	UFUNCTION(BlueprintCallable)
+		void NoticeChangePageToAll();
+
+/**************************************************************************************************************************************************************
+类外访问背包状态/属性函数
+
+***************************************************************************************************************************************************************/
+	UFUNCTION(BlueprintCallable)
+		bool& GetBPIsOpenStatus();
+	UFUNCTION(BlueprintCallable)
+		bool& GetPageToWeaponStatus();
+	UFUNCTION(BlueprintCallable)
+		bool& GetPageToConsumableStatus();
+
+	UFUNCTION(BlueprintCallable)
+		int32 GetBPCapacity();
+	UFUNCTION(BlueprintCallable)
+		TArray<int32>& GetSourceToTarget();
 public:
 	//切换视图
 	UFUNCTION(BlueprintCallable, Category = "ToggleCharacterView")
@@ -209,14 +256,20 @@ public:
 	UFUNCTION()
 		void NoticeOrganize(UBackPackWidget* INFO_UI);
 	UFUNCTION()
+		void NoticeOrganize_A(UBackPackWidget* INFO_UI);
+	UFUNCTION()
+		void NoticeOrganize_B(UBackPackWidget* INFO_UI);
+
+	UFUNCTION()
 		void NoticeSwapIndex(UBackPackWidget* BP_UI, int32 source_Index, int32 targe_Index);
 
 	//打开背包函数
 	void OpenBackPack();
 	//外界获取背包数组
-	UFUNCTION(BlueprintCallable,Category = "GetBackPackArray")
+	UFUNCTION(BlueprintCallable,Category = "GetBPArray")
 		TArray<FBackPackStruct>& GetBackPackArray();
-
+	UFUNCTION(BlueprintCallable, Category = "GetBPArray")
+		TArray<FBackPackStruct>& GetDisPlayShowArray();
 	UFUNCTION(BlueprintCallable, Category = "GetEquipArray")
 		TArray<FBackPackStruct>& GetEquipArray();
 

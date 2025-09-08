@@ -20,4 +20,5 @@ void ABullet_ItemActor::InitType() {
 	ItemInfo.ItemType = EItemType::EIT_Armor;
 	ItemInfo.WeaponNumber = 0;
 	ItemInfo.MaxStackNumber = 30;
+	ItemInfo.Quality = 1;
 }

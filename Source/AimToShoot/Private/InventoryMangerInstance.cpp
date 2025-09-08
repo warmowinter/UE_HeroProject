@@ -91,26 +91,128 @@ void UInventoryMangerInstance::TryPickUp(AHero* Player)
 			break;
 		}
 	}
+	DisPlayShowOfArray(Player);//拾取时同步更新对外展示的数组
 	OnBackPackWidgetUpdated.Broadcast(Player);
 }
 
 void UInventoryMangerInstance::OrganizeBackPack(AHero* Player) {
 	if (Player) {
 		UMyTool::SortBackPack(Player->GetBackPackArray(), 0, 15);
+		DisPlayShowOfArray(Player);//整理时同步更新对外展示的数组
 		OnBackPackWidgetUpdated.Broadcast(Player);
 		/*Player->BackPackUI->RefreshBackPack(Player->GetBackPackArray(),Player->GetEquipArray());*/
+	}
+}
+
+void UInventoryMangerInstance::OrganizeBackPack_A(AHero* Player)
+{
+	if (Player) {
+		UMyTool::SortBackPack_A(Player->GetBackPackArray(), 0, 15);
+		DisPlayShowOfArray(Player);//整理时同步更新对外展示的数组
+		OnBackPackWidgetUpdated.Broadcast(Player);
+	}
+}
+
+void UInventoryMangerInstance::OrganizeBackPack_B(AHero* Player)
+{
+	if (Player) {
+		UMyTool::SortBackPack_B(Player->GetBackPackArray(), 0, 15);
+		DisPlayShowOfArray(Player);//整理时同步更新对外展示的数组
+		OnBackPackWidgetUpdated.Broadcast(Player);
+	}
+}
+
+void UInventoryMangerInstance::ChangePageToWeapon(AHero* Player)
+{
+	if (!Player)	return;
+	Player->GetPageToWeaponStatus() = true;
+	Player->GetPageToConsumableStatus() = false;
+	DisPlayShowOfArray(Player);
+	OnBackPackWidgetUpdated.Broadcast(Player);
+}
+
+void UInventoryMangerInstance::ChangePageToConsumable(AHero* Player)
+{
+	if (!Player)	return;
+	Player->GetPageToWeaponStatus() = false;
+	Player->GetPageToConsumableStatus() = true;
+	DisPlayShowOfArray(Player);
+	OnBackPackWidgetUpdated.Broadcast(Player);
+}
+
+void UInventoryMangerInstance::ChangePageToAll(AHero* Player)
+{
+	if (!Player)	return;
+	Player->GetPageToWeaponStatus() = false;
+	Player->GetPageToConsumableStatus() = false;
+	DisPlayShowOfArray(Player);
+	OnBackPackWidgetUpdated.Broadcast(Player);
+}
+
+void UInventoryMangerInstance::DisPlayShowOfArray(AHero* Player)
+{
+	bool W_Status = Player->GetPageToWeaponStatus();
+	bool C_Status = Player->GetPageToConsumableStatus();
+
+	TArray<FBackPackStruct>& TargeArray = Player->GetDisPlayShowArray();
+	TArray<FBackPackStruct>& SourceArray = Player->GetBackPackArray();
+
+	TArray<int32>& BindIndex = Player->GetSourceToTarget();
+
+	int32 I_Capacity = Player->GetBPCapacity();
+
+	TargeArray.Empty();
+	TargeArray.SetNum(I_Capacity);
+
+	BindIndex.Empty();
+	BindIndex.SetNum(I_Capacity);
+
+	int32 init = 0;
+	if (W_Status && !C_Status) {
+		for (int32 i = 0; i < I_Capacity; i++) {
+			if (SourceArray[i].ItemType == EItemType::EIT_Weapon) {
+				BindIndex[init] = i;
+				TargeArray[init++] = SourceArray[i];
+			}
+			if (i >= 16) {
+				BindIndex[i] = i;
+				TargeArray[i] = SourceArray[i];
+			}
+		}
+	}
+	else if (!W_Status && C_Status) {
+		for (int32 i = 0; i < I_Capacity; i++) {
+			if (SourceArray[i].ItemType == EItemType::EIT_Consumable) {
+				BindIndex[init] = i;
+				TargeArray[init++] = SourceArray[i];
+			}
+			if (i >= 16) {
+				BindIndex[i] = i;
+				TargeArray[i] = SourceArray[i];
+			}
+		}
+	}
+	else if (W_Status && C_Status) {
+		UE_LOG(LogTemp, Log, TEXT("An error occurred BPStatus"));
+	}
+	else {
+		for (int32 i = 0; i < I_Capacity; i++) {
+			BindIndex[i] = i;
+			TargeArray[i] = SourceArray[i];
+		}
+
 	}
 }
 
 void UInventoryMangerInstance::I_OpenBackPack(AHero* Player) {
 	APlayerController* PC = Cast<APlayerController>(Player->GetController());
 
-	if (!I_Is_OpenBP) {
+	if (!(Player->GetBPIsOpenStatus())) {
 		if (!(Player->BackPackUI))	return;
 		Player->BackPackUI->SetVisibility(ESlateVisibility::Visible);
 		OnBackPackWidgetUpdated.Broadcast(Player);
 		UE_LOG(LogTemp, Log, TEXT("open BackPack"));
-		I_Is_OpenBP = true;
+		Player->GetBPIsOpenStatus() = true;
 
 		PC->bShowMouseCursor = true;
 		FInputModeGameAndUI InputMode;
@@ -120,7 +222,7 @@ void UInventoryMangerInstance::I_OpenBackPack(AHero* Player) {
 	}
 	else {
 		Player->BackPackUI->SetVisibility(ESlateVisibility::Hidden);
-		I_Is_OpenBP = false;
+		Player->GetBPIsOpenStatus() = false;
 		PC->bShowMouseCursor = false;
 		FInputModeGameOnly InputMode;
 		PC->SetInputMode(InputMode);
@@ -129,9 +231,21 @@ void UInventoryMangerInstance::I_OpenBackPack(AHero* Player) {
 }
 
 void UInventoryMangerInstance::swap_PlayerArrayIndex(AHero* Player, int32 source_Index, int32 targe_Index) {
-	FBackPackStruct temp_A = (Player->GetBackPackArray())[source_Index];
-	(Player->GetBackPackArray())[source_Index] = (Player->GetBackPackArray())[targe_Index];
-	(Player->GetBackPackArray())[targe_Index] = temp_A;
+
+	bool W_Status = Player->GetPageToWeaponStatus();
+	bool C_Status = Player->GetPageToConsumableStatus();
+
+	TArray<int32> const BindIndex = Player->GetSourceToTarget();
+
+	FBackPackStruct temp_A = (Player->GetBackPackArray())[BindIndex[source_Index]];
+	(Player->GetBackPackArray())[BindIndex[source_Index]] = (Player->GetBackPackArray())[BindIndex[targe_Index]];
+	(Player->GetBackPackArray())[BindIndex[targe_Index]] = temp_A;
+
+
+	//FBackPackStruct temp_A = (Player->GetBackPackArray())[source_Index];
+	//(Player->GetBackPackArray())[source_Index] = (Player->GetBackPackArray())[targe_Index];
+	//(Player->GetBackPackArray())[targe_Index] = temp_A;
+	DisPlayShowOfArray(Player);
 	//Player->RemoveWeapon();
 	//Player->InitializeEquipments();
 	Player->SyncEquipmentsWithBackPack();

@@ -20,4 +20,5 @@ void APistolWeapon_ItemActor::InitType()
 	ItemInfo.ItemType = EItemType::EIT_Weapon;
 	ItemInfo.WeaponNumber = 2;
 	ItemInfo.MaxStackNumber = 1;
+	ItemInfo.Quality = 2;
 }

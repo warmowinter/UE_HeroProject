@@ -13,7 +13,7 @@ AWeaponBase::AWeaponBase()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 	SkeleMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SkeletalComp"));
-
+	SetRootComponent(SkeleMesh);
 
 	FireRate = 1.0f;
 	BaseDamage = 1.0f;

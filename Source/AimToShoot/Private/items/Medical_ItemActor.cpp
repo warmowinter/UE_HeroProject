@@ -21,4 +21,5 @@ void AMedical_ItemActor::InitType() {
 	ItemInfo.ItemType = EItemType::EIT_Consumable;
 	ItemInfo.WeaponNumber = 0;
 	ItemInfo.MaxStackNumber = 2;
+	ItemInfo.Quality = 1;
 }

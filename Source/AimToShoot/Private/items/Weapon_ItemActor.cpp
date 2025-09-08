@@ -19,4 +19,5 @@ void AWeapon_ItemActor::InitType() {
 	ItemInfo.ItemType = EItemType::EIT_Weapon;
 	ItemInfo.WeaponNumber = 1;
 	ItemInfo.MaxStackNumber = 1;
+	ItemInfo.Quality = 1;
 }

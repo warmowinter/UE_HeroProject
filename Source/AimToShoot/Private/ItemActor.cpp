@@ -36,6 +36,7 @@ void AItemActor::Tick(float DeltaTime)
 void AItemActor::InitType() {
 	ItemInfo.ItemID = 0;
 	ItemInfo.Quantity = 1;
+	ItemInfo.Quality = 1;
 	ItemInfo.Description = TEXT("UNknown");
 	ItemInfo.Icon = nullptr;
 	ItemInfo.bIsStackable = false;

@@ -3,16 +3,39 @@
 
 #include "MyTool.h"
 
+/***************************************************************************************************************
+背包所用到的特殊排序算法
+
+****************************************************************************************************************/
+
 
 int32 UMyTool::GetBPItemCount(const TArray<FBackPackStruct>& BackPack, int32 ItemID) {
 	//占位
 	return ItemID;
 }
 
-
+//我在这里采用lambda便于后期灵活设定规则。
+//考虑以后加泛型筛选，UI下拉框和搜索框还不会，暂时先搁一边，先实现核心逻辑
 void UMyTool::SortBackPack(TArray<FBackPackStruct>& BackPack, int32 Low, int32 High)
 {
-	merge_sort(BackPack,Low,High);
+	merge_sort(BackPack,Low,High, [](const FBackPackStruct& a, const FBackPackStruct& b)
+		{
+			return CompareItems_A(a, b);
+		});
+}
+void UMyTool::SortBackPack_A(TArray<FBackPackStruct>& BackPack, int32 Low, int32 High)
+{
+	merge_sort(BackPack, Low, High, [](const FBackPackStruct& a, const FBackPackStruct& b)
+		{
+			return CompareItems_A(a, b);
+		});
+}
+void UMyTool::SortBackPack_B(TArray<FBackPackStruct>& BackPack, int32 Low, int32 High)
+{
+	merge_sort(BackPack, Low, High, [](const FBackPackStruct& a, const FBackPackStruct& b)
+		{
+			return CompareItems_B(a, b);
+		});
 }
 /**************************************************************************************************************
 排序算法：快排(Lomuto style)
@@ -48,7 +71,35 @@ void UMyTool::FastSort_A(TArray<FBackPackStruct>& Num, int32 low, int32 high) {
 归并排序（merge）
 
 *****************************************************************************************************************/
-void UMyTool::merge(TArray<FBackPackStruct>& num, int32 left,int32 mid, int32 right) {
+bool UMyTool::CompareItems_A(const FBackPackStruct& a, const FBackPackStruct& b) {
+
+	int32 A_Weight = UAllDataDefine::GetItemTypeSortWeight(a.ItemType);
+	int32 B_Weight = UAllDataDefine::GetItemTypeSortWeight(b.ItemType);
+	if (A_Weight != B_Weight) {
+		return A_Weight < B_Weight;
+	}
+	if (a.Quality != b.Quality) {
+		return a.Quality > b.Quality;
+	}
+	return a.Quantity > b.Quantity;
+
+}
+
+bool UMyTool::CompareItems_B(const FBackPackStruct& a, const FBackPackStruct& b) {
+
+	int32 A_Weight = UAllDataDefine::GetItemTypeSortWeight(a.ItemType);
+	int32 B_Weight = UAllDataDefine::GetItemTypeSortWeight(b.ItemType);
+	if (A_Weight != B_Weight) {
+		return A_Weight < B_Weight;
+	}
+	if (a.Quantity != b.Quantity) {
+		return a.Quantity > b.Quantity;
+	}
+	return a.Quality > b.Quality;
+
+}
+template<typename Compare>
+void UMyTool::merge(TArray<FBackPackStruct>& num, int32 left,int32 mid, int32 right, Compare comp) {
 	int32 n1 = mid - left + 1;
 	int32 n2 = right - mid;
 
@@ -61,7 +112,7 @@ void UMyTool::merge(TArray<FBackPackStruct>& num, int32 left,int32 mid, int32 ri
 	int32 i = 0, j = 0, k = left;
 
 	while (i < n1 && j < n2) {
-		if (L[i].ItemID <= R[j].ItemID && L[i].ItemID != 0 && R[j].ItemID != 0 || L[i].ItemID != 0 && R[j].ItemID == 0) {
+		if (comp(L[i],R[j] ) || (!comp(R[j], L[i]) && !comp(L[i], R[j]))) {
 			num[k] = L[i];
 			i++;
 		}
@@ -83,15 +134,15 @@ void UMyTool::merge(TArray<FBackPackStruct>& num, int32 left,int32 mid, int32 ri
 		k++;
 	}
 }
-
-void UMyTool::merge_sort(TArray<FBackPackStruct>& num, int32 left, int32 right) {
+template<typename Compare>
+void UMyTool::merge_sort(TArray<FBackPackStruct>& num, int32 left, int32 right, Compare comp) {
 	if (left < right) {
 		int32 mid =left + (right - left) / 2;
 
-		merge_sort(num, left, mid);
-		merge_sort(num, mid + 1, right);
+		merge_sort(num, left, mid,comp);
+		merge_sort(num, mid + 1, right, comp);
 
-		merge(num, left, mid, right);
+		merge(num, left, mid, right, comp);
 
 	}
 }

@@ -23,9 +23,9 @@ public:
 		UStaticMeshComponent* Mesh;
 	UPROPERTY(VisibleAnywhere)
 		USkeletalMeshComponent* SkeleMesh;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Item Info")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Item Info")
 		FBackPackStruct ItemInfo;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Item Texture2D")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Item Texture2D")
 		UTexture2D* ItemTexture2D;
 
 public:

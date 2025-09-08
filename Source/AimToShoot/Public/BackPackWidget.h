@@ -14,6 +14,11 @@
 
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnOrganizeButton, UBackPackWidget*, BP_UI);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnOrganize_AButton, UBackPackWidget*, BP_UI);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnOrganize_BButton, UBackPackWidget*, BP_UI);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnChoiceWeaponsButton);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnChoiceConsumablesButton);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnChoiceAllButton);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnSwapIndex_Array, UBackPackWidget*, BP_UI, int32, source_Index, int32, targe_Index);
 
 
@@ -33,6 +38,16 @@ public:
 	UPROPERTY(BlueprintAssignable)
 		FOnOrganizeButton OnOrganizePress;
 	UPROPERTY(BlueprintAssignable)
+		FOnOrganize_AButton OnOrganize_APress;
+	UPROPERTY(BlueprintAssignable)
+		FOnOrganize_BButton OnOrganize_BPress;
+	UPROPERTY(BlueprintAssignable)
+		FOnChoiceWeaponsButton OnChoiceWeaponsButton;
+	UPROPERTY(BlueprintAssignable)
+		FOnChoiceConsumablesButton OnChoiceConsumablesButton;
+	UPROPERTY(BlueprintAssignable)
+		FOnChoiceAllButton OnChoiceAllButton;
+	UPROPERTY(BlueprintAssignable)
 		FOnSwapIndex_Array OnSwapIndex_Array;
 
 public:
@@ -49,6 +64,8 @@ public:
 		class UButton* Button_Weapon;
 	UPROPERTY(Meta = (BindWidget))
 		class UButton* Button_Consumable;
+	UPROPERTY(Meta = (BindWidget))
+		class UButton* Button_All;
 
 	UPROPERTY(Meta = (BindWidget))
 		class UBorder* first;
@@ -97,6 +114,9 @@ public:
 		void OnWeaponButtonClicked();
 	UFUNCTION()
 		void OnConsumableButtonClicked();
+	UFUNCTION()
+		void OnChoiceAllButtonClicked();
+
 
 	UFUNCTION()
 		void HandleGridSwapIndex(UBackPackWidget* BP_UI, int32 source_Index, int32 targe_Index);

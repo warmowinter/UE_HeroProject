@@ -5,6 +5,7 @@
 #include "BackPackWidget.h"
 #include "Components/Image.h"
 #include "Components/TextBlock.h"
+#include "Components/Border.h"
 #include "Blueprint/WidgetBlueprintLibrary.h"
 #include "Blueprint/DragDropOperation.h"
 #include "InventoryMangerInstance.h"
@@ -30,6 +31,25 @@ void UItemSlotWidget::UpdateSlot(TArray<FBackPackStruct>* InItemData, int32 InIn
     }     
     if (ModelDate.Quantity) {
         ItemCount->SetText(ModelDate.Quantity > 1 ? FText::AsNumber(ModelDate.Quantity) : FText::GetEmpty());
+    }
+    switch (ModelDate.Quality)
+    {
+    case 0: BackGround_Color->SetBrushColor(FLinearColor(0.5f, 0.5f, 0.5f, 1.0f));//灰色
+        break;
+    case 1: BackGround_Color->SetBrushColor(FLinearColor(1.0f, 1.0f, 1.0f, 1.0f));//白色
+        break;
+    case 2: BackGround_Color->SetBrushColor(FLinearColor(0.0f, 0.5f, 1.0f, 1.0f));//蓝色
+        break;
+    case 3: BackGround_Color->SetBrushColor(FLinearColor(0.6f, 0.2f, 1.0f, 1.0f));//紫色
+        break;
+    case 4: BackGround_Color->SetBrushColor(FLinearColor(1.0f, 0.6f, 0.0f, 1.0f));//橙色
+        break;
+    default: // 默认品质 - 灰色
+        if (BackGround_Color)
+        {
+            BackGround_Color->SetBrushColor(FLinearColor(0.5f, 0.5f, 0.5f, 1.0f)); // 
+        }
+        break;
     }
 }
 //不用

@@ -88,7 +88,10 @@ void AHero::BeginPlay()
 	CurrentStamina = MaxStamina;
 	StaminaDrainRate = 10.0f;
 	//背包初始化
-	BackPackArray.SetNum(21);
+	InventoryCapacity = 21;
+	BackPackArray.SetNum(InventoryCapacity);
+	//对外背包初始化
+	DisPlayArray.SetNum(21);
 	//装备数组初始化
 	EquipArray.SetNum(6);
 
@@ -110,10 +113,15 @@ void AHero::BeginPlay()
 		}
 	}
 
-	//绑定委托
+	//绑定来自背包界面的事件委托
 	if (BackPackUI) {
 		BackPackUI->OnOrganizePress.AddDynamic(this, &AHero::NoticeOrganize);
+		BackPackUI->OnOrganize_APress.AddDynamic(this, &AHero::NoticeOrganize_A);
+		BackPackUI->OnOrganize_BPress.AddDynamic(this, &AHero::NoticeOrganize_B);
 		BackPackUI->OnSwapIndex_Array.AddDynamic(this, &AHero::NoticeSwapIndex);
+		BackPackUI->OnChoiceWeaponsButton.AddDynamic(this, &AHero::NoticeChangePageToWeapon);
+		BackPackUI->OnChoiceConsumablesButton.AddDynamic(this, &AHero::NoticeChangePageToConsumable);
+		BackPackUI->OnChoiceAllButton.AddDynamic(this, &AHero::NoticeChangePageToAll);
 	}
 
 	BPSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UInventoryMangerInstance>();
@@ -243,6 +251,47 @@ bool AHero::GetHeroIsCrouch()
 	return Is_Crouch;
 }
 
+void AHero::NoticeChangePageToWeapon()
+{
+	BPSubsystem->ChangePageToWeapon(this);
+
+}
+
+void AHero::NoticeChangePageToConsumable()
+{
+	BPSubsystem->ChangePageToConsumable(this);
+}
+
+void AHero::NoticeChangePageToAll()
+{
+	BPSubsystem->ChangePageToAll(this);
+}
+
+bool& AHero::GetBPIsOpenStatus()
+{
+	return Is_OpenBag;
+}
+
+bool& AHero::GetPageToWeaponStatus()
+{
+	return Is_ChoiceWeaponPage;
+}
+
+bool& AHero::GetPageToConsumableStatus()
+{
+	return Is_ChoicConsumablePage;
+}
+
+int32 AHero::GetBPCapacity()
+{
+	return InventoryCapacity;
+}
+
+TArray<int32>& AHero::GetSourceToTarget()
+{
+	return SourceToTarget;
+}
+
 void AHero::ToggleCharacterView() {
 	if (!Is_2D_View) {
 		CurrentCamera = MyCameraComponent_2D;
@@ -360,6 +409,20 @@ void AHero::NoticeOrganize(UBackPackWidget* INFO_UI)
 	BPSubsystem->OrganizeBackPack(this);
 }
 
+void AHero::NoticeOrganize_A(UBackPackWidget* INFO_UI)
+{
+	if (INFO_UI != BackPackUI)	return;
+
+	BPSubsystem->OrganizeBackPack_A(this);
+}
+
+void AHero::NoticeOrganize_B(UBackPackWidget* INFO_UI)
+{
+	if (INFO_UI != BackPackUI)	return;
+
+	BPSubsystem->OrganizeBackPack_B(this);
+}
+
 void AHero::NoticeSwapIndex(UBackPackWidget* BP_UI, int32 source_Index, int32 targe_Index)
 {
 	if (BP_UI != BackPackUI)	return;
@@ -395,6 +458,11 @@ void AHero::OpenBackPack() {
 //类外获取当前背包数组
 TArray<FBackPackStruct>& AHero::GetBackPackArray() {
 	return BackPackArray;
+}
+
+TArray<FBackPackStruct>& AHero::GetDisPlayShowArray()
+{
+	return DisPlayArray;
 }
 
 TArray<FBackPackStruct>& AHero::GetEquipArray()
@@ -556,7 +624,7 @@ void AHero::SyncEquipmentsWithBackPack() {
 		default: SocketName = "calf_r_Weapon"; break;
 		}
 
-		// ① 先清理该 Socket 上的旧武器
+		//先清理该 Socket 上的旧武器
 
 		TArray<AActor*> AttachedWeapons;
 		GetAttachedActors(AttachedWeapons);
@@ -566,7 +634,7 @@ void AHero::SyncEquipmentsWithBackPack() {
 			if (Weapon && Weapon->GetAttachParentSocketName() == SocketName) {
 				Weapon->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 
-				// 如果该武器已经不在背包数组里，说明被替换掉了 → 直接销毁
+		
 				bool bStillInBackpack = false;
 				for (int32 j = 16; j < 19; j++) {
 					if (BackPackArray[j].Actor_Ptr == Weapon) {
@@ -574,15 +642,15 @@ void AHero::SyncEquipmentsWithBackPack() {
 						break;
 					}
 				}
-
+				// 如果该武器已经不在背包数组里，说明被替换掉了 
 				if (!bStillInBackpack) {
-					if (Weapon == CurrentWeapon) {
-						// 旧武器就是当前手持武器 → 清空状态
-						CurrentWeapon = nullptr;
-						bUseControllerRotationYaw = false;
-						GetCharacterMovement()->bOrientRotationToMovement = true;
-						Is_AimState = false;
-					}
+					//if (Weapon == CurrentWeapon) {
+					//
+					//	CurrentWeapon = nullptr;
+					//	bUseControllerRotationYaw = false;
+					//	GetCharacterMovement()->bOrientRotationToMovement = true;
+					//	Is_AimState = false;
+					//}
 					FVector SpawnLocation(0.0f, 0.0f, -999.0f);
 					FRotator SpawnRotation(0.0f, 0.0f, 0.0f);
 					Weapon->SetActorLocationAndRotation(SpawnLocation, SpawnRotation);
@@ -590,7 +658,7 @@ void AHero::SyncEquipmentsWithBackPack() {
 			}
 		}
 
-		// ② 如果背包里该格子有武器 → 挂到对应 Socket
+		//如果背包里该格子有武器 → 挂到对应 Socket
 		if (BackPackArray[i].Actor_Ptr) {
 			AWeaponBase* Weapon = BackPackArray[i].Actor_Ptr;
 			// 如果是当前武器 → 挂到手上
@@ -606,7 +674,28 @@ void AHero::SyncEquipmentsWithBackPack() {
 			}
 		}
 	}
+	//如果当前手持武器与背包装备格里武器不匹配，直接卸下
+	bool isFindcurrent = false;
+	for (int32 j = 16; j < 19; j++) {
+		if (BackPackArray[j].Actor_Ptr == CurrentWeapon) {
+			isFindcurrent = true;
+		}
+	}
+	
+	if (!isFindcurrent) {
+		UE_LOG(LogTemp, Log, TEXT("This Occurred error!"));
+		CurrentWeapon->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+		FVector SpawnLocation(0.0f, 0.0f, -999.0f);
+		FRotator SpawnRotation(0.0f, 0.0f, 0.0f);
+		CurrentWeapon->SetActorLocationAndRotation(SpawnLocation, SpawnRotation);
+		bUseControllerRotationYaw = false;
+		GetCharacterMovement()->bOrientRotationToMovement = true;
+		Is_AimState = false;
+		CurrentWeapon = nullptr;
+	}
 }
+
+
 
 
 

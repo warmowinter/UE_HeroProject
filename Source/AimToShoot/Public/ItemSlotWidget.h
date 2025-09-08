@@ -57,8 +57,8 @@ private:
     // UI 绑定的组件
     UPROPERTY(meta = (BindWidget))
         class UImage* ItemIcon = nullptr;
-
     UPROPERTY(meta = (BindWidget))
         class UTextBlock* ItemCount = nullptr;
-
+    UPROPERTY(meta = (BindWidget))
+        class UBorder* BackGround_Color = nullptr;
 };

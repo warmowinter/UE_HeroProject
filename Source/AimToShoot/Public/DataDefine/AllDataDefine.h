@@ -45,6 +45,7 @@ public:
 		, bIsStackable(false)
 		, MaxStackNumber(30)
 		, ItemType(EItemType::EIT_Unknown)
+		, Quality(0)
 		, WeaponNumber(0)
 		, Actor_Ptr(nullptr)
 
@@ -70,7 +71,9 @@ public:
 	//类型
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
 		EItemType ItemType;
-	//武器数字，。。。。
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
+		int32 Quality;
+	//武器数字，。。。。后续要删掉，较与后面优化，冗余设计
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
 		int32 WeaponNumber;
 	//武器指针-指向实例化
@@ -83,5 +86,11 @@ UCLASS()
 class AIMTOSHOOT_API UAllDataDefine : public UObject
 {
 	GENERATED_BODY()
-	
+public:
+	UFUNCTION(BlueprintCallable, Category = "TypeSort")
+	static int32 GetItemTypeSortWeight(EItemType A_Itemtype);
+
+private:
+
+	static const TMap<EItemType, int32> ItemTypeSortWeights;
 };
