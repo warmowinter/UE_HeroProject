@@ -632,8 +632,9 @@ void AHero::SyncEquipmentsWithBackPack() {
 		for (AActor* Actor : AttachedWeapons) {
 			AWeaponBase* Weapon = Cast<AWeaponBase>(Actor);
 			if (Weapon && Weapon->GetAttachParentSocketName() == SocketName) {
-				Weapon->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 
+				Weapon->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+				UE_LOG(LogTemp, Log, TEXT("This Occurred first error!"));
 		
 				bool bStillInBackpack = false;
 				for (int32 j = 16; j < 19; j++) {
@@ -677,17 +678,19 @@ void AHero::SyncEquipmentsWithBackPack() {
 	//如果当前手持武器与背包装备格里武器不匹配，直接卸下
 	bool isFindcurrent = false;
 	for (int32 j = 16; j < 19; j++) {
-		if (BackPackArray[j].Actor_Ptr == CurrentWeapon) {
+		if (BackPackArray[j].Actor_Ptr == CurrentWeapon && BackPackArray[j].Actor_Ptr != nullptr) {
 			isFindcurrent = true;
 		}
 	}
 	
 	if (!isFindcurrent) {
-		UE_LOG(LogTemp, Log, TEXT("This Occurred error!"));
-		CurrentWeapon->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-		FVector SpawnLocation(0.0f, 0.0f, -999.0f);
-		FRotator SpawnRotation(0.0f, 0.0f, 0.0f);
-		CurrentWeapon->SetActorLocationAndRotation(SpawnLocation, SpawnRotation);
+		UE_LOG(LogTemp, Log, TEXT("This Occurred seconds error!"));
+		if (CurrentWeapon != nullptr) {
+			CurrentWeapon->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+			FVector SpawnLocation(0.0f, 0.0f, -999.0f);
+			FRotator SpawnRotation(0.0f, 0.0f, 0.0f);
+			CurrentWeapon->SetActorLocationAndRotation(SpawnLocation, SpawnRotation);
+		}
 		bUseControllerRotationYaw = false;
 		GetCharacterMovement()->bOrientRotationToMovement = true;
 		Is_AimState = false;

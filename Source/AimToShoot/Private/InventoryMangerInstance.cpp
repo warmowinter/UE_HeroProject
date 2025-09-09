@@ -13,10 +13,10 @@
 
 ************************************************************************************************************/
 
-
+//没用上，已废弃
 void UInventoryMangerInstance::NoticeHero_EquipUpdate(AHero* Player) {
-	Player->RemoveWeapon();
-	Player->InitializeEquipments();
+	//Player->RemoveWeapon();
+	//Player->InitializeEquipments();
 
 }
 
