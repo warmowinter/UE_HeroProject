@@ -74,7 +74,7 @@ void UAHeroAnimInstance::CalculateRotator() {
 	);
 
 	PitchAngle = SmoothRot.Pitch;
-	if (abs(RotationDelta.Yaw) >= 160) {
+	if (abs(RotationDelta.Yaw) >= 175) {
 		float SmoothYaw = FMath::FInterpTo(
 			CurrentRotation.Yaw,
 			0.f,

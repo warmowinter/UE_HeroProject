@@ -54,11 +54,12 @@ void UInventoryMangerInstance::AddItemToInventory(AHero* Player,const FBackPackS
 		}
 	}
 
+
 	// 如果可堆叠但没找到相同物品，就用空位
 	if (EmptySlotIndex != -1) {
 		Player_BPnum[EmptySlotIndex] = NewItem;
 	}
-
+	
 	//如果背包已满
 	if (EmptySlotIndex == -1) {
 		UE_LOG(LogTemp, Log, TEXT("return the Currently picked up Item"));
