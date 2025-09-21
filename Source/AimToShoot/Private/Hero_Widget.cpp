@@ -4,6 +4,8 @@
 #include "Hero_Widget.h"
 #include "Hero.h"
 #include "Components/ProgressBar.h"
+#include "Components/Border.h"
+#include "Components/TextBlock.h"
 
 void UHero_Widget::UpDateHealth(AHero* Object) {
 	if (HealthBar) {
@@ -22,4 +24,19 @@ void UHero_Widget::UpDateStamina(AHero* Object) {
 
 	StaminaBar->SetPercent(cal_Per);
 }
+
+void UHero_Widget::UpDateAmmo(AHero* Player)
+{
+	if (!Player) return;
+	if (Player->CurrentWeapon == nullptr) {
+		Border_ammo->SetVisibility(ESlateVisibility::Hidden);
+	}
+	else {
+		Border_ammo->SetVisibility(ESlateVisibility::Visible);
+		Show_ammo_text->SetText(FText::FromString(FString::Printf(TEXT("%d / %d"), Player->CurrentWeapon->GetWeaponCurrentAmmo(), Player->CurrentWeapon->GetWeaponMaxAmmo())));
+	}
+}
+
+
+
 

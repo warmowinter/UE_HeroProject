@@ -27,6 +27,16 @@ float AWeaponBase::GetBaseDamage()
 	return BaseDamage;
 }
 
+int32 AWeaponBase::GetWeaponCurrentAmmo()
+{
+	return CurrentAmmo;
+}
+
+int32 AWeaponBase::GetWeaponMaxAmmo()
+{
+	return MaxAmmo;
+}
+
 // Called when the game starts or when spawned
 void AWeaponBase::BeginPlay()
 {

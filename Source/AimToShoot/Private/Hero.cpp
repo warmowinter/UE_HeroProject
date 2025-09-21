@@ -100,6 +100,7 @@ void AHero::BeginPlay()
 		HeroWidget = CreateWidget<UHero_Widget>(GetWorld(),HeroWidgetClass);
 		if (HeroWidget) {
 			HeroWidget->AddToViewport();
+			HeroWidget->UpDateAmmo(this);
 		}
 	}
 	HeroWidget->UpDateHealth(this);
@@ -482,6 +483,7 @@ void AHero::StartFire() {
 	if (CurrentWeapon && CurrentWeapon->GetAttachParentSocketName() == TEXT("hand_r_Weapon")) {
 		Is_FireState = true;
 		CurrentWeapon->WeaponStartFire();
+		HeroWidget->UpDateAmmo(this);
 	}
 }
 //这个函数可能有隐患，当角色在射击过程中，切换武器了，那么停止开火这个就不会调用吧
@@ -489,6 +491,7 @@ void AHero::StopFire() {
 	if (CurrentWeapon) {
 		Is_FireState = false;
 		CurrentWeapon->WeaponStopFire();
+		HeroWidget->UpDateAmmo(this);
 	}
 }
 
@@ -516,6 +519,7 @@ void AHero::GetWeaponFromEquipGrid(int32 Index) {
 	bUseControllerRotationYaw = true;
 	GetCharacterMovement()->bOrientRotationToMovement = false;
 	Is_AimState = true;
+	HeroWidget->UpDateAmmo(this);
 }
 
 
@@ -539,6 +543,7 @@ void AHero::InitializeEquipments() {
 void AHero::EquipWeapon1() { 
 	UE_LOG(LogTemp, Log, TEXT("input select 1"));
 	GetWeaponFromEquipGrid(16); 
+
 }
 void AHero::EquipWeapon2() { 
 	UE_LOG(LogTemp, Log, TEXT("input select 2"));
@@ -696,7 +701,9 @@ void AHero::SyncEquipmentsWithBackPack() {
 		Is_AimState = false;
 		CurrentWeapon = nullptr;
 	}
+	HeroWidget->UpDateAmmo(this);
 }
+
 
 
 
@@ -721,6 +728,7 @@ void AHero::SwitchWeaponAttachment() {
 			Is_AimState = false;
 		}
 	}
+
 }
 
 void AHero::NoticeChangeBullet() {
@@ -728,6 +736,7 @@ void AHero::NoticeChangeBullet() {
 		CurrentWeapon->ChangeBullet();
 		Is_ChangeBullet = true;
 	}
+	HeroWidget->UpDateAmmo(this);
 }
 
 void AHero::PlayFireMontage(UAnimMontage* Montage) {

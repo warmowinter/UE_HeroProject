@@ -58,6 +58,11 @@ public:
 	UFUNCTION()
 		float GetBaseDamage();
 
+	UFUNCTION()
+		int32 GetWeaponCurrentAmmo();
+	UFUNCTION()
+		int32 GetWeaponMaxAmmo();
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

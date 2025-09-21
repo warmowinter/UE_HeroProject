@@ -22,10 +22,15 @@ public:
 		class UProgressBar* HealthBar;
 	UPROPERTY(Meta = (BindWidget))
 		class UProgressBar* StaminaBar;
-
+	UPROPERTY(Meta = (BindWidget))
+		class UBorder* Border_ammo;
+	UPROPERTY(Meta = (BindWidget))
+		class UTextBlock* Show_ammo_text;
 
 
 	void UpDateHealth(AHero* Object);
 
 	void UpDateStamina(AHero* Object);
+
+	void UpDateAmmo(AHero* Player);
 };
