@@ -28,6 +28,17 @@ public:
 	UPROPERTY(Meta = (BindWidget))
 		UButton* Button_ExitGame;
 
+protected:
+		virtual void NativeConstruct() override;
+
+		UFUNCTION()
+			void OnStartGameClicked();
+		UFUNCTION()
+			void OnContinueGameClicked();
+		UFUNCTION()
+			void OnSetChoiceClicked();
+		UFUNCTION()
+			void OnExitGameClicked();
 
 
 };
