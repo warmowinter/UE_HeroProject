@@ -27,6 +27,19 @@ void UMainMenu_Widget::OnStartGameClicked()
 {
 	UE_LOG(LogTemp, Log, TEXT("TestMap Open already"));
 	UGameplayStatics::OpenLevel(GetWorld(), TEXT("TestMap"));
+	//独立关卡不能作为一个流式关卡。
+	//if (Load_WidgetClass) {
+	//	UUserWidget* LoadingWidget = CreateWidget<UUserWidget>(GetWorld(), Load_WidgetClass);
+	//	if (LoadingWidget) {
+	//		LoadingWidget->AddToViewport();
+	//	}
+	//}
+
+	//FLatentActionInfo LatentInfo;
+	//LatentInfo.CallbackTarget = this;
+
+	//UGameplayStatics::LoadStreamLevel(this, "TestMap", true, false, LatentInfo);
+
 }
 
 void UMainMenu_Widget::OnContinueGameClicked()
@@ -41,5 +54,7 @@ void UMainMenu_Widget::OnSetChoiceClicked()
 
 void UMainMenu_Widget::OnExitGameClicked()
 {
-	//todo
+	APlayerController* PC = GetWorld()->GetFirstPlayerController();
+	UKismetSystemLibrary::QuitGame(GetWorld(), PC, EQuitPreference::Quit, true);
+
 }

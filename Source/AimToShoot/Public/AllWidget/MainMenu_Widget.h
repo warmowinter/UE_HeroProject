@@ -28,6 +28,9 @@ public:
 	UPROPERTY(Meta = (BindWidget))
 		UButton* Button_ExitGame;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, CateGory = "Loading_Picture")
+		TSubclassOf<UUserWidget> Load_WidgetClass;
+
 protected:
 		virtual void NativeConstruct() override;
 

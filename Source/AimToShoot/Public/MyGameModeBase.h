@@ -16,4 +16,10 @@ class AIMTOSHOOT_API AMyGameModeBase : public AGameModeBase
 
 public:
 		AMyGameModeBase();
+
+		virtual void BeginPlay() override;
+		virtual void StartPlay() override;
+
+
+
 };
